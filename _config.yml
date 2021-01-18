@@ -1,12 +1,10 @@
-# Jekyll configuration for Open SDG platform
-
+# Config by Djordje Sajlovic
+# Jekyll configuration for Open SDG platform.
 # Doing the Quick start? Here are the settings to update during installation:
-#
-#
 # Replace the baseurl with the name of this repository. For example, if the repository is named
 # "my-site-repository", then update the baseurl like so:
 # baseurl: "/my-site-repository"
-baseurl: "/sdg-site-bih"
+baseurl: ""
 # The next line should be the URL of your data repository published site. To find this,
 # go to your data repository in Github, and click "Settings", then scroll down to the
 # "Github Pages" section. Copy/paste the link in the green section.
@@ -21,17 +19,20 @@ metadata_edit_url: http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/[id
 # The list of languages that are translated. The first one is the default.
 languages:
   - en
-  - es
+  - bs
+  - sr
+  - hr
 #
 # That's enough for the Quick Start! The remaining settings can be configured later.
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
 # Recommended: set this to a particular "release" of Open SDG. For example:
 #remote_theme: open-sdg/open-sdg@1.1.0
-remote_theme: open-sdg/open-sdg@master
+#remote_theme: open-sdg/open-sdg@master
+remote_theme: brockfanning/open-sdg@bosnia-feature-set
 
 # Replace this title as needed.
-title: Indicators For The Sustainable Development Goals
+title: custom.indicator_title
 url: ""
 data_dir: data
 environment: staging
@@ -40,12 +41,14 @@ environment: staging
 # and some other required pages.
 create_indicators:
   layout: indicator
+  previous_next_links: true
 create_goals:
-  layout: goal-by-target-vertical
+  layout: goal-by-target
+  previous_next_links: true
 create_pages:
   pages:
     - folder: /
-      layout: frontpage-alt
+      layout: frontpage
     - folder: /goals
       layout: goals
     - folder: /reporting-status
@@ -64,15 +67,15 @@ analytics:
 
 # Replace the email addresses below.
 email_contacts:
-  questions: test@example.com
-  suggestions: test@example.com
-  functional: test@example.com
+  questions: sdg@bhas.gov.ba
+  suggestions: sdg@bhas.gov.ba
+  functional: sdg@bhas.gov.ba
 
 # International Support
 # Eg name: Australia and adjective: Australian
 country:
-  name: Australia
-  adjective: Australian
+  name: BiH
+  adjective: BiH
 
 # Optionally set a title/body for the frontpage banner. The defaults below point to a standard
 # translation, but feel free to change it as needed.
@@ -81,24 +84,12 @@ frontpage_introduction_banner:
   description: frontpage.intro_body
 
 frontpage_goals_grid:
-  title: Our data for Sustainable Development Goal indicators
-  description: Click on each goal for our Sustainable Development Goal global indicator data.
+  title: custom.goal_title
+  description: custom.goal_description
 
 frontpage_cards:
   - title: frontpage.download_all
     include: components/download-all-data.html
-  - title: Lorem ipsum
-    content: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis
-      cursus est sed dapibus.
-    button_label: Read more
-    button_link: https://example.com
-  - title: Nam vestibulum
-    content: |
-      Nam vestibulum, purus quis porttitor imperdiet, nisl sem mollis nisl, a
-      interdum risus enim vitae tortor. Donec feugiat accumsan rutrum.
-    button_label: Read more
-    button_link: https://example.com
 
 # Pages
 collections:
@@ -123,20 +114,16 @@ menu:
     translation_key: menu.reporting_status
   - path: /about
     translation_key: menu.about
-  - path: /guidance
-    translation_key: menu.guidance
-  - path: /faq
-    translation_key: menu.faq
-  - path: /news
-    translation_key: menu.updates
+ # - path: /faq
+ #   translation_key: menu.faq
+  - path: /publications
+    translation_key: menu.publications
+  - path: /covid-19-impact
+    translation_key: custom.covid
 
 footer_menu:
-  - path: mailto:my-email-address@example.com
+  - path: mailto:sdg@bhas.gov.ba
     translation_key: menu.contact_us
-  - path: https://twitter.com/MyTwitterAccount
-    translation_key: general.twitter
-  - path: https://facebook.com/MyFacebookAccount
-    translation_key: general.facebook
   - path: /about/cookies-and-privacy/
     translation_key: menu.cookies
 
@@ -146,7 +133,7 @@ non_global_metadata: indicator.national_metadata
 
 # Set a base for all goal image URLs. Note that the full goal image path will be
 # the base below, completed with: /[language]/[number].png (eg, /fr/6.png).
-goal_image_base: https://open-sdg.org/sdg-translations/assets/img/goals
+goal_image_base: https://sdg.bhas.gov.ba/assets/img/goals
 
 # Tell Jekyll to use the Remote Theme plugin.
 plugins:
@@ -177,3 +164,16 @@ exclude:
 #    max_zoom: 10
 #    subfolder: my-geojson-subfolder
 #    label: My map layer label (can be a translation key)
+
+custom_js:
+  - /assets/js/custom.js
+
+goal_image_extension: png
+
+accessible_tabs: true
+accessible_charts: true
+series_toggle: true
+
+data_fields:
+  series: SERIES
+  units: UNIT_MEASURE
