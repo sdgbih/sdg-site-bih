@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -17,6 +17,12 @@ var opensdg = {
   // A hook which can be used to modify the configuration for Chart.js.
   chartConfigAlter: function(callback) {
     this.chartConfigAlterations.push(callback);
+  },
+
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
   },
 
   // A hook which can be replaced to alter whether/how the values that are
@@ -105,13 +111,13 @@ var translations = {
         
 
         <!--[if IE 9]>
-        <script src="/sdg-site-bih/assets/js/lib/classList.js"></script>
+        <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/sdg-site-bih/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/sdg-site-bih/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
         http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
         -->
 
@@ -121,7 +127,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-site-bih/assets/css/style.css?v=20210118160743">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210118162750">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -132,7 +138,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-en layout-goal-by-target-vertical">
+<body class="language-en layout-goal-by-target">
 <!-- <div class="container"> -->
 
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
@@ -143,7 +149,7 @@ var translations = {
   <div class="disclaimer-alert">
     <strong class="phase-tag">Alpha</strong>
     
-    This is a development website. We welcome your <a href="mailto:test@example.com">feedback</a>.
+    This is a development website. We welcome your <a href="mailto:sdg@bhas.gov.ba">feedback</a>.
   </div>
 </div>
 
@@ -153,8 +159,8 @@ var translations = {
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/sdg-site-bih/" id="home">
-        <img src="/sdg-site-bih/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      <a class="navbar-brand" href="/" id="home">
+        <img src="/assets/img/logo/en/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
       </a>
 
       <div class="mobile-widgets">
@@ -166,8 +172,16 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/sdg-site-bih/es/9/">
-              Español
+            <a href="/bs/9/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/sr/9/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/9/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -184,17 +198,15 @@ var translations = {
             aria-haspopup="true">
           <button data-target="menu-mobile" aria-expanded="false">Menu</button>
           <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/sdg-site-bih/goals">Goals</a>
+    <a href="/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/reporting-status">Reporting Status</a>
+    <a href="/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/about">About</a>
+    <a href="/about">About</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/guidance">Guidance</a>
+    <a href="/publications">Publications</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/faq">FAQ</a>
-    </li><li class="nav-link ">
-    <a href="/sdg-site-bih/news">Updates</a>
+    <a href="/covid-19-impact">COVID-19 Impact</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -209,8 +221,16 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/sdg-site-bih/es/9/">
-              Español
+            <a href="/bs/9/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/sr/9/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/9/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -218,7 +238,8 @@ var translations = {
 
 
 
-</li></ul>
+</li>
+</ul>
 
         </li>
         <li id="searchToggle"
@@ -226,10 +247,10 @@ var translations = {
             aria-haspopup="true">
           <button data-target="search-mobile" aria-expanded="false">Search</button>
           <div id="search-mobile" class="menu-target">
-  <form action="/sdg-site-bih/search">
-    <input type="text" name="q" id="indicator_search-mobile" title="Search" />
+  <form action="/search">
     <label class="sr-only" for="indicator_search-mobile">Search</label>
-    <button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+    <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
+    --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
@@ -237,26 +258,24 @@ var translations = {
       </ul>
 
       <div id="search" class="menu-target">
-  <form action="/sdg-site-bih/search">
-    <input type="text" name="q" id="indicator_search" title="Search" />
+  <form action="/search">
     <label class="sr-only" for="indicator_search">Search</label>
-    <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+    <input type="text" name="q" id="indicator_search" title="Search" /><!--
+    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-    <a href="/sdg-site-bih/goals">Goals</a>
+    <a href="/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/reporting-status">Reporting Status</a>
+    <a href="/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/about">About</a>
+    <a href="/about">About</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/guidance">Guidance</a>
+    <a href="/publications">Publications</a>
     </li><li class="nav-link ">
-    <a href="/sdg-site-bih/faq">FAQ</a>
-    </li><li class="nav-link ">
-    <a href="/sdg-site-bih/news">Updates</a>
+    <a href="/covid-19-impact">COVID-19 Impact</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -271,8 +290,16 @@ var translations = {
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
       <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/sdg-site-bih/es/9/">
-              Español
+            <a href="/bs/9/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/sr/9/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/9/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -280,7 +307,8 @@ var translations = {
 
 
 
-</li></ul>
+</li>
+</ul>
 
 
     </nav>
@@ -293,18 +321,37 @@ var translations = {
 <div class="container">
   <ol class="breadcrumb">
   
-  <li><a href="/sdg-site-bih/">Home</a></li>
+  <li><a href="/">Home</a></li>
   <li class="active">Goal 9</li>
   
 </ol>
 
+  
+    
+<div class="previous-next-links row">
+    <div class="col-xs-3 col-md-3 col-lg-4 pull-left text-left">
+        <a class="btn btn-primary" href="/8" aria-labelledby="previous-link">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <span id="previous-link" class="hidden-sm hidden-xs">Previous goal</span>
+        </a>
+    </div>
+    <div class="col-xs-3 col-md-3 col-lg-4 pull-right text-right">
+        <a class="btn btn-primary" href="/10" aria-labelledby="next-link">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <span id="next-link" class="hidden-sm hidden-xs">Next goal</span>
+        </a>
+    </div>
+</div>
+
+
+  
 </div>
 
 <div class="heading goal-banner goal-9">
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
-        <img src="https://open-sdg.org/sdg-translations/assets/img/goals/en/9.png" alt="Industry, innovation and infrastructure - Goal 9" id="goal-9"/>
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/en/9.png" alt="Industry, innovation and infrastructure - Goal 9" id="goal-9" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -315,354 +362,402 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container" role="main">
+<div id="main-content" class="container goal-indicators goal-9 goal-by-target" role="main">
 
   
 
 
 
-  <div class="container">
-    <h2>Targets and indicators</h2>
-
-    
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.1</span>
-        </h3>
-        <span class="target-name">Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.1.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-1-1">Proportion of the rural population who live within 2 km of an all-season road</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.1.2</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-1-2">Passenger and freight volumes, by mode of transport</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.2</span>
-        </h3>
-        <span class="target-name">Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry’s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.2.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-2-1">Manufacturing value added as a proportion of GDP and per capita</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.2.2</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-2-2">Manufacturing employment as a proportion of total employment</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.3</span>
-        </h3>
-        <span class="target-name">Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.3.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-3-1">Proportion of small-scale industries in total industry value added</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.3.2</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-3-2">Proportion of small-scale industries with a loan or line of credit</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.4</span>
-        </h3>
-        <span class="target-name">By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.4.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-4-1">CO2 emission per unit of value added</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.5</span>
-        </h3>
-        <span class="target-name">Enhance scientific research, upgrade the technological capabilities of industrial sectors in all countries, in particular developing countries, including, by 2030, encouraging innovation and substantially increasing the number of research and development workers per 1 million people and public and private research and development spending</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.5.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-5-1">Research and development expenditure as a proportion of GDP</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.5.2</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-5-2">Researchers (in full-time equivalent) per million inhabitants</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.a</span>
-        </h3>
-        <span class="target-name">Facilitate sustainable and resilient infrastructure development in developing countries through enhanced financial, technological and technical support to African countries, least developed countries, landlocked developing countries and small island developing States</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.a.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-a-1">Total official international support (official development assistance plus other official flows) to infrastructure</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.b</span>
-        </h3>
-        <span class="target-name">Support domestic technology development, research and innovation in developing countries, including by ensuring a conducive policy environment for, inter alia, industrial diversification and value addition to commodities</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.b.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-b-1">Proportion of medium and high-tech industry value added in total value added</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
-      
-      <div class="row no-gutters goal-target-and-indicators">
-        <h3 class="goal-target">
-          <span class="target-number"><span class="sr-only">Target</span> 9.c</span>
-        </h3>
-        <span class="target-name">Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020</span>
-        
-
-          
-          
-          
-          
-          
-          
-          
-          
-
-          <div class="goal-indicator">
-            <h4>
-              <span class="indicator-number"><span class="sr-only">Indicator</span> 9.c.1</span>
-            </h4>
-            <span class="indicator-name"><a href="/sdg-site-bih/9-c-1">Proportion of population covered by a mobile network, by technology</a></span>
-            <span class="sr-only">Indicator status</span>
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-            
-          </div>
-        
-      </div>
-    
+  <div class="visible-md-block visible-lg-block">
+    <div class="col-md-6">
+      <h2>Targets</h2>
+    </div>
+    <div class="col-md-6">
+      <h2>Indicators</h2>
+    </div>
   </div>
+
+  
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.1
+      </span>
+      Develop quality, reliable, sustainable and resilient infrastructure, including regional and transborder infrastructure, to support economic development and human well-being, with a focus on affordable and equitable access for all
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 indicator-national goal-indicator">
+        <span>
+          9.1.1
+          <span class="status notstarted">
+            Exploring data sources
+          </span>
+        </span>
+        <a href="/9-1-1">
+          Proportion of the rural population who live within 2 km of an all-season road
+        </a>
+        
+          <ul class="tags">
+          
+            
+            <li class="tag-national warning">National</li>
+          
+          </ul>
+        
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.1.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-1-2">
+          Passenger and freight volumes, by mode of transport
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.2
+      </span>
+      Promote inclusive and sustainable industrialization and, by 2030, significantly raise industry’s share of employment and gross domestic product, in line with national circumstances, and double its share in least developed countries
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.2.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-2-1">
+          Manufacturing value added as a proportion of GDP and per capita
+        </a>
+        
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.2.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-2-2">
+          Manufacturing employment as a proportion of total employment
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.3
+      </span>
+      Increase the access of small-scale industrial and other enterprises, in particular in developing countries, to financial services, including affordable credit, and their integration into value chains and markets
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.3.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-3-1">
+          Proportion of small-scale industries in total industry value added
+        </a>
+        
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.3.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-3-2">
+          Proportion of small-scale industries with a loan or line of credit
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.4
+      </span>
+      By 2030, upgrade infrastructure and retrofit industries to make them sustainable, with increased resource-use efficiency and greater adoption of clean and environmentally sound technologies and industrial processes, with all countries taking action in accordance with their respective capabilities
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.4.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-4-1">
+          CO2 emission per unit of value added
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.5
+      </span>
+      Enhance scientific research, upgrade the technological capabilities of industrial sectors in all countries, in particular developing countries, including, by 2030, encouraging innovation and substantially increasing the number of research and development workers per 1 million people and public and private research and development spending
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.5.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-5-1">
+          Research and development expenditure as a proportion of GDP
+        </a>
+        
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.5.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-5-2">
+          Researchers (in full-time equivalent) per million inhabitants
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.a
+      </span>
+      Facilitate sustainable and resilient infrastructure development in developing countries through enhanced financial, technological and technical support to African countries, least developed countries, landlocked developing countries and small island developing States
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.a.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-a-1">
+          Total official international support (official development assistance plus other official flows) to infrastructure
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.b
+      </span>
+      Support domestic technology development, research and innovation in developing countries, including by ensuring a conducive policy environment for, inter alia, industrial diversification and value addition to commodities
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.b.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-b-1">
+          Proportion of medium and high-tech industry value added in total value added
+        </a>
+        
+      </div>
+    
+    </div>
+  
+    
+    <div class="indicator-cards target goal-target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Target</label>
+        9.c
+      </span>
+      Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12  goal-indicator">
+        <span>
+          9.c.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
+        <a href="/9-c-1">
+          Proportion of population covered by a mobile network, by technology
+        </a>
+        
+      </div>
+    
+    </div>
+  
 </div>
 
 <footer role="contentinfo">
@@ -675,21 +770,11 @@ var translations = {
             
               <li>
                 
-                  <a href="mailto:my-email-address@example.com" target="_blank">Contact us</a>
+                  <a href="mailto:sdg@bhas.gov.ba" target="_blank">Contact us</a>
                 
                 </li>
               <li>
-                
-                  <a href="https://twitter.com/MyTwitterAccount" target="_blank">Twitter</a>
-                
-                </li>
-              <li>
-                
-                  <a href="https://facebook.com/MyFacebookAccount" target="_blank">Facebook</a>
-                
-                </li>
-              <li>
-                <a href="/sdg-site-bih/about/cookies-and-privacy/">Cookies</a>
+                <a href="/about/cookies-and-privacy/">Cookies</a>
                 
                 </li>
               
@@ -726,9 +811,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-site-bih/assets/js/sdg.js?v=20210118160743'></script>
+<script src='/assets/js/sdg.js?v=20210118162750'></script>
 
-<script>
+
+    
+    
+    <script src="/assets/js/custom.js?v=20210118162750"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -768,6 +856,7 @@ $(function() {
               stackedDisaggregation: domData.stackeddisaggregation,
               graphAnnotations: domData.graphannotations,
               indicatorDownloads: domData.indicatordownloads,
+              compositeBreakdownLabel: domData.compositebreakdownlabel,
             }),
             view  = new indicatorView(model, {
               rootElement: '#indicatorData',

@@ -673,6 +673,158 @@ Chart.plugins.register({
     }
   }
 });
+// This plugin allows users to cycle through tooltips by keyboard.
+Chart.plugins.register({
+    afterInit: function(chart) {
+        var plugin = this;
+        plugin.chart = chart;
+        plugin.currentTooltip = null;
+        plugin.initElements();
+        $(chart.canvas).keydown(function(e) {
+            switch (e.which) {
+                case 37:
+                    plugin.previousTooltip();
+                    e.preventDefault();
+                    break;
+                case 39:
+                    plugin.nextTooltip();
+                    e.preventDefault();
+                    break;
+            }
+        });
+    },
+    initElements: function() {
+        $('<span/>')
+            .addClass('sr-only')
+            .attr('id', 'chart-tooltip-status')
+            .attr('role', 'status')
+            .appendTo('#chart');
+        if (window.innerWidth <= 768) {
+            $(this.chart.canvas).text(translations.indicator.chart + '. ' + translations.indicator.data_tabular_alternative);
+        }
+        else {
+            var keyboardInstructions = translations.indicator.data_keyboard_navigation;
+            $('<span/>')
+                .css('display', 'none')
+                .attr('id', 'chart-keyboard')
+                .text(', ' + keyboardInstructions)
+                .appendTo('#chart');
+            var describedBy = $('#chart canvas').attr('aria-describedby');
+            $(this.chart.canvas)
+                .attr('role', 'application')
+                .attr('aria-describedby', 'chart-keyboard ' + describedBy)
+                .text('Chart. ' + keyboardInstructions)
+        }
+    },
+    afterDatasetsDraw: function() {
+        var plugin = this;
+        if (plugin.allTooltips == null) {
+            plugin.allTooltips = plugin.getAllTooltips();
+        }
+    },
+    afterUpdate: function() {
+        var plugin = this;
+        plugin.allTooltips = null;
+        plugin.currentTooltip = null;
+    },
+    getAllTooltips: function() {
+        var datasets = this.chart.data.datasets;
+        var allTooltips = [];
+        if (datasets.length == 0) {
+            return allTooltips;
+        }
+        // For line charts, we group points into vertical tooltips.
+        if (this.chart.config.type == 'line') {
+            for (var pointIndex = 0; pointIndex < datasets[0].data.length; pointIndex++) {
+                var verticalTooltips = [];
+                for (var datasetIndex = 0; datasetIndex < datasets.length; datasetIndex++) {
+                    var meta = this.chart.getDatasetMeta(datasetIndex);
+                    if (meta.hidden) {
+                        continue;
+                    }
+                    if (datasets[datasetIndex].data[pointIndex] !== null) {
+                        verticalTooltips.push(meta.data[pointIndex]);
+                    }
+                }
+                if (verticalTooltips.length > 0) {
+                    allTooltips.push(verticalTooltips);
+                }
+            }
+        }
+        // For other charts, each point gets its own tooltip.
+        else {
+            for (var datasetIndex = 0; datasetIndex < datasets.length; datasetIndex++) {
+                var meta = this.chart.getDatasetMeta(datasetIndex);
+                if (meta.hidden) {
+                    continue;
+                }
+                for (var pointIndex = 0; pointIndex < datasets[datasetIndex].data.length; pointIndex++) {
+                    var singleTooltip = meta.data[pointIndex];
+                    allTooltips.push([singleTooltip]);
+                }
+            }
+        }
+        return allTooltips;
+    },
+    previousTooltip: function() {
+        var plugin = this,
+            newTooltip = 0;
+        if (plugin.currentTooltip !== null) {
+            newTooltip = plugin.currentTooltip - 1;
+        }
+        if (newTooltip < 0) {
+            newTooltip = plugin.allTooltips.length - 1;
+        }
+        plugin.activateTooltips(plugin.allTooltips[newTooltip]);
+        plugin.currentTooltip = newTooltip;
+    },
+    nextTooltip: function() {
+        var plugin = this,
+            newTooltip = 0;
+        if (plugin.currentTooltip !== null) {
+            newTooltip = plugin.currentTooltip + 1;
+        }
+        if (newTooltip >= plugin.allTooltips.length) {
+            newTooltip = 0;
+        }
+        plugin.activateTooltips(plugin.allTooltips[newTooltip]);
+        plugin.currentTooltip = newTooltip;
+    },
+    activateTooltips: function(tooltips) {
+        this.chart.tooltip._active = tooltips
+        this.chart.tooltip.update(true);
+        this.chart.draw();
+        this.announceTooltips(tooltips);
+    },
+    announceTooltips: function(tooltips) {
+        if (tooltips.length > 0) {
+            var labels = {};
+            for (var i = 0; i < tooltips.length; i++) {
+                var datasetIndex = tooltips[i]._datasetIndex,
+                    pointIndex = tooltips[i]._index,
+                    year = this.chart.data.labels[pointIndex],
+                    dataset = this.chart.data.datasets[datasetIndex],
+                    label = dataset.label,
+                    value = dataset.data[pointIndex];
+                if (typeof labels[year] === 'undefined') {
+                    labels[year] = [];
+                }
+                labels[year].push(label + ': ' + value);
+            }
+            var announcement = '';
+            Object.keys(labels).forEach(function(year) {
+                announcement += year + ' ';
+                labels[year].forEach(function(label) {
+                    announcement += label + ', ';
+                });
+            });
+            var currentAnnouncement = $('#chart-tooltip-status').text();
+            if (currentAnnouncement != announcement) {
+                $('#chart-tooltip-status').text(announcement);
+            }
+        }
+    }
+});
 function event(sender) {
   this._sender = sender;
   this._listeners = [];
@@ -857,13 +1009,13 @@ var indicatorModel = function (options) {
   /**
  * Constants to be used in indicatorModel.js and helper functions.
  */
-var UNIT_COLUMN = 'Units';
-var SERIES_COLUMN = 'Series';
+var UNIT_COLUMN = 'UNIT_MEASURE';
+var SERIES_COLUMN = 'SERIES';
 var GEOCODE_COLUMN = 'GeoCode';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 var HEADLINE_COLOR = '#777777';
-var SERIES_TOGGLE = false;
+var SERIES_TOGGLE = true;
 
   /**
  * Model helper functions with general utility.
@@ -889,20 +1041,11 @@ function isElementUniqueInArray(element, index, arr) {
 }
 
 /**
- * @param {Array} rows
+ * @param {Array} columns
  * @return {boolean}
  */
-function dataHasGeoCodes(rows) {
-  return dataHasColumn(GEOCODE_COLUMN, rows);
-}
-
-/**
- * @param {string} column
- * @param {Array} rows
- * @return {boolean}
- */
-function dataHasColumn(column, rows) {
-  return getColumnsFromData(rows).includes(column);
+function dataHasGeoCodes(columns) {
+  return columns.includes(GEOCODE_COLUMN);
 }
 
 /**
@@ -910,16 +1053,18 @@ function dataHasColumn(column, rows) {
  * @return {Array} Columns from first row
  */
 function getColumnsFromData(rows) {
-  return Object.keys(rows[0]);
+  return Object.keys(rows.reduce(function(result, obj) {
+    return Object.assign(result, obj);
+  }, {}));
 }
 
 /**
- * @param {Array} rows
- * @return {Array} Columns from first row, omitting non-fields
+ * @param {Array} columns
+ * @return {Array} Columns without non-fields
  */
-function getFieldColumnsFromData(rows) {
+function getFieldColumnsFromData(columns) {
   var omitColumns = nonFieldColumns();
-  return getColumnsFromData(rows).filter(function(col) {
+  return columns.filter(function(col) {
     return !omitColumns.includes(col);
   });
 }
@@ -953,8 +1098,8 @@ function nonFieldColumns() {
  * @param {Array} rows
  * @return {boolean}
  */
-function dataHasUnits(rows) {
-  return dataHasColumn(UNIT_COLUMN, rows);
+function dataHasUnits(columns) {
+  return columns.includes(UNIT_COLUMN);
 }
 
 /**
@@ -972,8 +1117,8 @@ function dataHasUnitSpecificFields(fieldsUsedByUnit) {
  * @param {Array} rows
  * @return {Array} Field names
  */
-function fieldsUsedByUnit(units, rows) {
-  var fields = getFieldColumnsFromData(rows);
+function fieldsUsedByUnit(units, rows, columns) {
+  var fields = getFieldColumnsFromData(columns);
   return units.map(function(unit) {
     return {
       unit: unit,
@@ -1032,11 +1177,11 @@ function getUnitFromStartValues(startValues) {
  */
 
 /**
- * @param {Array} rows
+ * @param {Array} columns
  * @return {boolean}
  */
-function dataHasSerieses(rows) {
-  return dataHasColumn(SERIES_COLUMN, rows);
+function dataHasSerieses(columns) {
+  return columns.includes(SERIES_COLUMN);
 }
 
 /**
@@ -1054,8 +1199,8 @@ function dataHasSeriesSpecificFields(fieldsUsedBySeries) {
  * @param {Array} rows
  * @return {Array} Field names
  */
-function fieldsUsedBySeries(serieses, rows) {
-  var fields = getFieldColumnsFromData(rows);
+function fieldsUsedBySeries(serieses, rows, columns) {
+  var fields = getFieldColumnsFromData(columns);
   return serieses.map(function(series) {
     return {
       series: series,
@@ -1118,8 +1263,8 @@ function getSeriesFromStartValues(startValues) {
  * @param {Array} edges
  * @return {Array} Field item states
  */
-function getInitialFieldItemStates(rows, edges) {
-  var initial = getFieldColumnsFromData(rows).map(function(field) {
+function getInitialFieldItemStates(rows, edges, columns) {
+  var initial = getFieldColumnsFromData(columns).map(function(field) {
     return {
       field: field,
       hasData: true,
@@ -1241,9 +1386,10 @@ function getChildFieldNames(edges) {
  * @param {boolean} dataHasSeriesSpecificFields
  * @param {Array} selectedFields Field items
  * @param {Array} edges
- * @return {Array} Field item states
+ * @param {string} compositeBreakdownLabel Alternate label for COMPOSITE_BREAKDOWN fields
+ * @return {Array} Field item states (with additional "label" properties)
  */
-function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dataHasUnitSpecificFields, fieldsBySeries, selectedSeries, dataHasSeriesSpecificFields, selectedFields, edges) {
+function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dataHasUnitSpecificFields, fieldsBySeries, selectedSeries, dataHasSeriesSpecificFields, selectedFields, edges, compositeBreakdownLabel) {
   var states = fieldItemStates.map(function(item) { return item; });
   if (dataHasUnitSpecificFields && dataHasSeriesSpecificFields) {
     states = fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSeries);
@@ -1272,7 +1418,13 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
     });
   }
   sortFieldsForView(states, edges);
-  return states;
+  return states.map(function(item) {
+    item.label = item.field;
+    if (item.field === 'COMPOSITE_BREAKDOWN' && compositeBreakdownLabel !== '') {
+      item.label = compositeBreakdownLabel;
+    }
+    return item;
+  });
 }
 
 /**
@@ -1437,6 +1589,10 @@ function selectMinimumStartingFields(rows, selectableFieldNames, selectedUnit) {
   // rows. In other words we want the row with the fewest number of fields.
   filteredData = _.sortBy(filteredData, function(row) { return Object.keys(row).length; });
 
+  if (filteredData.length === 0) {
+    return [];
+  }
+
   // Convert to an array of objects with 'field' and 'values' keys, omitting
   // any non-field columns.
   return Object.keys(filteredData[0]).filter(function(key) {
@@ -1588,27 +1744,86 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
  * @param {string} defaultLabel
  * @param {Array} colors
  * @param {Array} selectableFields Field names
+ * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields) {
-  var datasets = [], index = 0, dataset, color, background, border;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment;
+  var numColors = colors.length,
+      maxColorAssignments = numColors * 2;
+
+  prepareColorAssignments(colorAssignments, maxColorAssignments);
+  setAllColorAssignmentsReadyForEviction(colorAssignments);
+
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
     if (filteredData.length > 0) {
-      color = getColor(index, colors);
-      background = getBackground(index, colors);
-      border = getBorderDash(index, colors);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border);
+      excess = (index >= maxColorAssignments);
+      if (excess) {
+        // This doesn't really matter: excess datasets won't be displayed.
+        color = getHeadlineColor();
+        striped = false;
+      }
+      else {
+        combinationKey = JSON.stringify(combination);
+        colorAssignment = getColorAssignmentByCombination(colorAssignments, combinationKey);
+        if (colorAssignment !== undefined) {
+          colorIndex = colorAssignment.colorIndex;
+          striped = colorAssignment.striped;
+          colorAssignment.readyForEviction = false;
+        }
+        else {
+          if (colorAssignmentsAreFull(colorAssignments)) {
+            evictColorAssignment(colorAssignments);
+          }
+          var openColorInfo = getOpenColorInfo(colorAssignments, colors);
+          colorIndex = openColorInfo.colorIndex;
+          striped = openColorInfo.striped;
+          colorAssignment = getAvailableColorAssignment(colorAssignments);
+          assignColor(colorAssignment, combinationKey, colorIndex, striped);
+        }
+      }
+
+      color = getColor(colorIndex, colors);
+      background = getBackground(color, striped);
+      border = getBorderDash(striped);
+
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess);
       datasets.push(dataset);
       index++;
     }
   }, this);
-  datasets.sort(function(a, b) { return a.label > b.label; });
+
+  datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel);
     datasets.unshift(dataset);
   }
   return datasets;
+}
+
+/**
+ * @param {Array} colorAssignments
+ * @param {int} maxColorAssignments
+ */
+function prepareColorAssignments(colorAssignments, maxColorAssignments) {
+  while (colorAssignments.length < maxColorAssignments) {
+    colorAssignments.push({
+      combination: null,
+      colorIndex: null,
+      striped: false,
+      readyForEviction: false,
+    });
+  }
+}
+
+/**
+ * @param {Array} colorAssignments
+ */
+function setAllColorAssignmentsReadyForEviction(colorAssignments) {
+  for (var i = 0; i < colorAssignments.length; i++) {
+    colorAssignments[i].readyForEviction = true;
+  }
 }
 
 /**
@@ -1626,32 +1841,113 @@ function getDataMatchingCombination(data, combination, selectableFields) {
 }
 
 /**
- * @param {int} datasetIndex
- * @param {Array} colors
- * @return Color from a list
+ * @param {Array} colorAssignments
+ * @param {string} combination
+ * @return {Object|undefined} Color assignment object if found.
  */
-function getColor(datasetIndex, colors) {
-  if (datasetIndex >= colors.length) {
-    // Support double the number of colors, because we'll use striped versions.
-    return '#' + colors[datasetIndex - colors.length];
-  } else {
-    return '#' + colors[datasetIndex];
-  }
+function getColorAssignmentByCombination(colorAssignments, combination) {
+  return colorAssignments.find(function(assignment) {
+    return assignment.combination === combination;
+  });
 }
 
 /**
- * @param {int} datasetIndex
+ * @param {Array} colorAssignments
+ * @return {boolean}
+ */
+function colorAssignmentsAreFull(colorAssignments) {
+  for (var i = 0; i < colorAssignments.length; i++) {
+    if (colorAssignments[i].combination === null) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * @param {Array} colorAssignments
+ */
+function evictColorAssignment(colorAssignments) {
+  for (var i = 0; i < colorAssignments.length; i++) {
+    if (colorAssignments[i].readyForEviction) {
+      colorAssignments[i].combination = null;
+      colorAssignments[i].colorIndex = null;
+      colorAssignments[i].striped = false;
+      colorAssignments[i].readyForEviction = false;
+      return;
+    }
+  }
+  throw 'Could not evict color assignment';
+}
+
+/**
+ * @param {Array} colorAssignments
  * @param {Array} colors
+ * @return {Object} Object with 'colorIndex' and 'striped' properties.
+ */
+function getOpenColorInfo(colorAssignments, colors) {
+  // First look for normal colors, then striped.
+  var stripedStates = [false, true];
+  for (var i = 0; i < stripedStates.length; i++) {
+    var stripedState = stripedStates[i];
+    var assignedColors = colorAssignments.filter(function(colorAssignment) {
+      return colorAssignment.striped === stripedState && colorAssignment.colorIndex !== null;
+    }).map(function(colorAssignment) {
+      return colorAssignment.colorIndex;
+    });
+    if (assignedColors.length < colors.length) {
+      for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
+        if (!(assignedColors.includes(colorIndex))) {
+          return {
+            colorIndex: colorIndex,
+            striped: stripedState,
+          }
+        }
+      }
+    }
+  }
+  throw 'Could not find open color';
+}
+
+/**
+ * @param {Array} colorAssignments
+ * @return {Object|undefined} Color assignment object if found.
+ */
+function getAvailableColorAssignment(colorAssignments) {
+  return colorAssignments.find(function(assignment) {
+    return assignment.combination === null;
+  });
+}
+
+/**
+ * @param {Object} colorAssignment
+ * @param {string} combination
+ * @param {int} colorIndex
+ * @param {boolean} striped
+ */
+function assignColor(colorAssignment, combination, colorIndex, striped) {
+  colorAssignment.combination = combination;
+  colorAssignment.colorIndex = colorIndex;
+  colorAssignment.striped = striped;
+  colorAssignment.readyForEviction = false;
+}
+
+/**
+ * @param {int} colorIndex
+ * @param {Array} colors
+ * @return Color from a list
+ */
+function getColor(colorIndex, colors) {
+  return '#' + colors[colorIndex];
+}
+
+/**
+ * @param {string} color
+ * @param {boolean} striped
  * @return Background color or pattern
  */
-function getBackground(datasetIndex, colors) {
-  var color = getColor(datasetIndex, colors);
-
-  if (datasetIndex >= colors.length) {
-    color = getStripes(color);
-  }
-
-  return color;
+function getBackground(color, striped) {
+  return striped ? getStripes(color) : color;
 }
 
 /**
@@ -1666,12 +1962,11 @@ function getStripes(color) {
 }
 
 /**
- * @param {int} datasetIndex
- * @param {Array} colors
+ * @param {boolean} striped
  * @return {Array|undefined} An array produces dashed lines on the chart
  */
-function getBorderDash(datasetIndex, colors) {
-  return datasetIndex >= colors.length ? [5, 5] : undefined;
+function getBorderDash(striped) {
+  return striped ? [5, 5] : undefined;
 }
 
 /**
@@ -1684,7 +1979,7 @@ function getBorderDash(datasetIndex, colors) {
  * @param {Array} border
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
@@ -1696,6 +1991,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderDash: border,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
+    excess: excess,
   });
 }
 
@@ -1925,6 +2221,7 @@ function sortData(rows, selectedUnit) {
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
     tableDataFromDatasets: tableDataFromDatasets,
+    getColumnsFromData: getColumnsFromData,
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }
@@ -1972,38 +2269,59 @@ function sortData(rows, selectedUnit) {
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
+  this.compositeBreakdownLabel = options.compositeBreakdownLabel;
+
+  this.initialiseUnits = function() {
+    if (this.hasUnits) {
+      this.units = helpers.getUniqueValuesByProperty(helpers.UNIT_COLUMN, this.data);
+      this.selectedUnit = this.units[0];
+      this.fieldsByUnit = helpers.fieldsUsedByUnit(this.units, this.data, this.allColumns);
+      this.dataHasUnitSpecificFields = helpers.dataHasUnitSpecificFields(this.fieldsByUnit);
+    }
+  }
+
+  this.refreshSeries = function() {
+    if (this.hasSerieses) {
+      this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
+      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+      this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data, this.allColumns);
+      this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
+    }
+  }
+
+  this.initialiseFields = function() {
+    this.fieldItemStates = helpers.getInitialFieldItemStates(this.data, this.edgesData, this.allColumns);
+    this.validParentsByChild = helpers.validParentsByChild(this.edgesData, this.fieldItemStates, this.data);
+    this.selectableFields = helpers.getFieldNames(this.fieldItemStates);
+    this.allowedFields = helpers.getInitialAllowedFields(this.selectableFields, this.edgesData);
+  }
+
+  // Before continuing, we may need to filter by Series, so set up all the Series stuff.
+  this.allData = helpers.prepareData(this.data);
+  this.allColumns = helpers.getColumnsFromData(this.allData);
+  this.hasSerieses = helpers.SERIES_TOGGLE && helpers.dataHasSerieses(this.allColumns);
+  this.serieses = this.hasSerieses ? helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.allData) : [];
+  this.hasStartValues = Array.isArray(this.startValues) && this.startValues.length > 0;
+  if (this.hasSerieses) {
+    this.selectedSeries = this.serieses[0];
+    if (this.hasStartValues) {
+      this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
+    }
+    this.refreshSeries();
+  }
+  else {
+    this.data = this.allData;
+    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+  }
 
   // calculate some initial values:
-  this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
-  this.hasGeoData = helpers.dataHasGeoCodes(this.data);
-  if (helpers.dataHasUnits(this.data)) {
-    this.hasUnits = true;
-    this.units = helpers.getUniqueValuesByProperty(helpers.UNIT_COLUMN, this.data);
-    this.selectedUnit = this.units[0];
-    this.fieldsByUnit = helpers.fieldsUsedByUnit(this.units, this.data);
-    this.dataHasUnitSpecificFields = helpers.dataHasUnitSpecificFields(this.fieldsByUnit);
-  }
-  else {
-    this.hasUnits = false;
-  }
-  if (helpers.SERIES_TOGGLE && helpers.dataHasSerieses(this.data)) {
-    this.hasSerieses = true;
-    this.serieses = helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.data);
-    this.selectedSeries = this.serieses[0];
-    this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data);
-    this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
-  }
-  else {
-    this.hasSerieses = false;
-  }
-  this.fieldItemStates = helpers.getInitialFieldItemStates(this.data, this.edgesData);
-  this.validParentsByChild = helpers.validParentsByChild(this.edgesData, this.fieldItemStates, this.data);
-  this.selectableFields = helpers.getFieldNames(this.fieldItemStates);
-  this.allowedFields = helpers.getInitialAllowedFields(this.selectableFields, this.edgesData);
-  this.data = helpers.prepareData(this.data);
+  this.hasGeoData = helpers.dataHasGeoCodes(this.allColumns);
+  this.hasUnits = helpers.dataHasUnits(this.allColumns);
+  this.initialiseUnits();
+  this.initialiseFields();
   this.colors = opensdg.chartColors(this.indicatorId);
   this.maxDatasetCount = 2 * this.colors.length;
-  this.hasStartValues = Array.isArray(this.startValues) && this.startValues.length > 0;
+  this.colorAssignments = [];
 
   this.clearSelectedFields = function() {
     this.selectedFields = [];
@@ -2039,17 +2357,22 @@ function sortData(rows, selectedUnit) {
   };
 
   this.updateSelectedSeries = function(selectedSeries) {
+    // Updating the Series is akin to loading a whole new indicator, so
+    // here we re-initialise most everything on the page.
     this.selectedSeries = selectedSeries;
-    this.getData({
-      updateFields: this.dataHasSeriesSpecificFields
-    });
+    this.refreshSeries();
+    this.clearSelectedFields();
+    this.initialiseUnits();
+    this.initialiseFields();
+    this.getData({ updateFields: true, changingSeries: true });
     this.onSeriesesSelectedChanged.notify(selectedSeries);
   };
 
   this.getData = function(options) {
     options = Object.assign({
       initial: false,
-      updateFields: false
+      updateFields: false,
+      changingSeries: false,
     }, options);
 
     var headlineUnfiltered = helpers.getHeadline(this.selectableFields, this.data);
@@ -2070,7 +2393,7 @@ function sortData(rows, selectedUnit) {
 
     // If this is the initial load, check for special cases.
     var selectionUpdateNeeded = false;
-    if (options.initial) {
+    if (options.initial || options.changingSeries) {
       // Decide on a starting unit.
       if (this.hasUnits) {
         var startingUnit = this.selectedUnit;
@@ -2095,7 +2418,7 @@ function sortData(rows, selectedUnit) {
       }
 
       // Decide on a starting series.
-      if (this.hasSerieses) {
+      if (this.hasSerieses && !options.changingSeries) {
         var startingSeries = this.selectedSeries;
         if (this.hasStartValues) {
           var seriesInStartValues = helpers.getSeriesFromStartValues(this.startValues);
@@ -2154,7 +2477,8 @@ function sortData(rows, selectedUnit) {
           this.selectedSeries,
           this.dataHasSeriesSpecificFields,
           this.selectedFields,
-          this.edgesData
+          this.edgesData,
+          this.compositeBreakdownLabel,
         ),
         allowedFields: this.allowedFields,
         edges: this.edgesData,
@@ -2164,16 +2488,13 @@ function sortData(rows, selectedUnit) {
       });
     }
 
-    if (selectionUpdateNeeded || options.unitsChangeSeries) {
+    if (selectionUpdateNeeded || options.updateFields) {
       this.updateFieldStates(this.selectedFields);
     }
 
     var filteredData = helpers.getDataBySelectedFields(this.data, this.selectedFields);
     if (this.hasUnits) {
       filteredData = helpers.getDataByUnit(filteredData, this.selectedUnit);
-    }
-    if (this.hasSerieses) {
-      filteredData = helpers.getDataBySeries(filteredData, this.selectedSeries);
     }
 
     filteredData = helpers.sortData(filteredData, this.selectedUnit);
@@ -2182,7 +2503,7 @@ function sortData(rows, selectedUnit) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields, this.colorAssignments);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
@@ -2201,7 +2522,7 @@ function sortData(rows, selectedUnit) {
 
     this.onDataComplete.notify({
       datasetCountExceedsMax: datasetCountExceedsMax,
-      datasets: datasetCountExceedsMax ? datasets.slice(0, this.maxDatasetCount) : datasets,
+      datasets: datasets.filter(function(dataset) { return dataset.excess !== true }),
       labels: this.years,
       headlineTable: helpers.getHeadlineTable(headline, this.selectedUnit),
       selectionsTable: selectionsTable,
@@ -2507,7 +2828,10 @@ var indicatorView = function (model, options) {
   }
 
   this.initialiseFields = function(args) {
-    if(args.fields.length) {
+    var fieldsContainValues = args.fields.some(function(field) {
+      return field.values.length > 0;
+    });
+    if (fieldsContainValues) {
       var template = _.template($("#item_template").html());
 
       if(!$('button#clear').length) {
@@ -2566,6 +2890,12 @@ var indicatorView = function (model, options) {
     });
   };
 
+  this.alterTableConfig = function(config, info) {
+    opensdg.tableConfigAlterations.forEach(function(callback) {
+      callback(config, info);
+    });
+  };
+
   this.updateChartTitle = function(chartTitle) {
     if (typeof chartTitle !== 'undefined') {
       $('.chart-title').text(chartTitle);
@@ -2575,6 +2905,9 @@ var indicatorView = function (model, options) {
   this.updatePlot = function(chartInfo) {
     this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
+    view_obj._chartInstance.data.labels = chartInfo.labels;
+    // TODO: Investigate assets/js/chartjs/rescaler.js and why "allLabels" is needed.
+    view_obj._chartInstance.data.allLabels = chartInfo.labels;
 
     if(chartInfo.selectedUnit) {
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.labelString = translations.t(chartInfo.selectedUnit);
@@ -2840,7 +3173,7 @@ var indicatorView = function (model, options) {
     }
   };
 
-  var initialiseDataTable = function(el) {
+  var initialiseDataTable = function(el, info) {
     var datatables_options = options.datatables_options || {
       paging: false,
       bInfo: false,
@@ -2852,6 +3185,7 @@ var indicatorView = function (model, options) {
 
     datatables_options.aaSorting = [];
 
+    view_obj.alterTableConfig(datatables_options, info);
     table.DataTable(datatables_options);
     table.removeAttr('role');
     table.find('thead th').removeAttr('rowspan').removeAttr('colspan').removeAttr('aria-label');
@@ -3045,11 +3379,11 @@ var indicatorView = function (model, options) {
       var getHeading = function(heading, index) {
         var arrows = '<span class="sort"><i class="fa fa-sort-down"></i><i class="fa fa-sort-up"></i></span>';
         var button = '<span tabindex="0" role="button" aria-describedby="column-sort-info">' + translations.t(heading) + '</span>';
-        return (!index || heading.toLowerCase() == 'units') ? button + arrows : arrows + button;
+        return (!index) ? button + arrows : arrows + button;
       };
 
       table.headings.forEach(function (heading, index) {
-        table_head += '<th' + (!index || heading.toLowerCase() == 'units' ? '': ' class="table-value"') + ' scope="col">' + getHeading(heading, index) + '</th>';
+        table_head += '<th' + (!index ? '': ' class="table-value"') + ' scope="col">' + getHeading(heading, index) + '</th>';
       });
 
       table_head += '</tr></thead>';
@@ -3060,11 +3394,10 @@ var indicatorView = function (model, options) {
         var row_html = '<tr>';
         table.headings.forEach(function (heading, index) {
           // For accessibility set the Year column to a "row" scope th.
-          var isYear = (index == 0 || heading.toLowerCase() == 'year');
-          var isUnits = (heading.toLowerCase() == 'units');
+          var isYear = (index == 0);
           var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
           var cell_suffix = (isYear) ? '</th>' : '</td>';
-          row_html += cell_prefix + (isYear || isUnits ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '-') + cell_suffix;
+          row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '-') + cell_suffix;
         });
         row_html += '</tr>';
         currentTable.find('tbody').append(row_html);
@@ -3072,8 +3405,12 @@ var indicatorView = function (model, options) {
 
       $(el).append(currentTable);
 
-      // initialise data table
-      initialiseDataTable(el);
+      // initialise data table and provide some info for alterations.
+      var alterationInfo = {
+        table: table,
+        indicatorId: indicatorId,
+      };
+      initialiseDataTable(el, alterationInfo);
 
       $(el).removeClass('table-has-no-data');
       $('#selectionTableFooter').show();
@@ -3123,6 +3460,103 @@ $(document).ready(function() {
         tabsList.find('li').click(function(event) {
             if (event.target.tagName === 'LI') {
                 $(event.target).find('> a').click();
+            }
+        });
+    });
+});
+$(document).ready(function() {
+    $('.nav-tabs').each(function() {
+        var tabsList = $(this);
+        var tabs = tabsList.find('li > a');
+        var panes = tabsList.parent().find('.tab-pane');
+
+        panes.attr({
+            'class': 'tabPanel',
+            'role': 'tabpanel',
+            'aria-hidden': 'true',
+            'tabindex': '0',
+        }).hide();
+
+        tabsList.attr({
+            'role': 'tablist',
+        });
+
+        tabs.each(function(idx) {
+            var tab = $(this);
+            var tabId = 'tab-' + tab.attr('href').slice(1);
+            var pane = tabsList.parent().find(tab.attr('href'));
+
+            tab.attr({
+                'id': tabId,
+                'role': 'tab',
+                'aria-selected': 'false',
+                'tabindex': '-1',
+            }).parent().attr('role', 'presentation');
+
+            tab.removeAttr('href');
+
+            pane.attr('aria-labelledby', tabId);
+
+            tab.click(function(e) {
+                e.preventDefault();
+
+                tabsList.find('> li.active')
+                    .removeClass('active')
+                    .find('> a')
+                    .attr({
+                        'aria-selected': 'false',
+                        'tabindex': '-1',
+                    });
+
+                panes.filter(':visible').attr({
+                    'aria-hidden': 'true',
+                }).hide();
+
+                pane.attr({
+                    'aria-hidden': 'false',
+                }).show();
+
+                tab.attr({
+                    'aria-selected': 'true',
+                    'tabindex': '0',
+                }).parent().addClass('active');
+                tab.focus();
+            });
+        });
+
+        // Show the first tabPanel
+        panes.first().attr('aria-hidden', 'false').show();
+
+        // Set state for the first tabsList li
+        tabsList.find('li:first').addClass('active').find(' > a').attr({
+            'aria-selected': 'true',
+            'tabindex': '0',
+        });
+
+        // Set keydown events on tabList item for navigating tabs
+        tabsList.delegate('a', 'keydown', function(e) {
+            var tab = $(this);
+            switch (e.which) {
+                case 37:
+                    if (tab.parent().prev().length != 0) {
+                        tab.parent().prev().find('> a').click();
+                        e.preventDefault();
+                    }
+                    else {
+                        tabsList.find('li:last > a').click();
+                        e.preventDefault();
+                    }
+                    break;
+                case 39:
+                    if (tab.parent().next().length != 0) {
+                        tab.parent().next().find('> a').click();
+                        e.preventDefault();
+                    }
+                    else {
+                        tabsList.find('li:first > a').click();
+                        e.preventDefault();
+                    }
+                    break;
             }
         });
     });
@@ -3248,6 +3682,9 @@ var indicatorSearch = function() {
       resultsCount: resultItems.length,
       didYouMean: (alternativeSearchTerms.length > 0) ? alternativeSearchTerms : false,
     }));
+
+    // Hide the normal header search.
+    $('#search').css('visibility', 'hidden');
   }
 
   // Helper function to make a search query "fuzzier", using the ~ syntax.

@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://sdgbih.github.io/sdg-data-bosnia/sr',
+
+  chartConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Chart.js.
+  chartConfigAlter: function(callback) {
+    this.chartConfigAlterations.push(callback);
+  },
+
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
+  },
+
+  // A hook which can be replaced to alter whether/how the values that are
+  // displayed on indicator tables/graphs get rounded.
+  dataRounding: function(value) {
+    // Alterations go here.
+    return value;
+  },
+
+  language: 'sr',
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data !== null && this.data[key]) {
+      return this.data[key];
+    }
+
+    var originalKey = key;
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+
+        
+    <title>Индикатори за циљеве одрживог развоја</title>
+
+
+
+        <meta name="description" content="">
+        <meta property="og:description" content="">
+        
+        <meta name="robots" content="noindex, nofollow">
+        
+        <link rel="canonical" href="/">
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+
+        
+
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210118162750">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
+    </head>
+<body class="language-sr layout-reportingstatus">
+<!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Алфа","default_contrast":"Задани контраст","disable_high_contrast":"Онемогући високи контраст","disclaimer":"Ова интернет страница се развија. Поздрављамо ваше <a href=\"mailto:%email_address\">повратне информације</a>.","enable_high_contrast":"Омогући високи контраст","high_contrast":"Висок контраст","skip_link":"Пријеђи на главни садржај","tag_line":"17 циљева за трансформирање нашег свијета"};</script>
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Пријеђи на главни садржај</a>
+<div id="disclaimer">
+  <div class="container">
+  <div class="disclaimer-alert">
+    <strong class="phase-tag">Алфа</strong>
+    
+    Ова интернет страница се развија. Поздрављамо ваше <a href="mailto:sdg@bhas.gov.ba">повратне информације</a>.
+  </div>
+</div>
+
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <div class="logo-and-mobile-widgets">
+      <a class="navbar-brand" href="/sr/" id="home">
+        <img src="/assets/img/logo/sr/SDG_logo.png" alt="Циљеви одрживог развоја - 17 циљева за трансформирање нашег свијета" />
+      </a>
+
+      <div class="mobile-widgets">
+        <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+          <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Српски</span>
+      <span class="language-abbreviation">sr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/reporting-status/">
+              English
+            </a>
+          </li><li>
+            <a href="/bs/reporting-status/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/hr/reporting-status/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+        </div></div>
+    </div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="menu-mobile" aria-expanded="false">Мени</button>
+          <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
+    <a href="/sr/goals">Циљеви</a>
+    </li><li class="nav-link ">
+    <a href="/sr/reporting-status">Статус извјештавања</a>
+    </li><li class="nav-link ">
+    <a href="/sr/about">О нама</a>
+    </li><li class="nav-link ">
+    <a href="/sr/publications">Публикације</a>
+    </li><li class="nav-link ">
+    <a href="/sr/covid-19-impact">COVID-19 Утицај</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Српски</span>
+      <span class="language-abbreviation">sr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/reporting-status/">
+              English
+            </a>
+          </li><li>
+            <a href="/bs/reporting-status/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/hr/reporting-status/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li>
+</ul>
+
+        </li>
+        <li id="searchToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="search-mobile" aria-expanded="false">Претраживање</button>
+          <div id="search-mobile" class="menu-target">
+  <form action="/sr/search">
+    <label class="sr-only" for="indicator_search-mobile">Претраживање</label>
+    <input type="text" name="q" id="indicator_search-mobile" title="Претраживање" /><!--
+    --><button aria-label="Претраживање" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+        </li>
+      </ul>
+
+      <div id="search" class="menu-target">
+  <form action="/sr/search">
+    <label class="sr-only" for="indicator_search">Претраживање</label>
+    <input type="text" name="q" id="indicator_search" title="Претраживање" /><!--
+    --><button aria-label="Претраживање" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+    <a href="/sr/goals">Циљеви</a>
+    </li><li class="nav-link ">
+    <a href="/sr/reporting-status">Статус извјештавања</a>
+    </li><li class="nav-link ">
+    <a href="/sr/about">О нама</a>
+    </li><li class="nav-link ">
+    <a href="/sr/publications">Публикације</a>
+    </li><li class="nav-link ">
+    <a href="/sr/covid-19-impact">COVID-19 Утицај</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Српски</span>
+      <span class="language-abbreviation">sr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/reporting-status/">
+              English
+            </a>
+          </li><li>
+            <a href="/bs/reporting-status/">
+              Bosanski
+            </a>
+          </li><li>
+            <a href="/hr/reporting-status/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li>
+</ul>
+
+
+    </nav>
+  </div>
+
+</header>
+<div id="top" tabindex=-1></div>
+
+
+
+
+
+
+
+
+
+<div id="main-content" class="container reportingstatus" role="main">
+
+  <h1>
+  
+    Статус извјештавања
+  
+</h1>
+
+
+
+
+  
+
+  
+  <div class="goal goal-overall">
+    <div class="details">
+        <h2 class="status-goal">
+            Укупни статус извјештавања <span class="total"><span>245</span> индикатори</span>
+        </h2>
+        <div class="summary">
+            <div class="statuses"><div>
+                <span class="status complete"><span class="status-inner">146</span></span><strong>Извијештено онлине</strong><span class="value">60%</span>
+            </div><div>
+                <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+            </div><div>
+                <span class="status notstarted"><span class="status-inner">99</span></span><strong>Истраживање извора података</strong><span class="value">40%</span>
+            </div><div>
+                <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+            
+            
+            <span class="complete" style="width:59.59183673469388%" title="Извијештено онлине: 60%"></span>
+            
+            
+            <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+            
+            
+            <span class="notstarted" style="width:40.40816326530612%" title="Истраживање извора података: 40%"></span>
+            
+            
+            <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+    </div>
+    <br style="clear:both;">
+</div>
+  <h2>Статус према циљу</h2><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/1">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/1.png" alt="Свијет без сиромаштва - Циљ 1" width="100" height="100" class="goal-icon-1"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/1">Свијет без сиромаштва</a>
+            <span class="total">14 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">6</span></span><strong>Извијештено онлине</strong><span class="value">43%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">8</span></span><strong>Истраживање извора података</strong><span class="value">57%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:42.857142857142854%" title="Извијештено онлине: 43%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:57.14285714285714%" title="Истраживање извора података: 57%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/2">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/2.png" alt="Свијет без глади - Циљ 2" width="100" height="100" class="goal-icon-2"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/2">Свијет без глади</a>
+            <span class="total">13 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">7</span></span><strong>Извијештено онлине</strong><span class="value">54%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">6</span></span><strong>Истраживање извора података</strong><span class="value">46%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:53.84615384615384%" title="Извијештено онлине: 54%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:46.15384615384615%" title="Истраживање извора података: 46%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/3">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/3.png" alt="Здравље и благостање - Циљ 3" width="100" height="100" class="goal-icon-3"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/3">Здравље и благостање</a>
+            <span class="total">28 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">26</span></span><strong>Извијештено онлине</strong><span class="value">93%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">2</span></span><strong>Истраживање извора података</strong><span class="value">7%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:92.85714285714286%" title="Извијештено онлине: 93%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:7.142857142857142%" title="Истраживање извора података: 7%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/4">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/4.png" alt="Квалитетно образовање - Циљ 4" width="100" height="100" class="goal-icon-4"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/4">Квалитетно образовање</a>
+            <span class="total">12 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">7</span></span><strong>Извијештено онлине</strong><span class="value">58%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">5</span></span><strong>Истраживање извора података</strong><span class="value">42%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:58.33333333333334%" title="Извијештено онлине: 58%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:41.66666666666667%" title="Истраживање извора података: 42%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/5">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/5.png" alt="Родна равноправност - Циљ 5" width="100" height="100" class="goal-icon-5"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/5">Родна равноправност</a>
+            <span class="total">14 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">4</span></span><strong>Извијештено онлине</strong><span class="value">29%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">10</span></span><strong>Истраживање извора података</strong><span class="value">71%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:28.57142857142857%" title="Извијештено онлине: 29%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:71.42857142857143%" title="Истраживање извора података: 71%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/6">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/6.png" alt="Чиста вода и санитарни услови - Циљ 6" width="100" height="100" class="goal-icon-6"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/6">Чиста вода и санитарни услови</a>
+            <span class="total">11 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">10</span></span><strong>Извијештено онлине</strong><span class="value">91%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">1</span></span><strong>Истраживање извора података</strong><span class="value">9%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:90.9090909090909%" title="Извијештено онлине: 91%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:9.090909090909092%" title="Истраживање извора података: 9%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/7">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/7.png" alt="Приступачна енергија из чистих извора - Циљ 7" width="100" height="100" class="goal-icon-7"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/7">Приступачна енергија из чистих извора</a>
+            <span class="total">6 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">4</span></span><strong>Извијештено онлине</strong><span class="value">67%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">2</span></span><strong>Истраживање извора података</strong><span class="value">33%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:66.66666666666666%" title="Извијештено онлине: 67%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:33.33333333333333%" title="Истраживање извора података: 33%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/8">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/8.png" alt="Достојанствен рад и економски раст - Циљ 8" width="100" height="100" class="goal-icon-8"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/8">Достојанствен рад и економски раст</a>
+            <span class="total">16 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">11</span></span><strong>Извијештено онлине</strong><span class="value">69%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">5</span></span><strong>Истраживање извора података</strong><span class="value">31%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:68.75%" title="Извијештено онлине: 69%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:31.25%" title="Истраживање извора података: 31%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/9">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/9.png" alt="Индустрија, иновације и инфраструктура - Циљ 9" width="100" height="100" class="goal-icon-9"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/9">Индустрија, иновације и инфраструктура</a>
+            <span class="total">12 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">11</span></span><strong>Извијештено онлине</strong><span class="value">92%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">1</span></span><strong>Истраживање извора података</strong><span class="value">8%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:91.66666666666666%" title="Извијештено онлине: 92%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:8.333333333333332%" title="Истраживање извора података: 8%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/10">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/10.png" alt="Смањење неједнакости - Циљ 10" width="100" height="100" class="goal-icon-10"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/10">Смањење неједнакости</a>
+            <span class="total">13 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">9</span></span><strong>Извијештено онлине</strong><span class="value">69%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">4</span></span><strong>Истраживање извора података</strong><span class="value">31%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:69.23076923076923%" title="Извијештено онлине: 69%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:30.76923076923077%" title="Истраживање извора података: 31%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/11">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/11.png" alt="Одрживи градови и заједнице - Циљ 11" width="100" height="100" class="goal-icon-11"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/11">Одрживи градови и заједнице</a>
+            <span class="total">15 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">6</span></span><strong>Извијештено онлине</strong><span class="value">40%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">9</span></span><strong>Истраживање извора података</strong><span class="value">60%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:40.0%" title="Извијештено онлине: 40%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:60.0%" title="Истраживање извора података: 60%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/12">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/12.png" alt="Одговорна потрошња и производња - Циљ 12" width="100" height="100" class="goal-icon-12"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/12">Одговорна потрошња и производња</a>
+            <span class="total">13 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">5</span></span><strong>Извијештено онлине</strong><span class="value">38%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">8</span></span><strong>Истраживање извора података</strong><span class="value">62%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:38.46153846153847%" title="Извијештено онлине: 38%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:61.53846153846154%" title="Истраживање извора података: 62%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/13">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/13.png" alt="Очување климе - Циљ 13" width="100" height="100" class="goal-icon-13"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/13">Очување климе</a>
+            <span class="total">7 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">1</span></span><strong>Извијештено онлине</strong><span class="value">14%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">6</span></span><strong>Истраживање извора података</strong><span class="value">86%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:14.285714285714285%" title="Извијештено онлине: 14%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:85.71428571428571%" title="Истраживање извора података: 86%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/14">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/14.png" alt="Очување воденог свијета - Циљ 14" width="100" height="100" class="goal-icon-14"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/14">Очување воденог свијета</a>
+            <span class="total">10 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">1</span></span><strong>Извијештено онлине</strong><span class="value">10%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">9</span></span><strong>Истраживање извора података</strong><span class="value">90%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:10.0%" title="Извијештено онлине: 10%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:90.0%" title="Истраживање извора података: 90%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/15">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/15.png" alt="Очување живота на земљи - Циљ 15" width="100" height="100" class="goal-icon-15"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/15">Очување живота на земљи</a>
+            <span class="total">14 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">12</span></span><strong>Извијештено онлине</strong><span class="value">86%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">2</span></span><strong>Истраживање извора података</strong><span class="value">14%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:85.71428571428571%" title="Извијештено онлине: 86%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:14.285714285714285%" title="Истраживање извора података: 14%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/16">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/16.png" alt="Мир, правда и снажне институције - Циљ 16" width="100" height="100" class="goal-icon-16"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/16">Мир, правда и снажне институције</a>
+            <span class="total">23 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">12</span></span><strong>Извијештено онлине</strong><span class="value">52%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">11</span></span><strong>Истраживање извора података</strong><span class="value">48%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:52.17391304347826%" title="Извијештено онлине: 52%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:47.82608695652174%" title="Истраживање извора података: 48%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div><div class="goal reporting-status-item">
+    <div class="frame goal-tiles">
+        <a href="/sr/17">
+        <img src="https://sdg.bhas.gov.ba/assets/img/goals/sr/17.png" alt="Партнерством до циља - Циљ 17" width="100" height="100" class="goal-icon-17"/>
+        </a>
+    </div>
+    <div class="details">
+        <h3 class="status-goal">
+            <a href="/sr/17">Партнерством до циља</a>
+            <span class="total">24 индикатори</span>
+        </h3>
+        <div class="summary">
+            <div class="statuses"><div>
+                    <span class="status complete"><span class="status-inner">14</span></span><strong>Извијештено онлине</strong><span class="value">58%</span>
+                </div><div>
+                    <span class="status inprogress"><span class="status-inner">0</span></span><strong>Статистика у току</strong><span class="value">0%</span>
+                </div><div>
+                    <span class="status notstarted"><span class="status-inner">10</span></span><strong>Истраживање извора података</strong><span class="value">42%</span>
+                </div><div>
+                    <span class="status notapplicable"><span class="status-inner">0</span></span><strong>Није примјењиво</strong><span class="value">0%</span>
+                </div><br style="clear:both;">
+            </div>
+        </div>
+        <div class="goal-stats">
+                
+                
+                <span class="complete" style="width:58.33333333333334%" title="Извијештено онлине: 58%"></span>
+                
+                
+                <span class="inprogress" style="width:0.0%" title="Статистика у току: 0%"></span>
+                
+                
+                <span class="notstarted" style="width:41.66666666666667%" title="Истраживање извора података: 42%"></span>
+                
+                
+                <span class="notapplicable" style="width:0.0%" title="Није примјењиво: 0%"></span></div>
+        <div class="divider"></div>
+    </div>
+    <br style="clear:both;">
+</div>
+  
+
+  
+
+  
+
+  
+
+  <!---->
+
+</div>
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="footerLinks">
+          <ul>
+            <li><a href="https://open-sdg.org">Изграђено помоћу Open SDG-a</a></li>
+            
+              <li>
+                
+                  <a href="mailto:sdg@bhas.gov.ba" target="_blank">Контактирајте нас</a>
+                
+                </li>
+              <li>
+                <a href="/sr/about/cookies-and-privacy/">Колачићи</a>
+                
+                </li>
+              
+            
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<!-- Google Analytics -->
+
+<!-- /.container </div> -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script>translations['general'] = translations['general'] || {};
+    translations['general']['hide'] = 'Сакрити';</script>
+
+<script>translations['search'] = translations['search'] || {};
+    translations['search']['search'] = 'Претраживање';</script>
+
+<script src='/assets/js/sdg.js?v=20210118162750'></script>
+
+
+    
+    
+    <script src="/assets/js/custom.js?v=20210118162750"></script><script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
+      if (domData.showdata) {
+
+        $('.async-loading').each(function(i, obj) {
+            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
+        });
+
+        var remoteUrl = '/comb/' + domData.id + '.json';
+        if (opensdg.remoteDataBaseUrl !== '/') {
+          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+        }
+
+        $.ajax({
+          url: remoteUrl,
+          success: function(res) {
+
+            $('.async-loading').remove();
+            $('.async-loaded').show();
+
+            var model = new indicatorModel({
+              data: res.data,
+              edgesData: res.edges,
+              showMap: domData.showmap,
+              country: domData.country,
+              indicatorId: domData.indicatorid,
+              shortIndicatorId: domData.id,
+              chartTitle: domData.charttitle,
+              chartTitles: domData.charttitles,
+              measurementUnit: domData.measurementunit,
+              showData: domData.showdata,
+              graphType: domData.graphtype,
+              startValues: domData.startvalues,
+              graphLimits: domData.graphlimits,
+              stackedDisaggregation: domData.stackeddisaggregation,
+              graphAnnotations: domData.graphannotations,
+              indicatorDownloads: domData.indicatordownloads,
+              compositeBreakdownLabel: domData.compositebreakdownlabel,
+            }),
+            view  = new indicatorView(model, {
+              rootElement: '#indicatorData',
+              legendElement: '#plotLegend',
+              maxChartHeight: 420,
+              tableColumnDefs: [
+                { maxCharCount: 25 }, // nowrap
+                { maxCharCount: 35, width: 200 },
+                { maxCharCount: Infinity, width: 250 }
+              ]
+            }),
+            controller = new indicatorController(model, view);
+            controller.initialise();
+          }
+        });
+      }
+    }
+
+    var switcher = new accessibilitySwitcher();
+
+
+});
+</script>
+
+
+
+
+</body>
+</html>
+

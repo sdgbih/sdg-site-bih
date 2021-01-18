@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://sdgbih.github.io/sdg-data-bosnia/bs',
+
+  chartConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Chart.js.
+  chartConfigAlter: function(callback) {
+    this.chartConfigAlterations.push(callback);
+  },
+
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
+  },
+
+  // A hook which can be replaced to alter whether/how the values that are
+  // displayed on indicator tables/graphs get rounded.
+  dataRounding: function(value) {
+    // Alterations go here.
+    return value;
+  },
+
+  language: 'bs',
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data !== null && this.data[key]) {
+      return this.data[key];
+    }
+
+    var originalKey = key;
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+
+        
+    <title>
+        
+        Indikator 16.a.1 -
+        
+        Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima - Indikatori za ciljeve održivog razvoja
+    </title>
+
+
+
+        <meta name="description" content="">
+        <meta property="og:description" content="">
+        
+        <meta name="robots" content="noindex, nofollow">
+        
+        <link rel="canonical" href="/">
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+
+        
+
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210118162750">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
+    </head>
+<body class="language-bs layout-indicator">
+<!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Alfa","default_contrast":"Zadani kontrast","disable_high_contrast":"Onemogući visoki kontrast","disclaimer":"Ova internet stranica se razvija. Pozdravljamo vaše <a href=\"mailto:%email_address\">povratne informacije</a>.","enable_high_contrast":"Omogući visoki kontrast","high_contrast":"Visok kontrast","skip_link":"Prijeđi na glavni sadržaj","tag_line":"17 ciljeva za transformiranje našeg svijeta"};</script>
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Prijeđi na glavni sadržaj</a>
+<div id="disclaimer">
+  <div class="container">
+  <div class="disclaimer-alert">
+    <strong class="phase-tag">Alfa</strong>
+    
+    Ova internet stranica se razvija. Pozdravljamo vaše <a href="mailto:sdg@bhas.gov.ba">povratne informacije</a>.
+  </div>
+</div>
+
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <div class="logo-and-mobile-widgets">
+      <a class="navbar-brand" href="/bs/" id="home">
+        <img src="/assets/img/logo/bs/SDG_logo.png" alt="Ciljevi održivog razvoja - 17 ciljeva za transformiranje našeg svijeta" />
+      </a>
+
+      <div class="mobile-widgets">
+        <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+          <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Bosanski</span>
+      <span class="language-abbreviation">bs</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/16-a-1/">
+              English
+            </a>
+          </li><li>
+            <a href="/sr/16-a-1/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/16-a-1/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+        </div></div>
+    </div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="menu-mobile" aria-expanded="false">Meni</button>
+          <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
+    <a href="/bs/goals">Ciljevi</a>
+    </li><li class="nav-link ">
+    <a href="/bs/reporting-status">Status izvještavanja</a>
+    </li><li class="nav-link ">
+    <a href="/bs/about">O nama</a>
+    </li><li class="nav-link ">
+    <a href="/bs/publications">Publikacije</a>
+    </li><li class="nav-link ">
+    <a href="/bs/covid-19-impact">COVID-19 Uticaj</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Bosanski</span>
+      <span class="language-abbreviation">bs</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/16-a-1/">
+              English
+            </a>
+          </li><li>
+            <a href="/sr/16-a-1/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/16-a-1/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li>
+</ul>
+
+        </li>
+        <li id="searchToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="search-mobile" aria-expanded="false">Pretraživanje</button>
+          <div id="search-mobile" class="menu-target">
+  <form action="/bs/search">
+    <label class="sr-only" for="indicator_search-mobile">Pretraživanje</label>
+    <input type="text" name="q" id="indicator_search-mobile" title="Pretraživanje" /><!--
+    --><button aria-label="Pretraživanje" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+        </li>
+      </ul>
+
+      <div id="search" class="menu-target">
+  <form action="/bs/search">
+    <label class="sr-only" for="indicator_search">Pretraživanje</label>
+    <input type="text" name="q" id="indicator_search" title="Pretraživanje" /><!--
+    --><button aria-label="Pretraživanje" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+    <a href="/bs/goals">Ciljevi</a>
+    </li><li class="nav-link ">
+    <a href="/bs/reporting-status">Status izvještavanja</a>
+    </li><li class="nav-link ">
+    <a href="/bs/about">O nama</a>
+    </li><li class="nav-link ">
+    <a href="/bs/publications">Publikacije</a>
+    </li><li class="nav-link ">
+    <a href="/bs/covid-19-impact">COVID-19 Uticaj</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Bosanski</span>
+      <span class="language-abbreviation">bs</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/16-a-1/">
+              English
+            </a>
+          </li><li>
+            <a href="/sr/16-a-1/">
+              Српски
+            </a>
+          </li><li>
+            <a href="/hr/16-a-1/">
+              Hrvatski
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li>
+</ul>
+
+
+    </nav>
+  </div>
+
+</header>
+<div id="top" tabindex=-1></div>
+
+
+<script type="text/template" id="item_template">
+  <% _.each(fields, function(fieldItem) { %>
+    <div class="variable-selector<% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=fieldItem.field%>">
+      <button class='accessBtn' tabindex='0' aria-expanded='false'
+        <% if(allowedFields.indexOf(fieldItem.field) == -1) { %>
+        aria-describedby='variable-hint-<%=fieldItem.field.replace(/ /g, '-')%>'
+        <% }%>
+      >
+        <% if(allowedFields.indexOf(fieldItem.field) == -1) { %><h6><% } else { %><h5><% } %>
+          <span aria-hidden="true"><%=translations.t(fieldItem.label)%><i class="fa fa-chevron-down"></i></span>
+          <span class="sr-only"> <%=translations.t(fieldItem.label)%></span>
+        <% if(allowedFields.indexOf(fieldItem.field) == -1) { %></h6><% } else { %></h5><% } %>
+      </button>
+      <div class="bar">
+        <div class="selected"></div>
+      </div>
+      <div class="variable-options">
+        <fieldset>
+          <legend class="sr-only">Podkategorije - <%=translations.t(fieldItem.field)%></legend>
+          <div>
+            <button data-type="select">Označi sve</button>
+            <button data-type="clear">Obriši sve</button>
+          </div>
+          <% _.each(fieldItem.values, function(item) { %>
+            <label>
+              <input type="checkbox" <%=item.checked ? 'checked' : ''%> value="<%=item.value%>" data-field="<%=fieldItem.field%>" /><%=translations.t(item.value)%>
+            </label>
+          <% }); %>
+        </fieldset>
+      </div>
+
+      <% if(allowedFields.indexOf(fieldItem.field) == -1) { %>
+        <div class="variable-hint" id="variable-hint-<%=fieldItem.field.replace(/ /g, '-')%>">Dostupno kada '<%= translations.t(_.findWhere(edges, { To: fieldItem.field }).From) %>' je označeno
+        </div>
+        <div class="no-data-hint" id="no-data-hint-<%=fieldItem.field.replace(/ /g, '-')%>">
+          Nema opcija zbog gornjih filtera
+        </div>
+      <% }%>
+
+    </div>
+  <% }); %>
+</script>
+
+<script type="text/template" id="units_template">
+  <% if(units.length) { %>
+    <h4>Tip jedinice</h4>
+    <fieldset>
+      <legend class="sr-only">Tip jedinice</legend>
+      <% _.each(units, function(unitsItem, index) { %>
+        <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
+        <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
+      <% }); %>
+    </fieldset>
+  <% } %>
+</script>
+
+<script type="text/template" id="series_template">
+  <% if(serieses.length) { %>
+    <h4>Varijabla</h4>
+    <fieldset>
+      <legend class="sr-only">Varijabla</legend>
+      <% _.each(serieses, function(seriesItem, index) { %>
+        <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
+        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
+      <% }); %>
+    </fieldset>
+  <% } %>
+</script>
+
+<script>translations['indicator'] = {"chart":"Grafikon","clear_all":"Obriši sve","clear_selections":"Obriši označeno","data_not_available":"Ovi podaci nisu dostupni. Odaberite alternativne podatke za prikaz.","dataset_size_warning":"Previše je skupova podataka za prikaz na grafikonu. Neće biti prikazane sve dok ne uklonite neke odabire.","download_chart":"Preuzmite grafikon CSV","download_chart_image":"Preuzmi sliku grafikona","download_chart_image_title":"Preuzmi grafikon kao sliku","download_csv":"Preuzmi CSV","download_csv_title":"Preuzmi kao CSV","download_geojson":"Preuzmi GeoJSON","download_geojson_title":"Preuzmi kao GeoJSON","download_headline":"Preuzmite CSV naslov","download_headline_title":"Preuzmi podatke o naslovu kao CSV","download_source":"Preuzmi izvor CSV","download_source_sdmx":"Preuzmi izvor SDMX","download_source_sdmx_title":"Preuzmi izvorne podatke kao SDMX","download_source_title":"Preuzmi izvorne podatke kao CSV","download_table":"Preuzmite tabelu CSV","edit":"Uredi","edit_data":"Uredi podatke","edit_metadata":"Uredi metapodatke","footnote":"Fusnota","geographical_area":"Geografsko područje","global_metadata":"Globalni metapodaci","global_metadata_blurb":"Ova tabela pruža informacije o metapodacima za SDG indikatore kako ih je definisala Statistička komisija UN-a. Kompletne globalne metapodatke pruža Odjel za statistiku UN-a.","legend_help":"Kliknite na legendu kako biste uklonili pojedine linije s grafikona.","loading":"Učitavanje","loading_map":"Učitavanje mape","map":"Mapa","national_metadata":"Nacionalni metapodaci","national_metadata_blurb":"Ova tabela sadrži metapodatke o stvarnim pokazateljima dostupnim iz %country_name statistike najbliže odgovarajućem globalnom SDG indikatoru. Imajte na umu da čak i kada je globalni SDG indikator dostupan iz %country_adjective statistike, ovu tabelu treba pogledati za informacije o nacionalnoj metodologiji i drugo %country_adjective-specific informacije o metapodacima.","next":"Sljedeći indikator","no_data_hint":"Nema opcija zbog gornjih filtera","previous":"Prethodni indikator","select_all":"Označi sve","series":"Varijabla","series_help":"Odaberite kategorije iz  padajućeg menija ispod kako biste vidjeli različite podjele podataka. Neki neće biti dostupni dok se ne odabere viši nivo.","source":"Izvor","sources":"Izvori","sub_categories":"Podkategorije","table":"Tabela","unit_of_measurement":"Mjerna jedinica","units_type":"Tip jedinice","variable_hint":"Dostupno kada '%field' je označeno","view_indicator_list":"Pogledajte listu indikatora ovog cilja"};</script>
+
+<script>translations['data'] = {"1-2019 2020 jan":"a)2019 - 2020 Januar","10-2019 2020 oct":"j)2019 - 2020 Oktobar","11-2019 2020 nov":"k)2019 - 2020 Novembar","12-2019 2020 dec":"l)2019 - 2020 Decembar","2-2019 2020 feb":"b)2019 - 2020 Februar","3-2019 2020 mar":"c)2019 - 2020 Mart","4-2019 2020 apr":"d)2019 - 2020 April","5-2019 2020 may":"e)2019 - 2020 Maj","6-2019 2020 june":"f)2019 - 2020 Juni","7-2019 2020 july":"g)2019 - 2020 Juli","8-2019 2020 aug":"h)2019 - 2020 August","9-2019 2020 sept":"i)2019 - 2020 Septembar","Age":"Starost","Bothsex":"Ukupno","Education level":"Nivo obrazovanja","Entity":"Entitet","Female":"Ženski","Location":"Lokacija","Male":"Muški","Month":"Mjesec","Sex":"Spol","Type":"Tip","Type of skill":"Vrsta vještine","Value":"Vrijednost","Year":"Godina","all":"Ukupno","all area":"Ukupna površina","customs":"Carinske dažbine, naknade za carinsko evidentiranje i posebne dažbine","domestic material consumption by type of raw material":"Materijalni otisak, prema vrsti sirovine (tone)","domestic material consumption per capita":"Materijalni otisak po glavi stanovnika, prema vrsti sirovine (tone)","domestic material consumption per unit of GDP":"Materijalni otisak po BDP-u, prema vrsti sirovine (kilogrami po konstantnom američkom dolaru 2010)","excise duties on import goods":"Akciza na uvozne proizvode","final trend":"Finalni trend Q/Q-1","freight volume, by mode of transport":"Obim tereta, po granama saobraćaja (tonskim kilometrima)","lowsec":"Lowsec","math":"Matematika","non seasonal":"Nedesezonirani podaci Q/Q-4","number":"Broj","number of local governments":"Broj lokalnih samouprava (broj)","number of local governments that adopt and implement local DRR strategies in":"Broj lokalnih samouprava koje usvajaju i provode lokalne strategije smanjenja rizika od katastrofa u skladu s nacionalnim strategijama (broj)","number of undernourish people":"Broj pothranjenih ljudi (milioni)","number of victims of intentional homicide per 100,000 population, by sex":"Broj žrtava ubistava s namjerom na 100.000 stanovnika, prema polu (žrtve na 100.000 stanovnika)","number of victims of intentional homicide, by sex":"Broj žrtava ubistava s namjerom, po polu (broj)","passenger volume, by mode of transport":"Obim putnika (putničkih kilometara), po granama saobraćaja","per 100 population":"Na 100 stanovnika","per 100000 live births":"Na 100000 živorođenih","per 100000 population":"Na 100000 stanovnika","prevalence of moderate or severe food insecurity in the adult population":"Rasprostranjenost umjerene ili ozbiljne nesigurnosti hrane u odrasloj populaciji(%)","prevalence of severe food insecurity in the adult population":"Rasprostranjenost ozbiljne nesigurnosti hrane u odrasloj populaciji (%)","prevalence of undernourishment":"Rasprostranjenost podhranjenosti (%)","proportion of local governments that adopt and implement local disaster risk":"Udio lokalnih samouprava koje usvajaju i provode lokalne strategije smanjenja rizika od katastrofa u skladu s nacionalnim strategijama smanjenja rizika od katastrofe (%)","proportion of women aged 20-24 years who were married or in a union before age 15":"Udio žena u dobi od 20 do 24 godine koje su bile u braku ili u zajednici prije 15. godine (%)","proportion of women aged 20-24 years who were married or in a union before age 18":"Udio žena u dobi od 20 do 24 godine koje su bile u braku ili u zajednici prije 18. godine (%)","read":"Čitanje","rural":"Ruralna","seasonal":"Desezonirani podaci Q/Q-1","tonnes":"Tone","total":"Ukupno","type of product":"Vrsta proizvoda","type of revenue":"Naziv prihoda","urban":"Urbana","vat":"Porez na dodanu vrijednost"};</script>
+
+
+<div class="container">
+  
+<ol class="breadcrumb">
+  
+  <li><a href="/bs/">Naslovna</a></li>
+  <li><a href="/bs/16" title="Promovirati mirna i inkluzivna društva za održivi razvoj, osigurati pristup pravdi za sve i izgraditi efikasne, odgovorne i inkluzivne institucije na svim nivoima">Cilj 16</a></li>
+  <li class="active">Indikator 16.a.1</li>
+  
+</ol>
+
+
+  
+    
+<div class="previous-next-links row">
+    <div class="col-xs-3 col-md-3 col-lg-4 pull-left text-left">
+        <a class="btn btn-primary" href="/bs/16-10-2" aria-labelledby="previous-link">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <span id="previous-link" class="hidden-sm hidden-xs">Prethodni indikator</span>
+        </a>
+    </div>
+    <div class="col-xs-3 col-md-3 col-lg-4 pull-right text-right">
+        <a class="btn btn-primary" href="/bs/16-b-1" aria-labelledby="next-link">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            <span id="next-link" class="hidden-sm hidden-xs">Sljedeći indikator</span>
+        </a>
+    </div>
+</div>
+
+
+  
+</div>
+<div class="heading goal-banner indicator goal-16">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+        <a href="/bs/16" title="Pogledajte listu indikatora ovog cilja">
+          <img src="https://sdg.bhas.gov.ba/assets/img/goals/bs/16.png" alt="Mir i pravda - Cilj 16" id="goal-16"/>
+        </a>
+      </div>
+      <div class="col-xs-8 col-md-9 col-lg-10 indicator-details">
+      
+        <div>
+          <h1>
+            
+            Indikator 16.a.1
+            
+            <span class="lead-copy">Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="main-content" class="container goal-16" role="main">
+  
+
+  
+
+  
+
+
+  
+
+
+<div class="row"
+  id="indicatorData"
+  data-indicatorid='indicator_16-a-1'
+  data-id="16-a-1"
+  data-country="BiH"
+  data-charttitle="Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima"
+  data-charttitles="[{&quot;series&quot;:&quot;Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)&quot;,&quot;title&quot;:&quot;Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)&quot;},{&quot;series&quot;:&quot;Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, D status (1 = DA; 0 = NE)&quot;,&quot;title&quot;:&quot;Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, D status (1 = DA; 0 = NE)&quot;}]"
+  data-measurementunit=""
+  data-showdata="true"
+  data-graphtype="line"
+  data-geocoderegex=""
+  data-showmap=""
+  data-startvalues="null"
+  data-graphlimits="null"
+  data-stackeddisaggregation=""
+  data-graphannotations="null"
+  data-indicatordownloads="null"
+  data-compositebreakdownlabel="Parlamentarni odbori"
+>
+  
+  <span role="status" class="sr-only" id="indicator-data-view-status"></span>
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="serieses"></div>
+<div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Podkategorije</h4>
+    <p>Odaberite kategorije iz  padajućeg menija ispod kako biste vidjeli različite podjele podataka. Neki neće biti dostupni dok se ne odabere viši nivo.</p>
+  </span>
+  <div id="fields">
+    <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/headline/16-a-1.csv" class="btn btn-primary btn-download" download="indicator_16-a-1.csv" tabindex="0" role="button">Preuzmite CSV naslov</a>
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/data/16-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-a-1.csv' tabindex='0' role='button'>Preuzmi izvor CSV</a>
+
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">{"BOOL"=>"Logička ili binarna mjera", "CON_USD"=>"konstantni američki dolari", "CUR_LCU_M"=>"Lokalna valuta (milioni)", "GPERM3"=>"Mikrogrami po kubnom metru", "HA_TH"=>"Hiljade hektara", "IX"=>"Index", "KG"=>"Kilogrami", "KG_PER_CON_USD"=>"Kilogrami po konstanti američkog dolara", "KM2"=>"Kvadratnih kilometara", "LITRES"=>"Litri", "MILLIONS"=>"Milioni", "MJ_PER_GDP_CON_PPP_USD"=>"Megadžula po konstantni američkog dolara PPP BDP", "NUMBER"=>"Broj", "PER_1000000_POP"=>"Na milion stanovnika", "PER_100000_LIVE_BIRTHS"=>"Na 100 000 živorođenih", "PER_100000_POP"=>"Na 100 000 stanovnika", "PER_10000_POP"=>"Na 10 000 stanovnika", "PER_1000_LIVE_BIRTHS"=>"Na 1 000 živorođenih", "PER_1000_POP"=>"Na 1 000 stanovnika", "PER_1000_UNINFECTED_POP"=>"Na 1 000 nezaraženog stanovništva", "PER_100_POP"=>"Na 100 stanovnika", "PT"=>"Procenat", "P_KM"=>"Putnički kilometri", "RO"=>"Odnos", "SCORE"=>"Rezultat", "THOUSANDS"=>"Hiljade", "TONNES"=>"Tone", "TONNES_M"=>"Milioni tona", "T_KM"=>"Tonski kilometri", "UNIT_MEASURE"=>"Mjerna jedinica", "USD"=>"Američki dolar"}</th>
+        
+        
+        
+        <th scope="col" class="table-value">{"AG_FPA_CFPI"=>"Indeks potrošačkih cijena hrane", "AG_LND_DGRD"=>"Udio zemljišta koje je degradirano na ukupnoj površini zemljišta", "AG_LND_FRST"=>"Udio šumske površine u ukupnoj površini zemljišta", "AG_LND_FRSTBIOPHA"=>"Nadzemna biomasa u šumi po hektaru (tone po hektaru)", "AG_LND_FRSTCERT"=>"Površina šume certificirana prema nezavisno potvrđenoj certifikacijskoj šemi (hektari)", "AG_LND_FRSTCHG"=>"Neto promjene šumske površine (%)", "AG_LND_FRSTN"=>"Šumska površina (hektari)", "AG_LND_TOTL"=>"Površina zemljišta (hektari)", "AG_PRD_FIESMS"=>"Rasprostranjenost umjerene ili ozbiljne nesigurnosti hrane kod odrasle populacije", "AG_PRD_FIESMSN"=>"Ukupna populacija u umjerenoj ili ozbiljnoj nesigurnosti hrane (broj)", "AG_PRD_FIESS"=>"Rasprostranjenost ozbiljne nesigurnosti hranom kod populacije", "AG_PRD_FIESSN"=>"Ukupna populacija u ozbiljnoj nesigurnosti hrane (broj)", "BX_TRF_PWKR"=>"Količina doznaka (u američkim dolarima) kao udio u ukupnom iznosu BDP-a", "DC_FTA_TOTAL"=>"Ukupna zvanična razvojna pomoć (bruto isplata) za tehničku saradnju", "DC_ODA_BDVL"=>"Ukupna zvanična razvojna pomoć za biodiverzitet, po zemljama primaocima", "DC_ODA_POVLG"=>"Zvanični grantovi za razvojnu pomoć za smanjenje siromaštva po zemljama primaocima (procenat BND-a)", "DC_TOF_AGRL"=>"Ukupni zvanični tokovi (isplate) za poljoprivredu, prema zemljama primaocima", "DC_TOF_HLTHL"=>"Ukupna zvanična razvojna pomoć medicinskim istraživanjima i osnovnim zdravstvenim sektorima, bruto isplata, prema zemljama primaocima", "DC_TOF_INFRAL"=>"Ukupni zvanični tokovi za infrastrukturu, prema zemljama primaocima", "DC_TOF_SCHIPSL"=>"Ukupni zvanični tokovi stipendija, prema zemljama primaocima", "DC_TOF_TRDCML"=>"Ukupni zvanični tokovi (obaveze) za pomoć trgovini, prema zemljama primaocima", "DC_TOF_TRDDBML"=>"Ukupni zvanični tokovi (isplate) za pomoć trgovini, prema zemljama primaocima", "DC_TOF_WASHL"=>"Ukupna zvanična razvojna pomoć (bruto izdaci) za vodosnabdijevanje i kanalizaciju, prema zemljama primaocima", "DC_TRF_TOTL"=>"Ukupna razvojna pomoć, prema zemljama primaocima", "DT_TDS_DECT"=>"Servisiranja duga kao udio izvoza roba i usluga", "EG_ACS_ELEC"=>"Udio stanovništva sa pristupom električnoj energiji", "EG_EGY_CLEAN"=>"Udio stanovništva koji se prvenstveno oslanja na čista goriva i tehnologiju", "EG_EGY_PRIM"=>"Energetski intenzitet primarne energije", "EG_FEC_RNEW"=>"Udio obnovljive energije u ukupnoj finalnoj potrošnji energije", "EG_TBA_H2CO"=>"Udio prekograničnih slivova (riječni i jezerski bazeni i vodonosnici) sa operativnim aranžmanom za vodnu saradnju", "EG_TBA_H2COAQ"=>"Udio prekograničnih vodonosnika s operativnim aranžmanom za vodnu saradnju", "EG_TBA_H2CORL"=>"Udio prekograničnih slivova rijeka i jezera s operativnim aranžmanom za vodnu saradnju", "EN_ATM_CO2"=>"Emisije ugljen-dioksida izgaranjem goriva", "EN_ATM_CO2GDP"=>"Emisije ugljen-dioksida po jedinici BDP-a", "EN_ATM_CO2MVA"=>"Emisije ugljen-dioksida po jedinici proizvoda dodane vrijednosti", "EN_ATM_PM25"=>"Srednji godišnji nivo finih čestica u gradovima, urbano stanovništvo", "EN_EWT_GENPCAP"=>"Proizvedeni elektronski otpad, po stanovniku (Kg)", "EN_EWT_GENV"=>"Proizvedeni elektronski otpad (tone)", "EN_EWT_RCYPCAP"=>"Reciklaža elektronskog otpada, po stanovniku (Kg)", "EN_EWT_RCYR"=>"Reciklaža elektronskog otpada, stopa (%)", "EN_EWT_RCYV"=>"Reciklaža elektronskog otpada (tone)", "EN_H2O_GRAMBQ"=>"Udio tijela podzemnih voda sa dobrim kvalitetom ambijentalne vode", "EN_H2O_OPAMBQ"=>"Udio otvorenih vodnih tijela sa dobrim kvalitetom ambijentalne vode", "EN_H2O_RVAMBQ"=>"Udio riječnih vodnih tijela sa dobrim kvalitetom ambijentalne vode", "EN_H2O_WBAMBQ"=>"Udio vodnih tijela sa dobrim kvalitetom ambijentalne vode", "EN_HAZ_GENGDP"=>"Proizvedeni opasni otpad, po jedinici BDP-a", "EN_HAZ_GENV"=>"Proizvedeni opasni otpad (tone)", "EN_HAZ_PCAP"=>"Proizvedeni opasni otpad, po stanovniku (Kg)", "EN_LND_SLUM"=>"Udio gradskog stanovništva koje živi u siromašnim četvrtima", "EN_MAT_DOMCMPC"=>"Potrošnja domaćih materijala po stanovniku, prema vrsti sirovine", "EN_MAT_DOMCMPG"=>"Potrošnja domaćih materijala, po jedinici BDP-a", "EN_MAT_DOMCMPT"=>"Potrošnja domaćih materijala", "EN_REF_WASCOL"=>"Pokrivenost prikupljenog komunalnog čvrstog otpada, po gradovima (%)", "EN_SCP_FSHGDP"=>"Održivi ribolov kao udio u BDP-u", "EN_WBE_PMNR"=>"Opseg vodnog tijela (trajni) (kvadratni kilometri)", "EN_WBE_PMPN"=>"Opseg vodnog tijela (trajni i možda trajnih) (kvadratni kilometri)", "EN_WBE_PMPR"=>"Opseg vodnog tijela (trajni) (% ukupne površine kopna)", "EN_WWT_WWDS"=>"Udio sigurno prečišćenih protoka otpadnih voda iz domaćinstva", "ER_BDY_ABT2NP"=>"Zemlje koje su uspostavile nacionalne ciljeve u skladu sa Aichi biodiverzitetom cilj 2 Strateškog plana za biodiverzitet 2011-2020. u svoje nacionalne strategije i planove za biodiverzitet (1 = DA; 0 = NE)", "ER_BDY_SEEA"=>"Zemlje s integrisanim vrijednostima biodiverziteta u nacionalnim sistemima računovodstva i izvještavanja, definisane kao implementacija Sistema ekološko-ekonomskog računovodstva (1 = DA; 0 = NE)", "ER_CBD_ABSCLRHS"=>"Zemlje koje imaju zakonodavne, administrativne i političke okvire za osiguranje pravedne raspodjele koristi (1 = DA; 0 = NE)", "ER_CBD_NAGOYA"=>"Zemlje potpisnice Nagojskog protokola (1 = DA; 0 = NE)", "ER_CBD_ORSPGRFA"=>"Zemlje koje imaju zakonodavni, administrativni i politički okvir ili mjere prijavljene putem internetskog sistema izvještavanja o usklađenosti s Međunarodnim ugovorom o biljnim genetičkim resursima za hranu i poljoprivredu (PGRFA) (1 = DA; 0 = NE)", "ER_CBD_PTYPGRFA"=>"Zemlje koje su ugovorne strane Međunarodnog ugovora o biljnim genetičkim resursima za hranu i poljoprivredu (PGRFA) (1 = DA; 0 = NE)", "ER_CBD_SMTA"=>"Ukupan prijavljeni broj Standardnih sporazuma o prijenosu materijala (SMTA) koji prenose biljne genetičke resurse za hranu i poljoprivredu u zemlju", "ER_GRF_ANIMRCNTN"=>"Broj lokalnih pasmina za koje se čuva dovoljno genetskih resursa za rekonstituciju", "ER_GRF_PLNTSTOR"=>"Pasmine biljaka za koje se čuva dovoljno genetičkih resursa (broj)", "ER_H2O_IWRMD"=>"Stepen primjene integrisanog upravljanja vodnim resursima", "ER_H2O_PRDU"=>"Zemlje sa zakonskim procedurama ili politikama za učešće korisnika usluga/zajednica u programu planiranja i upravljanja vodnim resursima, prema nivou definicije u postupcima (10 = Jasno definisano; 5 = Nije jasno definisano; 0 = NA)", "ER_H2O_RURP"=>"Zemlje sa korisnicima/zajednicama koje učestvuju u programima planiranja u ruralnom snabdijevanju pitkom vodom, prema nivou učešća (3 = visoko; 2 = umjereno; 1 = nisko; 0 = NA)", "ER_H2O_STRESS"=>" Nivo vodenog stresa: povlačenje slatke vode kao udio raspoloživih slatkovodnih resursa", "ER_IAS_LEGIS"=>"Zakoni, propisi, akti koji se odnose na sprečavanje uvođenja i upravljanja invazivnim stranim vrstama (1 = DA, 0 = NE)", "ER_IAS_NBSAP"=>"Nacionalna strategija i akcioni plan za biodiverzitet (NBSAP) ima za cilj usklađivanje sa Aichi biodiverzitetom, cilj 9 utvrđen u Strateškom planu za biološku raznolikost 2011-2020 (1 = DA, 0 = NE)", "ER_MTN_GRNCOV"=>"Indeks planinskog zelenog pokrivača (kvadratnih kilometara)", "ER_MTN_GRNCVI"=>"Indeks planinskog zelenog pokrivača", "ER_MTN_TOTL"=>"Planinsko područje (kvadratni kilometri)", "ER_PTD_FRHWTR"=>"Prosječan udio pokrivenih ključnih područja slatkovodne biološke raznolikosti prema zaštićenim područjima", "ER_PTD_MTN"=>"Prosječan udio pokrivenih ključnih područja slatkovodne biološke raznolikosti prema zaštićenim područjima", "ER_PTD_TERR"=>"Prosječan udio pokrivenih ključnih područja slatkovodne biološke raznolikosti prema zaštićenim područjima", "ER_RSK_LST"=>"Indeks crvene liste", "ER_WAT_PART"=>"Zemlje sa korisnicima/zajednicama koje učestvuju u programima planiranja i upravljanja vodnim resursima, prema nivou učešća (3 = visoko; 2 = umjereno; 1 = nisko; 0 = NA)", "ER_WAT_PRDU"=>"Zemlje sa zakonskim procedurama ili politikama za učešće korisnika usluga/zajednica u programu planiranja u planiranju i upravljanju vodnim resursima, prema nivou definicije u postupcima (10 = Jasno definisano; 5 = Nije jasno definisano; 0 = NA)", "FB_ATM_TOTL"=>"Broj automatizovanih bankomata (ATM) na 100.000 odraslih stanovnika", "FB_BNK_ACCSS"=>"Udio odraslih (15 i više godina) koji imaju račun u banci ili drugoj finansijskoj instituciji ili kod provajdera mobilnih novčanih usluga", "FB_CBK_BRCH"=>"Broj filijala komercijalnih banaka na 100 000 odraslih", "FC_ACC_SSID"=>"Udio malih industrija sa kreditom ili kreditnom linijom", "FI_FSI_FSANL"=>"Krediti u ukupnim bruto kreditima koji se ne izvode (%)", "FI_FSI_FSERA"=>"Povrat imovine (%)", "FI_FSI_FSKA"=>"Regulatorni kapital za imovinu (%)", "FI_FSI_FSKNL"=>"Neto krediti određeni za kapital koji se ne izvode (%)", "FI_FSI_FSKRTC"=>"Regulatorni 1 nivo kapitala za imovinu ponderiranu rizikom (%)", "FI_FSI_FSLS"=>"Likvidna imovina na kratkoročnim obavezama (%)", "FI_FSI_FSSNO"=>"Neto otvorena pozicija u devizama do kapitala (%)", "GB_POP_SCIERD"=>"Istraživači (u ekvivalentu punog radnog vremena) na milion stanovnika", "GB_XPD_RSDV"=>"Rashodi za istraživanje i razvoj kao udio u BDP-u", "GC_GOB_TAXD"=>"Udio domaćeg budžeta koji se finansira iz domaćih poreza", "GF_FRN_FDI"=>"Prilivi stranih direktnih investicija (SDI)", "GF_XPD_GBPC"=>"Primarni državni rashodi kao udio u prvobitno odobrenom budžetu", "GR_G14_GDP"=>"Ukupni prihodi države kao udio u BDP-u", "GR_G14_XDC"=>"Ukupni državni prihodi, u lokalnoj valuti", "IC_FRM_BRIB"=>"Učestalost podmićivanja (% firmi koje imaju barem jedan zahtjev za plaćanje mita)", "IC_GEN_MGTL"=>"Udio žena na rukovodećim pozicijama", "IC_GEN_MGTN"=>"Udio žena na višim i srednjim rukovodećim pozicijama", "IS_RDP_FRGVOL"=>"Obim tereta (tonski kilometri)", "IS_RDP_PFVOL"=>"Obim putnika (putnički kilometri)", "IT_MOB_2GNTWK"=>"Udio stanovništva pokriven najmanje 2G mobilnom mrežom", "IT_MOB_3GNTWK"=>"Udio stanovništva pokriven najmanje 3G mobilnom mrežom", "IT_MOB_4GNTWK"=>"Udio stanovništva pokriven najmanje 4G mobilnom mrežom", "IT_NET_BBND"=>"Broj pretplatnika fiksnog širokopojasnog pristupa internetu na 100 stanovnika", "IT_NET_BBNDN"=>"Broj pretplatnika fiksnog širokopojasnog pristupa internetu (broj)", "IT_USE_II99"=>"Korisnici interneta na 100 stanovnika", "IU_COR_BRIB"=>"Stopa rasprostranjenosti mita", "NV_IND_MANF"=>"Dodana vrijednost u proizvodnji kao udio u BDP-u", "NV_IND_MANFPC"=>"Dodana vrijednost proizvodnje po glavi stanovnika", "NV_IND_SSIS"=>"Udio malih industrija u ukupnoj dodanoj vrijednosti industrije", "NV_IND_TECH"=>"Udio dodate vrijednosti srednje i visokotehnološke industrije u odnosu na ukupnu dodatnu vrijednost", "NY_GDP_PCAP"=>"Godišnja stopa rasta realnog BDP-a po stanovniku", "SD_CPA_UPRDP"=>"Broj zemalja koje imaju nacionalne urbane politike ili planove regionalnog razvoja koji (a) odgovaraju na dinamiku stanovništva; (b) osiguravaju uravnotežen teritorijalni razvoj; i (c) povećava lokalni fiskalni prostor (1 = DA; 0 = NE)", "SERIES"=>"SDG Varijable", "SE_ADT_ACTS"=>"Udio mladih i odraslih sa vještinama u informacionim i komunikacionim tehnologijama (IKT)", "SE_ADT_EDUCTRN"=>"Stopa učešća mladih i odraslih u formalnom i neformalnom obrazovanju i obuci", "SE_AGP_CPRA"=>"Prilagođeni indeks rodnog pariteta za stopu završetka, prema spolu, lokaciji, kvintilu bogatstva i nivou obrazovanja", "SE_ALP_CPLR"=>"Prilagođeni indeks pariteta lokacije za stopu završetka, prema spolu, lokaciji, kvintilu bogatstva i nivou obrazovanja", "SE_AWP_CPRA"=>"Prilagođeni indeks pariteta bogatstva za stopu završetka, prema spolu, lokaciji, kvintilu bogatstva i nivou obrazovanja", "SE_DEV_ONTRK"=>"Udio djece koja su razvojno na pravom putu u najmanje tri od sljedećih domena: pismenost-računanje, fizički razvoj, socijalno-emocionalni razvoj i učenje", "SE_GPI_PART"=>"Indeks rodnog pariteta za stopu učešća u formalnom i neformalnom obrazovanju i obuci", "SE_LGP_ACHI"=>"Indeks pariteta jezičkog testa za postignuća", "SE_NAP_ACHI"=>"Izvorni indeks pariteta za postignuće", "SE_TOT_CPLR"=>"Stopa završetka studija prema spolu, lokaciji, kvintilu bogatstva i nivou obrazovanja (%)", "SE_TOT_GPI"=>"Indeks rodnog pariteta za postignuća", "SE_TOT_PRFL"=>"Udio djece i mladih  koja postižu najmanje minimalan nivo dostignuća u čitanju i  matematici", "SE_TOT_RUPI"=>"Indeks ruralnog prema urbanom paritetu za postignuća", "SE_TOT_SESPI"=>"Niski do visoki indeks statusa socijalno-ekonomskog pariteta za postignuća", "SG_DMK_PARLCC_LC"=>"Broj predsjedavajućih stalnih odbora, prema starosti i spolu, u donjem domu ili jednodomnom parlamentu", "SG_DMK_PARLCC_UC"=>"Broj predsjedavajućih stalnih odbora, prema starosti i spolu, gornji dom", "SG_DMK_PARLMP_LC"=>"Odnos ženskih članove parlamenata (Odnos udjela žena u parlamentu u udjelu žena u nacionalnom stanovništvu sa starosnom podobnošću kao donja granica), u donjem domu ili jednodomnom parlamentu", "SG_DMK_PARLMP_UC"=>"Odnos za ženske članove parlamenata (Odnos udjela žena u parlamentu u udjelu žena u nacionalnom stanovništvu sa starosnom podobnošću kao donja granica), u gornjem domu", "SG_DMK_PARLSP_LC"=>"Broj govornika u parlamentu, prema starosti i spolu, u donjem domu ili jednodomnom parlamentu", "SG_DMK_PARLSP_UC"=>"Broj govornika u parlamentu, prema starosti i spolu, u gornjem domu", "SG_DSR_SILN"=>"Broj lokalnih samouprava koje usvajaju i provode lokalne strategije smanjenja rizika od katastrofa u skladu s nacionalnim strategijama", "SG_DSR_SILS"=>"Udio lokalnih samouprava koje usvajaju i provode lokalne strategije smanjenja rizika od katastrofa u skladu s nacionalnim strategijama smanjenja rizika od katastrofa", "SG_GEN_EQPWN"=>"Udio zemalja sa sistemima praćenja i raspodjelom javnih rashoda za rodnu ravnopravnost i osnaživanje žena", "SG_GEN_LOCGELS"=>"Udio biračkih mjesta koje imaju žene u savjetodavnim tijelima lokalne uprave", "SG_GEN_PARL"=>"Udio mjesta koje imaju žene u nacionalnim parlamentima (% od ukupnog broja mjesta)", "SG_GEN_PARLN"=>"Broj mjesta koje imaju žene u nacionalnim parlamentima", "SG_GEN_PARLNT"=>"Broj mjesta u nacionalnim parlamentima", "SG_GOV_LOGV"=>"Broj lokalnih samouprava", "SG_HAZ_CMRBASEL"=>"Usklađenost sa Bazelskom konvencijom o opasnom otpadu i drugim hemikalijama", "SG_HAZ_CMRMNTRL"=>"Usklađenost s Montrealskim protokolom o opasnom otpadu i drugim hemikalijama", "SG_HAZ_CMRROTDAM"=>"Usklađenost sa Roterdamskom konvencijom o opasnom otpadu i drugim hemikalijama", "SG_HAZ_CMRSTHOLM"=>"Usklađenost sa Štokholmskom konvencijom o opasnom otpadu i drugim hemikalijama", "SG_INF_ACCSS"=>"Broj zemalja koje usvajaju i provode ustavne, zakonske i/ili političke garancije za pristup informacijama od javnog značaja", "SG_INT_MBRDEV"=>"Udio članova zemalja u razvoju u međunarodnim organizacijama, prema organizaciji", "SG_INT_VRTDEV"=>"Udio prava glasa zemalja u razvoju u međunarodnim organizacijama, prema organizaciji", "SG_NHR_IMPLN"=>"Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)", "SG_NHR_NOAPPLN"=>"Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, D status (1 = DA; 0 = NE)", "SG_PLN_RECNDI"=>"Udio novih razvojnih intervencija izvučenih iz okvira rezultata koje vode zemlje - podaci prema primaocu", "SG_PLN_RECRICTRY"=>"Udio indikatora rezultata izvučenih iz okvira rezultata koje vode zemlje - podaci prema primaocu (%)", "SG_PLN_RECRIMON"=>"Udio indikatora rezultata koji će se pratiti pomoću državnih izvora i sistema praćenja - podaci po primaocu (%)", "SG_PLN_REPOLRES"=>"Opseg upotrebe državnih okvira rezultata i alata za planiranje od strane pružalaca razvojne saradnje - podaci prema primaocu (%)", "SG_REG_BRTH"=>"Udio djece mlađe od 5 godina čije je rođenje upisano u matične knjige kod nadležnog organa", "SG_REG_BRTH90N"=>"Zemlja sa matičnim knjigama rođenih koje su popunjene najmanje 90 posto (1 = DA; 0 = NE)", "SG_REG_CENSUSN"=>"Zemlje koje su provele najmanje jedan popis stanovništva i domaćinstava u posljednjih 10 godina (1 = DA; 0 = NE)", "SG_REG_DETH75N"=>"Zemlje sa knjigom umrlih koje su popunjene najmanje 75 posto (1 = DA; 0 = NE)", "SG_STT_CAPTY"=>"Vrijednost u dolarima svih resursa dostupnih za jačanje statističkih kapaciteta u zemljama u razvoju", "SG_STT_FPOS"=>"Zemlje sa nacionalnim statističkim zakonodavstvom koje je u skladu sa Osnovnim principima zvanične statistike (1 = DA; 0 = NE)", "SG_STT_NSDSFDDNR"=>"Zemlje s nacionalnim statističkim planovima koje finansiraju donatori (1 = DA; 0 = NE)", "SG_STT_NSDSFDGVT"=>"Zemlje s nacionalnim statističkim planovima koje finansira država (1 = DA; 0 = NE)", "SG_STT_NSDSFND"=>"Zemlje s nacionalnim statističkim planovima koji su u potpunosti finansirani (1= DA; 0 = NE)", "SG_STT_NSDSIMPL"=>"Zemlje s nacionalnim statističkim planovima koji su u provedbi (1 = DA; 0 = NE)", "SH_AAP_ASMORT"=>"Stopa mortaliteta koja se pripisuje zagađenju okolnog zraka", "SH_AAP_MORT"=>"Stopa sirovog mortaliteta koja se pripisuje zagađenju okolnog zraka", "SH_ACS_DTP3"=>"Udio ciljane populacije sa pristupom 3 doze vakcine protiv difterije, tetanusa i velikog kašlja (DTP3)", "SH_ACS_MCV2"=>"Udio ciljane populacije sa pristupom drugoj dozi vakcine protiv malih boginja (MCV2)", "SH_ACS_UNHC"=>"Indeks pokrivenosti uslugama univerzalne zdravstvene zaštite", "SH_ALC_CONSPT"=>"Potrošnja alkohola po stanovniku (starosti od 15 godina i više) u kalendarskoj godini", "SH_BLD_ECOLI"=>"Udio infekcije krvotoka zbog Escherichia coli rezistentne na cefalosporin 3. generacije (npr. ESBL-E) među pacijentima koji traže pomoć i kojima se uzet uzorak krvi  i koji je testiran", "SH_BLD_MRSA"=>"Udio infekcije krvotoka zbog Staphylococcus aureusa rezistentnog na meticilin (MRSA) među pacijentima koji traže pomoć i kojima je uzet uzorak krvi koji je testiran", "SH_DTH_NCD"=>"Smrti uzrokovane nezaraznim bolesima (broj)", "SH_DTH_NCOM"=>"Stopa smrtnosti uzrokovana kardiovaskularnim bolestima, rakom, dijabetesom ili hroničnom respiratornom bolešću", "SH_DYN_IMRT"=>"Stopa smrtnosti dojenčadi", "SH_DYN_IMRTN"=>"Umrla dojenčad (broj)", "SH_DYN_MORT"=>"Stopa smrtnosti ispod pet godina", "SH_DYN_MORTN"=>"Smrtnost ispod pet ogdina (broj)", "SH_DYN_NMRT"=>"Stopa neonatalnog mortaliteta", "SH_DYN_NMRTN"=>"Neonatalni mortalitet (broj)", "SH_FPL_MTMM"=>"Udio žena reproduktivnog uzrasta (starosti od 15 do 49 godina) koje su svoju potrebu za planiranje porodice zadovoljile sa modernim metodama", "SH_H2O_SAFE"=>"Udio stanovništva koji koristi usluge bezbjednog upravljanja pitkom vodom", "SH_HAP_ASMORT"=>"Stopa smrtnosti koja se pripisuje zagađenjem zraka domaćinstava", "SH_HAP_HBSAG"=>"Rasprostranjenost površinskog antigena hepatitisa B (HBsAg)", "SH_HAP_MORT"=>"Sirova stopa smrtnosti koja se pripisuje zagađenjem zraka domaćinstava", "SH_HIV_INCD"=>"Broj novih HIV infekcija na 1 000 neinficiranih stanovnika", "SH_IHR_CAPS"=>"Kapaciteti za Međunarodne zdravstvene propise (IHR) i pripravnost za hitne medicinske usluge", "SH_MED_DEN"=>"Gustina i distribucija zdravstvenih radnika", "SH_MED_HWRKDIS"=>"Gustina i distribucija zdravstvenih radnika, prema spolu i vrsti zanimanja", "SH_PRV_SMOK"=>"Starosna standardizirana rasprostranjenost trenutne upotrebe duhana među osobama starosti 15 godina i više", "SH_SAN_DEFECT"=>"Udio stanovništva koje prakticira otvorenu defekaciju", "SH_SAN_HNDWSH"=>"Udio stanovništva sa osnovnim uređajima za pranje ruku u prostorijama", "SH_SAN_SAFE"=>"Udio stanovništva koji koristi sanitarne usluge kojima se sigurno upravlja", "SH_STA_AIRP"=>"Stopa smrtnosti koja se pripisuje zagađenju domaćinstva i okolnog zraka", "SH_STA_ASAIRP"=>"Starosno standardizirana stopa smrtnosti koja se pripisuje zagađenju domaćinstva i okolnog zraka (umrli na 100 000 stanovnika)", "SH_STA_BRTC"=>"Udio poroda uz prisustvo kvalifikovanih zdravstvenih radnika", "SH_STA_MORT"=>"Stopa smrtnosti majki", "SH_STA_POISN"=>"Stopa smrtnosti uzrokovana nenamjernim trovanjem", "SH_STA_SCIDE"=>"Stopa samoubistvima", "SH_STA_SCIDEN"=>"Broj smrtnih slučajeva samoubistvom", "SH_STA_STNT"=>"Udio djece umjereno ili ozbiljno zaostale u razvoju", "SH_STA_STNTN"=>"Djeca umjereno ili teško zaostala u razvoju (broj)", "SH_STA_TRAF"=>"Stopa smrtnosti zbog povreda u cestovnom saobraćaju", "SH_STA_WASH"=>"Stopa smrtnosti koja se pripisuje nebezbjednoj vodi, nebezbjednoj sanitaciji i nedostatku higijene", "SH_STA_WAST"=>"Udio djece koja su umjereno ili ozbiljno iscrpljena", "SH_STA_WASTN"=>"Djeca umjereno ili ozbiljno iscrpljena (broj)", "SH_SUD_ALCOL"=>"Poremećaji upotrebe alkohola, rasprostranjenost u 12 mjeseci (%)", "SH_TBS_INCD"=>"Učestalost tuberkuloze", "SH_TRP_INTVN"=>"Broj ljudi kojima su potrebne intervencije protiv zanemarenih tropskih bolesti", "SH_XPD_EARN10"=>"Udio stanovništva s velikim troškovima za zdravstvo po domaćinstvu kao udio u ukupnim rashodima ili prihodima domaćinstva", "SH_XPD_EARN25"=>"Udio stanovništva s velikim troškovima za zdravstvo (većim od 25%) po domaćinstvu kao udio u ukupnim rashodima ili prihodima domaćinstva", "SI_COV_LMKT"=>"Udio stanovništva obuhvaćenog programima tržišta rada", "SI_COV_PENSN"=>"Udio stanovništva iznad zakonske starosne granice za penziju koji primaju penziju", "SI_COV_SOCAST"=>"Udio stanovništva obuhvaćenog programima socijalne pomoći", "SI_COV_SOCINS"=>"Udio stanovništva obuhvaćenog programima socijalnog osiguranja", "SI_COV_UEMP"=>"Udio nezaposlenih koji primaju novčanu naknadu za nezaposlene", "SI_POV_50MI"=>"Udio ljudi koji žive ispod 50 posto srednje vrijednosti prihoda", "SI_POV_DAY1"=>"Udio stanovništva koje živi ispod međunarodne linije siromaštva", "SI_POV_EMP1"=>"Zaposleno stanovništvo ispod međunarodne linije siromaštva", "SI_POV_NAHC"=>"Udio stanovništva koje živi ispod nacionalne granice siromaštva", "SI_RMT_COST"=>"Troškovi doznaka kao proporcija doznačenog iznosa", "SL_CPA_YEMP"=>"Postojanje razvijene i operacionalizovane nacionalne strategije za zapošljavanje mladih, kao posebne strategije ili kao dio nacionalne strategije zapošljavanja", "SL_EMP_GTOTL"=>"Udio radne snage u BDP-u", "SL_EMP_PCAP"=>"Godišnja stopa rasta realnog BDP-a po zaposlenoj osobi", "SL_ISV_IFEM"=>"Udio neformalne zaposlenosti u ukupnoj zaposlenosti, prema sektorima i spolu (Usklađene procjene ILO-a)", "SL_LBR_NTLCPL"=>"Nivo nacionalne usklađenosti radnih prava (sloboda udruživanja i kolektivnog pregovaranja) na osnovu tekstualnih izvora Međunarodne organizacije rada (ILO) i nacionalnog zakonodavstva", "SL_TLF_MANF"=>"Zaposlenost u  prerađivačkoj industriji  kao udio ukupne zaposlenosti", "SL_TLF_NEET"=>"Udio mladih koji nisu u obuhvaćeni obrazovanjem, zaposlenošću, ili obukom", "SL_TLF_UEM"=>"Stopa nezaposlenosti", "SM_DTH_MIGR"=>"Ukupni smrtni slučajevi i nestanci zabilježeni tokom migracije", "SM_POP_REFG_OR"=>"Udio stanovništva izbjeglica, prema zemlji porijekla", "SN_ITK_DEFC"=>"Rasprostranjenost pothranjenosti", "SN_ITK_DEFCN"=>"Broj pothranjenih ljudi", "SN_STA_OVWGT"=>"Udio djece sa umjerenom ili ozbiljnom prekomjernom tjelesnom težinom", "SN_STA_OVWGTN"=>"Djeca sa umjerenom ili ozbiljnom prekomjernom tjelesnom težinom (broj)", "SP_ACS_BSRVH2O"=>"Udio stanovništva koji koristi osnovne usluge pitke vode", "SP_ACS_BSRVSAN"=>"Udio stanovništva koji koristi osnovne sanitarne usluge", "SP_DYN_ADKL"=>"Stopa nataliteta adolescenata (na 1 000 žena starih 15-19 godina)", "SP_DYN_MRBF15"=>"Udio žena starosti 20-24 godine koje su bile u braku ili u vanbračnoj zajednici prije 15. godine", "SP_DYN_MRBF18"=>"Udio žena starosti 20-24 godine koje su bile u braku ili u vanbračnoj zajednici prije 18. godine", "ST_EEV_ACCSEEA"=>"Primjena standardnih računovodstvenih alata za praćenje ekonomskih i okolišnih aspekata turizma (SEEA tablice)", "ST_EEV_ACCTSA"=>"Primjena standardnih računovodstvenih alata za praćenje ekonomskih i okolišnih aspekata turizma (tabele satelitskih računa turizma)", "ST_EEV_STDACCT"=>"Primena standardnih računovodstvenih alata za praćenje ekonomskih i ekoloških aspekata turizma (broj tabela)", "TM_TAX_WMFN"=>"Svjetski ponderirani carinski prosjek, status najpovlaštenije države", "TM_TAX_WMPS"=>"Svetski ponderirani carinski prosjek, preferencijalni status", "TM_TRF_ZERO"=>"Proporcija carinskih linija na uvoz sa nultom tarifom", "VC_DSR_OBDN"=>"Broj smetnji u radu ostalih osnovnih usluga uzrokovan katastrofama", "VC_HTF_DETV"=>"Detektovane žrtve trgovine ljudima (broj)", "VC_HTF_DETVFL"=>"Detektovane žrtve trgovine ljudima za prisilni rad, služnost i ropstvo (broj)", "VC_HTF_DETVOG"=>"Detektovane žrtve trgovine ljudima za uklanjanje organa (broj)", "VC_HTF_DETVOP"=>"Detektovane žrtve trgovine ljudima za druge svrhe (broj)", "VC_HTF_DETVSX"=>"Detektovane žrtve trgovine ljudima za  seksualno iskorištavanje (broj)", "VC_IHR_PSRC"=>"Broj žrtava ubistava s namjerom na 100 000 stanovnika", "VC_IHR_PSRCN"=>"Broj žrtava ubistava s predomišljajem", "VC_PRS_UNSNT"=>"Neosuđeni pritvorenici kao udio u ukupnoj zatvorskoj populaciji", "VC_VAW_PHYPYV"=>"Udio djece starosti 1 - 14 godina koja su tokom proteklog mjeseca doživjela bilo kakvo fizičko kažnjavanje i/ili psihološku agresiju od strane njegovatelja, u proteklih mjesec dana"}</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2005</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2000</td>
+          
+          
+          
+          <td>1</td>
+          
+          
+          
+          <td>Broj</td>
+          
+          
+          
+          <td class="table-value">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, D status (1 = DA; 0 = NE)</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="datatableFooter">
+    
+    <p>Izvor: UNSTATS</p>
+    
+    
+    
+    
+  </div>
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded spacer medium" style="display:none;">
+
+    <div style="display: none;">
+  <span id="table-alternative"></span>
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  <li role="presentation" class="nav-item active">
+    <a class="nav-link" data-toggle="tab" id="tab-chartview" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+ aria-describedby="table-alternative">Grafikon</a>
+  </li>
+  <li role="presentation" class="nav-item">
+    <a class="nav-link" data-toggle="tab" id="tab-tableview" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+>Tabela</a>
+  </li></ul>
+
+    <div class="tab-content data-view">
+  <div role="tabpanel" class="tab-pane active" id="chartview">
+    
+
+    <div id="dataset-size-warning" style="display:none" role="alert">
+      <i class="fa fa-bolt"><span class="sr-only"></span></i>
+      Previše je skupova podataka za prikaz na grafikonu. Neće biti prikazane sve dok ne uklonite neke odabire.
+    </div>
+
+    
+    
+    <div id="selectionsChart">
+      <figure role="group">
+        <div id="chart-canvas">
+          <h4 id="chart-heading" class="chart-title">Zemlje s nacionalnim institucijama za ljudska prava u skladu s Pariškim principima, A status (1 = DA; 0 = NE)</h4>
+          <div id="chart" class="plot-container">
+            
+<canvas
+    role="img"
+    aria-labelledby="chart-heading"
+    aria-describedby="table-alternative chart-annotations"
+    tabindex="0"
+ ></canvas>
+
+<script>
+// Add a chart alteration to support the chart_graph_limits metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+  if (info.graphLimits && info.graphLimits.length > 0) {
+    var limit = _.findWhere(info.graphLimits, { unit: info.selectedUnit }) || info.graphLimits[0];
+    var overrides = {
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: limit.minimum,
+              max: limit.maximum,
+            }
+          }]
+        }
+      }
+    }
+    // Add these overrides onto the normal config.
+    $.extend(true, config, overrides);
+  }
+});
+</script>
+
+<span style="display: none;" id="chart-annotations" role="status"></span>
+<script>
+opensdg.annotationPresets = {
+    common: {
+        // This "common" preset is applied to all annotations automatically.
+        borderColor: '#505a5f',
+        type: 'line',
+        label: {
+            backgroundColor: 'black',
+            fontColor: 'white',
+        },
+        // This "highContrast" overrides colors when in high-contrast mode.
+        highContrast: {
+            label: {
+                backgroundColor: 'white',
+                fontColor: 'black'
+            }
+        },
+        // This callback is used to generate a generic description for screenreaders.
+        // This can be overridden to be a more specific string, eg:
+        //
+        //     description: 'Chart annotation showing a 2030 target of 15%'
+        //
+        description: function() {
+            var descriptionParts = [translations.indicator.chart_annotation];
+            if (this.label && this.label.content) {
+                descriptionParts.push(translations.t(this.label.content));
+            }
+            else {
+                // If there is no label, just specify whether it is a box or line.
+                if (this.type == 'line') {
+                    descriptionParts.push(this.mode + ' line');
+                }
+                if (this.type == 'box') {
+                    descriptionParts.push('box');
+                }
+            }
+            if (typeof this.value !== 'undefined') {
+                descriptionParts.push(this.value);
+            }
+            return descriptionParts.join(': ');
+        },
+    },
+    target_line: {
+        mode: 'horizontal',
+        borderDash: [5, 5],
+        label: {
+            position: 'right',
+            content: translations.indicator.annotation_2030_target,
+        },
+    },
+};
+
+// Add a chart alteration to support the chart_annotations metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+    if (info.graphAnnotations && info.graphAnnotations.length > 0) {
+        var annotations = info.graphAnnotations.filter(function(annotation) {
+            var match = true;
+            if (match && info.selectedUnit) {
+                match = (info.selectedUnit === annotation.unit);
+            }
+            if (match && info.selectedSeries) {
+                match = (info.selectedSeries === annotation.series);
+            }
+            return match;
+        });
+        // Apply some helpers/fixes to the annotations.
+        annotations = annotations.map(function(annotation) {
+            // Apply the "common" preset.
+            if (opensdg.annotationPresets.common) {
+                annotation = $.extend(true, {}, opensdg.annotationPresets.common, annotation);
+            }
+            // Apply any specified presets.
+            if (annotation.preset) {
+                var preset = annotation.preset;
+                if (opensdg.annotationPresets[preset]) {
+                    annotation = $.extend(true, {}, opensdg.annotationPresets[preset], annotation);
+                }
+            }
+            // Default to horizontal lines.
+            if (!annotation.mode && annotation.type === 'line') {
+                annotation.mode = 'horizontal';
+            }
+            // Provide the obscure scaleID properties on user's behalf.
+            if (!annotation.scaleID && annotation.type === 'line') {
+                if (annotation.mode === 'horizontal') {
+                    annotation.scaleID = 'y-axis-0';
+                }
+                if (annotation.mode === 'vertical') {
+                    annotation.scaleID = 'x-axis-0';
+                }
+            }
+            if (!annotation.xScaleID && annotation.type === 'box') {
+                annotation.xScaleID = 'x-axis-0';
+            }
+            if (!annotation.yScaleID && annotation.type === 'box') {
+                annotation.yScaleID = 'y-axis-0';
+            }
+            // Provide the "enabled" label property on the user's behalf.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.enabled = true;
+            }
+            // Translate any label content.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.content = translations.t(annotation.label.content);
+            }
+            // Save some original values for later used when contrast mode is switched.
+            if (typeof annotation.defaultContrast === 'undefined') {
+                annotation.defaultContrast = {};
+                if (annotation.borderColor) {
+                    annotation.defaultContrast.borderColor = annotation.borderColor;
+                }
+                if (annotation.backgroundColor) {
+                    annotation.defaultContrast.backgroundColor = annotation.backgroundColor;
+                }
+                if (annotation.label) {
+                    annotation.defaultContrast.label = {};
+                    if (annotation.label.fontColor) {
+                        annotation.defaultContrast.label.fontColor = annotation.label.fontColor;
+                    }
+                    if (annotation.label.backgroundColor) {
+                        annotation.defaultContrast.label.backgroundColor = annotation.label.backgroundColor;
+                    }
+                }
+            }
+            return annotation;
+        });
+        if (annotations.length > 0) {
+            var overrides = {
+                options: {
+                    annotation: {
+                        drawTime: 'afterDatasetsDraw',
+                        annotations: annotations
+                    }
+                }
+            };
+            // Add these overrides onto the normal config.
+            $.extend(true, config, overrides);
+
+            // Update the chart annotations element.
+            var descriptions = annotations.map(function(annotation) {
+                var description = '';
+                if (annotation.description) {
+                    if (typeof annotation.description === 'function') {
+                        description = annotation.description.call(annotation);
+                    }
+                    else {
+                        description = translations.t(annotation.description);
+                    }
+                }
+                return description;
+            }).filter(function(description) { return description != ''; });
+
+            var currentDescription = $('#chart-annotations').text();
+            var newDescription = descriptions.join('. ');
+            if (currentDescription != newDescription) {
+                $('#chart-annotations').text(newDescription);
+            }
+        }
+    }
+});
+</script>
+
+<script>
+// For line charts, add the vertical line hover functionality.
+opensdg.chartConfigAlter(function(config, info) {
+    var overrides = {
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
+    };
+    // Add these overrides onto the normal config, and return it.
+    $.extend(true, config, overrides);
+});
+</script>
+
+          </div>
+          <div id="plotLegend"></div>
+          
+
+
+
+<div id="selectionChartFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Izvor:</dt>
+        <dd>UNSTATS</dd>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+        </div>
+      </figure>
+      <div id="chartSelectionDownload" class="clearfix">
+        <button id="btnSave" title="Preuzmi grafikon kao sliku" class='btn btn-primary btn-download'>
+          Preuzmi sliku grafikona
+        </button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="tableview">
+    <div style="display: none;">
+      <span id="column-sort-info"></span>
+    </div>
+    <div id="selectionsTable"></div>
+
+
+
+
+<div id="selectionTableFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+        <dt>Izvor:</dt>
+        <dd>UNSTATS</dd>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+<div id="tableSelectionDownload" class="clearfix"></div>
+
+  </div>
+</div>
+
+
+  </div>
+
+</section>
+
+  
+  <ul class="nav nav-tabs spacer medium" role="tablist">
+
+  <li role="presentation" class="nav-item active">
+  <a class="nav-link" data-toggle="tab" id="tab-national" href="#national" aria-controls="national" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to National Metadata tab"
+>Nacionalni metapodaci</a>
+</li>
+
+<li role="presentation" class="nav-item">
+  <a class="nav-link" data-toggle="tab" id="tab-global" href="#global" aria-controls="global" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Global Metadata tab"
+>Globalni metapodaci</a>
+</li>
+
+<li role="presentation" class="nav-item">
+  <a class="nav-link" data-toggle="tab" id="tab-sources" href="#sources" aria-controls="sources" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Sources tab"
+>Izvori</a>
+</li>
+
+
+  
+  <li role="presentation" class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Uredi</a>
+  </li>
+  
+</ul>
+
+<div class="tab-content">
+  
+    <div role="tabpanel" class="tab-pane active" id="national">
+  <!-- National Metadata -->
+  <div >
+    <article>
+      <p>
+        
+        
+        Ova tabela sadrži metapodatke o stvarnim pokazateljima dostupnim iz BiH statistike najbliže odgovarajućem globalnom SDG indikatoru. Imajte na umu da čak i kada je globalni SDG indikator dostupan iz BiH statistike, ovu tabelu treba pogledati za informacije o nacionalnoj metodologiji i drugo BiH-specific informacije o metapodacima.
+      </p>
+      <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      <tr>
+        <th scope="row">Dostupni indikatori </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Opis indikatora </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Geografska pokrivenost </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Mjerna jedinica </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Definicije </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Kalkulacije </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Ostale informacije </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Osiguranje kvaliteta </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Uporedivost sa međunarodnim podacima/standardima </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Komentari i ograničenja </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Racionalno i tumačenje </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Podaci posljednji put ažurirani </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/68356bad743c3c436b2f8d70ce1e3d543704052b" target="_blank">
+                2021-01-18: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Posljednji put ažurirani metapodaci </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/68356bad743c3c436b2f8d70ce1e3d543704052b" target="_blank">
+                2021-01-18: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </article>
+  </div>
+</div>
+<div role="tabpanel" class="tab-pane" id="global">
+  <!-- Global Metadata -->
+  <div>
+    <article>
+      <p>Ova tabela pruža informacije o metapodacima za SDG indikatore kako ih je definisala Statistička komisija UN-a. Kompletne globalne metapodatke pruža Odjel za statistiku UN-a.</p>
+      <table class="table">
+  
+  
+  
+  
+  
+      
+      
+      <tr>
+        <th scope="row">Naziv indikatora </th>
+        <td>
+          
+            <p>Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Broj indikatora </th>
+        <td>
+          
+            <p>16.a.1</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Naziv podcilja </th>
+        <td>
+          
+            <p>Ojačati relevantne nacionalne institucije, uključujući i međunarodnu saradnju, za izgradnju kapaciteta na svim nivoima, posebno u zemljama u razvoju, radi sprečavanja nasilja i borbe protiv terorizma i kriminala</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Broj podcilja </th>
+        <td>
+          
+            <p>16.a</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Opis globalnog indikatora </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">UN-ov označeni nivo </th>
+        <td>
+          
+            <p>1</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">UN kustos agencija </th>
+        <td>
+          
+            <p>United Nations Office of the High Commissioner for Human Rights</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Link do UN metapodataka </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-0A-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 1361kB) <span class="visuallyhidden">otvara se u novom prozoru</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </article>
+  </div>
+</div>
+<div role="tabpanel" class="tab-pane" id="sources">
+  <!-- Count the non-empty sources (up to 5) -->
+
+
+
+
+  <div class="row no-gutters">
+  
+    
+    
+    <div class="col-md-6">
+      
+      <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      <tr>
+        <th scope="row">Organizacija </th>
+        <td>
+          
+            <p>UNSTATS</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Periodičnost </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Posljednji dostupni podaci </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Geografska pokrivenost </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Link do izvora podataka </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://unstats.un.org/sdgs/indicators/database/" target="_blank">
+                Link <span class="visuallyhidden">otvara se u novom prozoru</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Datum izdavanja </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Sljedeće izdanje </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Statistička klasifikacija </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Kontakt podaci </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Ostale informacije </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+  </div>
+
+
+</div>
+
+  
+  
+  <div role="tabpanel" class="tab-pane" id="edit">
+    <div class="edit-container">
+  
+  
+
+  
+  
+
+
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/data/indicator_16-a-1.csv">Uredi podatke</a>
+  
+
+  
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/16-a-1.md">Uredi metapodatke</a>
+  
+
+  
+</div>
+
+  </div>
+  
+</div>
+
+
+  </div>
+</div>
+
+</div>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="footerLinks">
+          <ul>
+            <li><a href="https://open-sdg.org">Izgrađeno pomoću Open SDG-a</a></li>
+            
+              <li>
+                
+                  <a href="mailto:sdg@bhas.gov.ba" target="_blank">Kontaktirajte nas</a>
+                
+                </li>
+              <li>
+                <a href="/bs/about/cookies-and-privacy/">Kolačići</a>
+                
+                </li>
+              
+            
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<!-- Google Analytics -->
+
+<!-- /.container </div> -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script>translations['general'] = translations['general'] || {};
+    translations['general']['hide'] = 'Sakriti';</script>
+
+<script>translations['search'] = translations['search'] || {};
+    translations['search']['search'] = 'Pretraživanje';</script>
+
+<script src='/assets/js/sdg.js?v=20210118162750'></script>
+
+
+    
+    
+    <script src="/assets/js/custom.js?v=20210118162750"></script><script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
+      if (domData.showdata) {
+
+        $('.async-loading').each(function(i, obj) {
+            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
+        });
+
+        var remoteUrl = '/comb/' + domData.id + '.json';
+        if (opensdg.remoteDataBaseUrl !== '/') {
+          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+        }
+
+        $.ajax({
+          url: remoteUrl,
+          success: function(res) {
+
+            $('.async-loading').remove();
+            $('.async-loaded').show();
+
+            var model = new indicatorModel({
+              data: res.data,
+              edgesData: res.edges,
+              showMap: domData.showmap,
+              country: domData.country,
+              indicatorId: domData.indicatorid,
+              shortIndicatorId: domData.id,
+              chartTitle: domData.charttitle,
+              chartTitles: domData.charttitles,
+              measurementUnit: domData.measurementunit,
+              showData: domData.showdata,
+              graphType: domData.graphtype,
+              startValues: domData.startvalues,
+              graphLimits: domData.graphlimits,
+              stackedDisaggregation: domData.stackeddisaggregation,
+              graphAnnotations: domData.graphannotations,
+              indicatorDownloads: domData.indicatordownloads,
+              compositeBreakdownLabel: domData.compositebreakdownlabel,
+            }),
+            view  = new indicatorView(model, {
+              rootElement: '#indicatorData',
+              legendElement: '#plotLegend',
+              maxChartHeight: 420,
+              tableColumnDefs: [
+                { maxCharCount: 25 }, // nowrap
+                { maxCharCount: 35, width: 200 },
+                { maxCharCount: Infinity, width: 250 }
+              ]
+            }),
+            controller = new indicatorController(model, view);
+            controller.initialise();
+          }
+        });
+      }
+    }
+
+    var switcher = new accessibilitySwitcher();
+
+
+});
+</script>
+
+
+
+
+</body>
+</html>
+
