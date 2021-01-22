@@ -19,7 +19,7 @@ standalone_indicators:
     - tourist-nights
     - electricity-supply
     - value-of-agricultural-products
-   
+  
 ---
 In cooperation with the Ministry of Security of BiH, the Ministry of Civil
 Affairs of BiH, the Ministry of Foreign Affairs of BiH and with the technical
