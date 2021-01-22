@@ -2231,7 +2231,7 @@
         
         {
           "id": "road-transport",
-          "title": "Road transport, railway transport and air transport",
+          "title": "Road transport",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/road-transport",
@@ -2247,7 +2247,7 @@
         
         {
           "id": "cross-border-traffic",
-          "title": "Cross-border traffic",
+          "title": "Railway transport",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/cross-border-traffic",
@@ -2263,7 +2263,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "Tourist nights",
+          "title": "Air transport",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/tourist-nights",
@@ -2279,7 +2279,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "Electricity supply",
+          "title": "Cross-border traffic",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/electricity-supply",
@@ -2295,7 +2295,7 @@
         
         {
           "id": "value-of-agricultural-products",
-          "title": "Value of agricultural products sold on green markets by groups of products",
+          "title": "Tourist nights",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/value-of-agricultural-products",
