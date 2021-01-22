@@ -13,10 +13,13 @@ standalone_indicators:
     - average-monthly-earnings
     - labour-force-of-bih
     - road-transport
+    - railway-transport
+    - air-transport
     - cross-border-traffic
     - tourist-nights
     - electricity-supply
     - value-of-agricultural-products
+    
 ---
 U saradnji Ministarstva sigurnosti BiH, Ministarstva civilnih poslova, Ministarstva
 vanjskih poslova BiH i uz tehničku i finansijsku podršku Razvojnog programa
