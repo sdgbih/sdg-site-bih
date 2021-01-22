@@ -13,6 +13,8 @@ standalone_indicators:
     - average-monthly-earnings
     - labour-force-of-bih
     - road-transport
+    - railway-transport
+    - air-transport
     - cross-border-traffic
     - tourist-nights
     - electricity-supply
