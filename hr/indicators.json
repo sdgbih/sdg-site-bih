@@ -2231,7 +2231,7 @@
         
         {
           "id": "road-transport",
-          "title": "Cestovni, žеljеznički i žračni transport",
+          "title": "Cestovni transport",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/road-transport",
@@ -2247,7 +2247,7 @@
         
         {
           "id": "cross-border-traffic",
-          "title": "Granični promet",
+          "title": "Žеljеznički transport",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/cross-border-traffic",
@@ -2263,7 +2263,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "Noćenja turista",
+          "title": "Zračni transport",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/tourist-nights",
@@ -2279,7 +2279,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "Opskrba električnom energijom",
+          "title": "Granični promet",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/electricity-supply",
@@ -2295,7 +2295,7 @@
         
         {
           "id": "value-of-agricultural-products",
-          "title": "Vrijednost poljoprivrednih proizvoda prodatih na zelenim pijacama prema grupama proizvoda",
+          "title": "Noćenja turista",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/value-of-agricultural-products",
