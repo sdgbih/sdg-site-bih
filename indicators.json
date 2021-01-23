@@ -2103,10 +2103,42 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "Gross domestic product – production approach",
+          "title": "Railway transport",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/gross-domestic-product",
+          "href": "/covid-19-impact/railway-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "air-transport",
+          "title": "Air transport",
+          "description": "",
+          "keywords": "",
+          "href": "/covid-19-impact/air-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "railway-transport",
+          "title": "Railway transport",
+          "description": "",
+          "keywords": "",
+          "href": "/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2119,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "Revenues from indirect taxes",
+          "title": "Railway transport",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/revenue-from-indirect-taxes",
+          "href": "/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2263,7 +2295,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "Air transport",
+          "title": "Tourist nights",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/tourist-nights",
@@ -2279,7 +2311,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "Cross-border traffic",
+          "title": "Electricity supply",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/electricity-supply",
@@ -2295,7 +2327,7 @@
         
         {
           "id": "value-of-agricultural-products",
-          "title": "Tourist nights",
+          "title": "Value of agricultural products sold on green markets by groups of products",
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/value-of-agricultural-products",

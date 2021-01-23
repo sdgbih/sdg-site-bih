@@ -2103,10 +2103,42 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "Bruto domaći proizvod, proizvodni pristup",
+          "title": "Žеljеznički transport",
           "description": "",
           "keywords": "",
-          "href": "/hr/covid-19-impact/gross-domestic-product",
+          "href": "/hr/covid-19-impact/railway-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "air-transport",
+          "title": "Zračni transport",
+          "description": "",
+          "keywords": "",
+          "href": "/hr/covid-19-impact/air-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "railway-transport",
+          "title": "Žеljеznički transport",
+          "description": "",
+          "keywords": "",
+          "href": "/hr/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2119,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "Prihodi od neizravnih poreza",
+          "title": "Žеljеznički transport",
           "description": "",
           "keywords": "",
-          "href": "/hr/covid-19-impact/revenue-from-indirect-taxes",
+          "href": "/hr/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2263,7 +2295,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "Zračni transport",
+          "title": "Noćenja turista",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/tourist-nights",
@@ -2279,7 +2311,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "Granični promet",
+          "title": "Opskrba električnom energijom",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/electricity-supply",
@@ -2295,7 +2327,7 @@
         
         {
           "id": "value-of-agricultural-products",
-          "title": "Noćenja turista",
+          "title": "Vrijednost poljoprivrednih proizvoda prodatih na zelenim pijacama prema grupama proizvoda",
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/value-of-agricultural-products",

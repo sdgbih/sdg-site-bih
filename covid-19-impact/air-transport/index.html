@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://sdgbih.github.io/sdg-data-bosnia/hr',
+  remoteDataBaseUrl: 'https://sdgbih.github.io/sdg-data-bosnia/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -32,7 +32,7 @@ var opensdg = {
     return value;
   },
 
-  language: 'hr',
+  language: 'en',
 };
 
 // For backwards compatibility, some of these might need to be global.
@@ -99,7 +99,7 @@ var translations = {
         
     <title>
         
-        Bruto domaći proizvod, proizvodni pristup - Indikatori za ciljeve održivog razvoja
+        Air transport - Indicators For The Sustainable Development Goals
     </title>
 
 
@@ -130,7 +130,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210122223025">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210123195130">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,18 +141,18 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-hr layout-indicator">
+<body class="language-en layout-indicator">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alfa","default_contrast":"Zadani kontrast","disable_high_contrast":"Onemogući visoki kontrast","disclaimer":"Ova internet stranica se razvija. Pozdravljamo vaše povratne informacije.","enable_high_contrast":"Omogući visoki kontrast","high_contrast":"Visok kontrast","skip_link":"Prijeđi na glavni sadržaj","tag_line":"17 ciljeva za transformiranje našeg svijeta"};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Prijeđi na glavni sadržaj</a>
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
   <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Alfa</strong>
+    <strong class="phase-tag">Alpha</strong>
     
-    Ova internet stranica se razvija. Pozdravljamo vaše povratne informacije.
+    This is a development website. We welcome your <a href="mailto:sdg@bhas.gov.ba">feedback</a>.
   </div>
 </div>
 
@@ -162,8 +162,8 @@ var translations = {
   <div class="container">
 
     <div class="logo-and-mobile-widgets">
-      <a class="navbar-brand" href="/hr/" id="home">
-        <img src="/assets/img/logo/hr/SDG_logo.png" alt="Ciljevi održivog razvoja - 17 ciljeva za transformiranje našeg svijeta" />
+      <a class="navbar-brand" href="/" id="home">
+        <img src="/assets/img/logo/en/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
       </a>
 
       <div class="mobile-widgets">
@@ -172,19 +172,19 @@ var translations = {
   
   <div class="btn-group language-toggle-dropdown ">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Hrvatski</span>
-      <span class="language-abbreviation">hr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/covid-19-impact/gross-domestic-product/">
-              English
-            </a>
-          </li><li>
-            <a href="/bs/covid-19-impact/gross-domestic-product/">
+            <a href="/bs/covid-19-impact/air-transport/">
               Bosanski
             </a>
           </li><li>
-            <a href="/sr/covid-19-impact/gross-domestic-product/">
+            <a href="/sr/covid-19-impact/air-transport/">
               Српски
+            </a>
+          </li><li>
+            <a href="/hr/covid-19-impact/air-transport/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -197,19 +197,19 @@ var translations = {
 
       <ul class="top-level">
         <li id="menuToggle"
-            aria-label=""
+            aria-label="Menu toggle. Click to expand or collapse the menu."
             aria-haspopup="true">
-          <button data-target="menu-mobile" aria-expanded="false">Izbornik</button>
+          <button data-target="menu-mobile" aria-expanded="false">Menu</button>
           <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/hr/goals">Ciljevi</a>
+    <a href="/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/hr/reporting-status">Status izvještavanja</a>
+    <a href="/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/hr/about">O nama</a>
+    <a href="/about">About</a>
     </li><li class="nav-link ">
-    <a href="/hr/publications">Publikacije</a>
+    <a href="/publications">Publications</a>
     </li><li class="nav-link ">
-    <a href="/hr/covid-19-impact">COVID-19 Uticaj</a>
+    <a href="/covid-19-impact">COVID-19 Impact</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -221,19 +221,19 @@ var translations = {
   
   <div class="btn-group language-toggle-dropdown ">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Hrvatski</span>
-      <span class="language-abbreviation">hr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/covid-19-impact/gross-domestic-product/">
-              English
-            </a>
-          </li><li>
-            <a href="/bs/covid-19-impact/gross-domestic-product/">
+            <a href="/bs/covid-19-impact/air-transport/">
               Bosanski
             </a>
           </li><li>
-            <a href="/sr/covid-19-impact/gross-domestic-product/">
+            <a href="/sr/covid-19-impact/air-transport/">
               Српски
+            </a>
+          </li><li>
+            <a href="/hr/covid-19-impact/air-transport/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -246,14 +246,14 @@ var translations = {
 
         </li>
         <li id="searchToggle"
-            aria-label=""
+            aria-label="Search toggle. Click to expand or collapse the search bar."
             aria-haspopup="true">
-          <button data-target="search-mobile" aria-expanded="false">Pretraživanje</button>
+          <button data-target="search-mobile" aria-expanded="false">Search</button>
           <div id="search-mobile" class="menu-target">
-  <form action="/hr/search">
-    <label class="sr-only" for="indicator_search-mobile">Pretraživanje</label>
-    <input type="text" name="q" id="indicator_search-mobile" title="Pretraživanje" /><!--
-    --><button aria-label="Pretraživanje" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  <form action="/search">
+    <label class="sr-only" for="indicator_search-mobile">Search</label>
+    <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
+    --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
@@ -261,24 +261,24 @@ var translations = {
       </ul>
 
       <div id="search" class="menu-target">
-  <form action="/hr/search">
-    <label class="sr-only" for="indicator_search">Pretraživanje</label>
-    <input type="text" name="q" id="indicator_search" title="Pretraživanje" /><!--
-    --><button aria-label="Pretraživanje" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  <form action="/search">
+    <label class="sr-only" for="indicator_search">Search</label>
+    <input type="text" name="q" id="indicator_search" title="Search" /><!--
+    --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-    <a href="/hr/goals">Ciljevi</a>
+    <a href="/goals">Goals</a>
     </li><li class="nav-link ">
-    <a href="/hr/reporting-status">Status izvještavanja</a>
+    <a href="/reporting-status">Reporting Status</a>
     </li><li class="nav-link ">
-    <a href="/hr/about">O nama</a>
+    <a href="/about">About</a>
     </li><li class="nav-link ">
-    <a href="/hr/publications">Publikacije</a>
+    <a href="/publications">Publications</a>
     </li><li class="nav-link ">
-    <a href="/hr/covid-19-impact">COVID-19 Uticaj</a>
+    <a href="/covid-19-impact">COVID-19 Impact</a>
     </li><li class="language-toggle-menu-header">
     
 
@@ -290,19 +290,19 @@ var translations = {
   
   <div class="btn-group language-toggle-dropdown ">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Hrvatski</span>
-      <span class="language-abbreviation">hr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
     <ul class="dropdown-menu"><li>
-            <a href="/covid-19-impact/gross-domestic-product/">
-              English
-            </a>
-          </li><li>
-            <a href="/bs/covid-19-impact/gross-domestic-product/">
+            <a href="/bs/covid-19-impact/air-transport/">
               Bosanski
             </a>
           </li><li>
-            <a href="/sr/covid-19-impact/gross-domestic-product/">
+            <a href="/sr/covid-19-impact/air-transport/">
               Српски
+            </a>
+          </li><li>
+            <a href="/hr/covid-19-impact/air-transport/">
+              Hrvatski
             </a>
           </li></ul>
   </div>
@@ -331,7 +331,7 @@ var translations = {
       >
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %><h6><% } else { %><h5><% } %>
           <span aria-hidden="true"><%=translations.t(fieldItem.label)%><i class="fa fa-chevron-down"></i></span>
-          <span class="sr-only"> <%=translations.t(fieldItem.label)%></span>
+          <span class="sr-only">Show sub-categories: <%=translations.t(fieldItem.label)%></span>
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %></h6><% } else { %></h5><% } %>
       </button>
       <div class="bar">
@@ -339,10 +339,10 @@ var translations = {
       </div>
       <div class="variable-options">
         <fieldset>
-          <legend class="sr-only">Podkategorije - <%=translations.t(fieldItem.field)%></legend>
+          <legend class="sr-only">Sub-categories - <%=translations.t(fieldItem.field)%></legend>
           <div>
-            <button data-type="select">Označi sve</button>
-            <button data-type="clear">Obriši sve</button>
+            <button data-type="select">Select all</button>
+            <button data-type="clear">Clear all</button>
           </div>
           <% _.each(fieldItem.values, function(item) { %>
             <label>
@@ -353,10 +353,10 @@ var translations = {
       </div>
 
       <% if(allowedFields.indexOf(fieldItem.field) == -1) { %>
-        <div class="variable-hint" id="variable-hint-<%=fieldItem.field.replace(/ /g, '-')%>">Dostupno kada '<%= translations.t(_.findWhere(edges, { To: fieldItem.field }).From) %>' je označeno
+        <div class="variable-hint" id="variable-hint-<%=fieldItem.field.replace(/ /g, '-')%>">Available when '<%= translations.t(_.findWhere(edges, { To: fieldItem.field }).From) %>' is selected
         </div>
         <div class="no-data-hint" id="no-data-hint-<%=fieldItem.field.replace(/ /g, '-')%>">
-          Nema opcija zbog gornjih filtera
+          No options available because of filters above
         </div>
       <% }%>
 
@@ -366,9 +366,9 @@ var translations = {
 
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
-    <h4>Tip jedinice</h4>
+    <h4>Units type</h4>
     <fieldset>
-      <legend class="sr-only">Tip jedinice</legend>
+      <legend class="sr-only">Units type</legend>
       <% _.each(units, function(unitsItem, index) { %>
         <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
         <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
@@ -379,9 +379,9 @@ var translations = {
 
 <script type="text/template" id="series_template">
   <% if(serieses.length) { %>
-    <h4>Serije</h4>
+    <h4>Series</h4>
     <fieldset>
-      <legend class="sr-only">Serije</legend>
+      <legend class="sr-only">Series</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
@@ -390,7 +390,7 @@ var translations = {
   <% } %>
 </script>
 
-<script>translations['indicator'] = {"chart":"Grafikon","clear_all":"Obriši sve","clear_selections":"Obriši označeno","data_not_available":"Ovi podaci nisu dostupni. Odaberite alternativne podatke za prikaz.","dataset_size_warning":"Previše je skupova podataka za prikaz na grafikonu. Neće biti prikazane sve dok ne uklonite neke odabire.","download_chart":"Preuzmite grafikon CSV","download_chart_image":"Preuzmi sliku grafikona","download_chart_image_title":"Preuzmi grafikon kao sliku","download_csv":"Preuzmi CSV","download_csv_title":"Preuzmi kao CSV","download_geojson":"Preuzmi GeoJSON","download_geojson_title":"Preuzmi kao GeoJSON","download_headline":"Preuzmite CSV naslov","download_headline_title":"Preuzmi podatke o naslovu kao CSV","download_source":"Preuzmi izvor CSV","download_source_sdmx":"Preuzmi izvor SDMX","download_source_sdmx_title":"Preuzmi izvorne podatke kao SDMX","download_source_title":"Preuzmi izvorne podatke kao CSV","download_table":"Preuzmite tabelu CSV","edit":"Uredi","edit_data":"Uredi podatke","edit_metadata":"Uredi metapodatke","footnote":"Fusnota","geographical_area":"Geografsko područje","global_metadata":"Globalni metapodaci","global_metadata_blurb":"Ova tablica pruža informacije o metapodacima za SDG indikatore kako ih je definisala Statistička komisija UN-a. Kompletne globalne metapodatke pruža Odjel za statistiku UN-a.","legend_help":"Kliknite na legendu kako biste uklonili pojedine linije s grafikona.","loading":"Učitavanje","loading_map":"Učitavanje mape","map":"Mapa","national_metadata":"Nacionalni metapodaci","national_metadata_blurb":"Ova tablica sadrži metapodatke o stvarnim pokazateljima dostupnim iz %country_name statistike najbliže odgovarajućem globalnom SDG indikatoru. Imajte na umu da čak i kada je globalni SDG indikator dostupan iz %country_adjective statistike, ovu tablicu treba pogledati za informacije o nacionalnoj metodologiji i drugo %country_adjective-specific informacije o metapodacima.","next":"Sljedeći indikator","no_data_hint":"Nema opcija zbog gornjih filtera","previous":"Prethodni indikator","select_all":"Označi sve","series":"Serije","series_help":"Odaberite kategorije iz  padajućeg menija ispod kako biste vidjeli različite podjele podataka. Neki neće biti dostupni dok se ne odabere viši stepen.","source":"Izvor","sources":"Izvori","sub_categories":"Podkategorije","table":"Tablica","unit_of_measurement":"Mjerna jedinica","units_type":"Tip jedinice","variable_hint":"Dostupno kada '%field' je označeno","view_indicator_list":"Pogledajte listu indikatora ovog cilja"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 Target","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 <script>translations['data'] = null;</script>
 
@@ -402,15 +402,15 @@ var translations = {
     
 <div class="previous-next-links row">
     <div class="col-xs-3 col-md-3 col-lg-4 pull-left text-left">
-        <a class="btn btn-primary" href="/hr/17-19-2" aria-labelledby="previous-link">
+        <a class="btn btn-primary" href="/covid-19-impact/railway-transport" aria-labelledby="previous-link">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <span id="previous-link" class="hidden-sm hidden-xs">Prethodni indikator</span>
+            <span id="previous-link" class="hidden-sm hidden-xs">Previous indicator</span>
         </a>
     </div>
     <div class="col-xs-3 col-md-3 col-lg-4 pull-right text-right">
-        <a class="btn btn-primary" href="/hr/covid-19-impact/revenue-from-indirect-taxes" aria-labelledby="next-link">
+        <a class="btn btn-primary" href="/covid-19-impact/railway-transport" aria-labelledby="next-link">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            <span id="next-link" class="hidden-sm hidden-xs">Sljedeći indikator</span>
+            <span id="next-link" class="hidden-sm hidden-xs">Next indicator</span>
         </a>
     </div>
 </div>
@@ -427,7 +427,7 @@ var translations = {
         <div>
           <h1>
             
-            <span class="lead-copy">Bruto domaći proizvod, proizvodni pristup</span>
+            <span class="lead-copy">Air transport</span>
           </h1>
         </div>
       </div>
@@ -448,14 +448,14 @@ var translations = {
 
 <div class="row"
   id="indicatorData"
-  data-indicatorid='indicator_gross-domestic-product'
-  data-id="gross-domestic-product"
+  data-indicatorid='indicator_air-transport'
+  data-id="air-transport"
   data-country="National"
-  data-charttitle="Bruto domaći proizvod, proizvodni pristup"
+  data-charttitle="Air transport"
   data-charttitles="null"
-  data-measurementunit="%"
+  data-measurementunit=""
   data-showdata="true"
-  data-graphtype="bar"
+  data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="null"
@@ -472,8 +472,8 @@ var translations = {
 <div id="units"></div>
 <div id="toolbar">
   <span id="series-help">
-    <h4>Podkategorije</h4>
-    <p>Odaberite kategorije iz  padajućeg menija ispod kako biste vidjeli različite podjele podataka. Neki neće biti dostupni dok se ne odabere viši stepen.</p>
+    <h4>Sub-categories</h4>
+    <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
   </span>
   <div id="fields">
     <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
@@ -489,17 +489,285 @@ var translations = {
 
   <div id="datatables">
 
-    <a href="https://sdgbih.github.io/sdg-data-bosnia/hr/headline/gross-domestic-product.csv" class="btn btn-primary btn-download" download="indicator_gross-domestic-product.csv" tabindex="0" role="button">Preuzmite CSV naslov</a>
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/en/headline/air-transport.csv" class="btn btn-primary btn-download" download="indicator_air-transport.csv" tabindex="0" role="button">Download Headline CSV</a>
 
-    <a href="https://sdgbih.github.io/sdg-data-bosnia/hr/data/gross-domestic-product.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_gross-domestic-product.csv' tabindex='0' role='button'>Preuzmi izvor CSV</a>
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/en/data/air-transport.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_air-transport.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Bruto domaći proizvod, proizvodni pristup</caption>
+      <caption>Air transport</caption>
       <thead>
+        
+        
+        <th scope="col">{"1-2019 2020 jan"=>"a)2019 - 2020 January", "10-2019 2020 oct"=>"j)2019 - 2020 October", "11-2019 2020 nov"=>"k)2019 - 2020 November", "12-2019 2020 dec"=>"l)2019 - 2020 December", "2-2019 2020 feb"=>"b)2019 - 2020 February", "3-2019 2020 mar"=>"c)2019 - 2020 March", "4-2019 2020 apr"=>"d)2019 - 2020 April", "5-2019 2020 may"=>"e)2019 - 2020 May", "6-2019 2020 june"=>"f)2019 - 2020 June", "7-2019 2020 july"=>"g)2019 - 2020 July", "8-2019 2020 aug"=>"h)2019 - 2020 August", "9-2019 2020 sept"=>"i)2019 - 2020 September", "April"=>"d)April", "August"=>"h)August", "December"=>"l)December", "February"=>"b)February", "January"=>"a)January", "July"=>"g)July", "June"=>"f)June", "March"=>"c)March", "May"=>"e)May", "November"=>"k)November", "October"=>"j)October", "September"=>"i)September"}</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col" class="table-value">{"BOOL"=>"Boolean or binary measure", "CON_USD"=>"Constant USD", "CUR_LCU_M"=>"CUR_LCU_M", "CUR_NAC"=>"in BAM", "CUR_NAC_1000"=>"in thousands of BAM", "GPERM3"=>"Micrograms per cubic meter", "HA_TH"=>"HA_TH", "IX"=>"Index", "KG"=>"Kilograms", "KG_PER_CON_USD"=>"Kilograms per constant USD", "KM2"=>"Square kilometers", "LITRES"=>"LITRES", "MILLIONS"=>"MILLIONS", "MJ_PER_GDP_CON_PPP_USD"=>"Megajoules per USD constant PPP GDP", "NUMBER"=>"Number", "PER_1000000_POP"=>"Per million population", "PER_100000_LIVE_BIRTHS"=>"Per 100,000 live births", "PER_100000_POP"=>"Per 100,000 population", "PER_10000_POP"=>"Per 10,000 population", "PER_1000_LIVE_BIRTHS"=>"Per 1,000 live births", "PER_1000_POP"=>"Per 1,000 population", "PER_1000_UNINFECTED_POP"=>"Per 1,000 uninfected population", "PER_100_POP"=>"Per 100 population", "PT"=>"Percent", "P_KM"=>"Passenger kilometres", "RO"=>"Ratio", "SCORE"=>"Score", "THOUSANDS"=>"THOUSANDS", "TONNES"=>"TONNES", "TONNES_M"=>"TONNES_M", "TONNES_T"=>"OOOt", "T_KM"=>"Tonne kilometres", "UNIT_MEASURE"=>"Unit of measure", "USD"=>"USD"}</th>
+        
         
       </thead>
       <tbody>
+        
+        <tr>
+          
+          
+          <td>2003</td>
+          
+          
+          
+          <td>23.9562657328</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>
+          
+          
+          
+          <td>23.9562657328</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>
+          
+          
+          
+          <td>41.41298189</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>
+          
+          
+          
+          <td>44.200802904</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>
+          
+          
+          
+          <td>44.9060770735</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>
+          
+          
+          
+          <td>43.6400967956</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>
+          
+          
+          
+          <td>41.7375095023</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>42.8563874887</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>43.3316157281</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>43.7502030221</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>42.6582565862</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>43.8087208477</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>43.1510838982</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>42.7014657298</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>42.960209393</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>43.1099367098</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
         
       </tbody>
     </table>
@@ -508,10 +776,8 @@ var translations = {
   <div id="datatableFooter">
     
     
-    <p>Geografsko područje: National</p>
+    <p>Geographical Area: National</p>
     
-    
-    <p>Mjerna jedinica: %</p>
     
     
   </div>
@@ -526,7 +792,7 @@ var translations = {
   <div class="async-loaded spacer medium" style="display:none;">
 
     <div style="display: none;">
-  <span id="table-alternative"></span>
+  <span id="table-alternative">For tabular data alternative see Table tab.</span>
 </div>
 <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
   <li role="presentation" class="nav-item active">
@@ -534,14 +800,14 @@ var translations = {
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
- aria-describedby="table-alternative">Grafikon</a>
+ aria-describedby="table-alternative">Chart</a>
   </li>
   <li role="presentation" class="nav-item">
     <a class="nav-link" data-toggle="tab" id="tab-tableview" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
->Tablica</a>
+>Table</a>
   </li></ul>
 
     <div class="tab-content data-view">
@@ -549,8 +815,8 @@ data-event-label="Change to Table tab"
     
 
     <div id="dataset-size-warning" style="display:none" role="alert">
-      <i class="fa fa-bolt"><span class="sr-only"></span></i>
-      Previše je skupova podataka za prikaz na grafikonu. Neće biti prikazane sve dok ne uklonite neke odabire.
+      <i class="fa fa-bolt"><span class="sr-only">Warning:</span></i>
+      There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
     </div>
 
     
@@ -558,7 +824,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Bruto domaći proizvod, proizvodni pristup</h4>
+          <h4 id="chart-heading" class="chart-title">Air transport</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -755,32 +1021,39 @@ opensdg.chartConfigAlter(function(config, info) {
 </script>
 
 <script>
+// For line charts, add the vertical line hover functionality.
 opensdg.chartConfigAlter(function(config, info) {
-  if (info.stackedDisaggregation) {
     var overrides = {
-      options: {
-        scales: {
-          xAxes: [{ stacked: true }],
-          yAxes: [{ stacked: true }],
-        }
-      }
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
     };
-    // If we have stackedDisaggregation, we need to group datasets into stacks.
-    config.data.datasets.forEach(function(dataset) {
-      var disaggregation = $.extend({}, dataset.disaggregation);
-      // We're going to "stringify" each combination of disaggregations in order
-      // to place them in their own "stacks". To place "stacked" disaggregations
-      // into the same stack, we set them as "samestack" before stringifying.
-      // Note that the string "samestack" is completely arbitrary.
-      if (typeof disaggregation[info.stackedDisaggregation] !== 'undefined') {
-        disaggregation[info.stackedDisaggregation] = 'samestack';
-      }
-      // Use the disaggregation as a unique id for each stack.
-      dataset.stack = JSON.stringify(disaggregation);
-    });
     // Add these overrides onto the normal config, and return it.
     $.extend(true, config, overrides);
-  }
 });
 </script>
 
@@ -796,13 +1069,10 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-        <dt>Geografsko područje:</dt>
+        <dt>Geographical Area:</dt>
         <dd>National</dd>
         
 
-        
-        <dt>Mjerna jedinica:</dt>
-        <dd>%</dd>
         
 
         
@@ -814,8 +1084,8 @@ opensdg.chartConfigAlter(function(config, info) {
         </div>
       </figure>
       <div id="chartSelectionDownload" class="clearfix">
-        <button id="btnSave" title="Preuzmi grafikon kao sliku" class='btn btn-primary btn-download'>
-          Preuzmi sliku grafikona
+        <button id="btnSave" title="Download chart as image" class='btn btn-primary btn-download'>
+          Download Chart Image
         </button>
       </div>
     </div>
@@ -825,7 +1095,7 @@ opensdg.chartConfigAlter(function(config, info) {
   </div>
   <div role="tabpanel" class="tab-pane" id="tableview">
     <div style="display: none;">
-      <span id="column-sort-info"></span>
+      <span id="column-sort-info">Click to sort by this column</span>
     </div>
     <div id="selectionsTable"></div>
 
@@ -838,13 +1108,10 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-        <dt>Geografsko područje:</dt>
+        <dt>Geographical Area:</dt>
         <dd>National</dd>
         
 
-        
-        <dt>Mjerna jedinica:</dt>
-        <dd>%</dd>
         
 
         
@@ -871,7 +1138,7 @@ opensdg.chartConfigAlter(function(config, info) {
 data-event-category="Tab change"
 data-event-action="Change metadata view"
 data-event-label="Change to National Metadata tab"
->Nacionalni metapodaci</a>
+>National Metadata</a>
 </li>
 
 <li role="presentation" class="nav-item">
@@ -879,13 +1146,13 @@ data-event-label="Change to National Metadata tab"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
 data-event-label="Change to Sources tab"
->Izvori</a>
+>Sources</a>
 </li>
 
 
   
   <li role="presentation" class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Uredi</a>
+    <a class="nav-link" data-toggle="tab" href="#edit" aria-controls="edit" role="tab">Edit</a>
   </li>
   
 </ul>
@@ -899,7 +1166,7 @@ data-event-label="Change to Sources tab"
       <p>
         
         
-        Ova tablica sadrži metapodatke o stvarnim pokazateljima dostupnim iz BiH statistike najbliže odgovarajućem globalnom SDG indikatoru. Imajte na umu da čak i kada je globalni SDG indikator dostupan iz BiH statistike, ovu tablicu treba pogledati za informacije o nacionalnoj metodologiji i drugo BiH-specific informacije o metapodacima.
+        This table provides metadata for the actual indicator available from BiH statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from BiH statistics, this table should be consulted for information on national methodology and other BiH-specific metadata information.
       </p>
       <table class="table">
   
@@ -919,7 +1186,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Dostupni indikatori </th>
+        <th scope="row">Indicator available </th>
         <td>
           
             
@@ -933,7 +1200,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Opis indikatora </th>
+        <th scope="row">Indicator description </th>
         <td>
           
             
@@ -947,7 +1214,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Geografska pokrivenost </th>
+        <th scope="row">Geographical coverage </th>
         <td>
           
             <p>National</p>
@@ -961,21 +1228,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Mjerna jedinica </th>
-        <td>
-          
-            <p>%</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Definicije </th>
+        <th scope="row">Unit of measurement </th>
         <td>
           
             
@@ -989,7 +1242,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Kalkulacije </th>
+        <th scope="row">Definitions </th>
         <td>
           
             
@@ -1003,7 +1256,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Ostale informacije </th>
+        <th scope="row">Calculations </th>
         <td>
           
             
@@ -1017,7 +1270,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Osiguranje kvaliteta </th>
+        <th scope="row">Other information </th>
         <td>
           
             
@@ -1031,7 +1284,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Uporedivost sa međunarodnim podacima/standardima </th>
+        <th scope="row">Quality assurance </th>
         <td>
           
             
@@ -1045,7 +1298,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Komentari i ograničenja </th>
+        <th scope="row">Comparability with international data/standards </th>
         <td>
           
             
@@ -1059,7 +1312,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Racionalno i tumačenje </th>
+        <th scope="row">Comments and limitations </th>
         <td>
           
             
@@ -1073,7 +1326,21 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Podaci posljednji put ažurirani </th>
+        <th scope="row">Rational and interpretation </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Data last updated </th>
         <td>
           
             
@@ -1096,7 +1363,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Posljednji put ažurirani metapodaci </th>
+        <th scope="row">Metadata last updated </th>
         <td>
           
             
@@ -1105,8 +1372,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/95c780aebbcd2a5f39b6bb72b01f451a2101401b" target="_blank">
-                2021-01-20: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/7e05ecfd14d64fe88915714d11d5993393c06242" target="_blank">
+                2021-01-23: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1211,7 +1478,7 @@ data-event-label="Change to Sources tab"
   <!-- Global Metadata -->
   <div>
     <article>
-      <p>Ova tablica pruža informacije o metapodacima za SDG indikatore kako ih je definisala Statistička komisija UN-a. Kompletne globalne metapodatke pruža Odjel za statistiku UN-a.</p>
+      <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
       <table class="table">
   
   
@@ -1221,10 +1488,10 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Naziv indikatora </th>
+        <th scope="row">Indicator name </th>
         <td>
           
-            <p>Bruto domaći proizvod, proizvodni pristup</p>
+            <p>Air transport</p>
 
           
         </td>
@@ -1235,21 +1502,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Broj indikatora </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Naziv podcilja </th>
+        <th scope="row">Indicator number </th>
         <td>
           
             
@@ -1263,21 +1516,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Broj podcilja </th>
-        <td>
-          
-            <p>gross-domestic-product</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Opis globalnog indikatora </th>
+        <th scope="row">Target name </th>
         <td>
           
             
@@ -1291,7 +1530,21 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">UN-ov označeni stepen </th>
+        <th scope="row">Target number </th>
+        <td>
+          
+            <p>air-transport</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Global indicator description </th>
         <td>
           
             
@@ -1305,7 +1558,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">UN kustos agencija </th>
+        <th scope="row">UN designated tier </th>
         <td>
           
             
@@ -1319,7 +1572,21 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Link do UN metapodataka </th>
+        <th scope="row">UN custodian agency </th>
+        <td>
+          
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      <tr>
+        <th scope="row">Link to UN metadata </th>
         <td>
           
             
@@ -1497,7 +1764,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Organizacija </th>
+        <th scope="row">Organisation </th>
         <td>
           
             
@@ -1511,7 +1778,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Periodičnost </th>
+        <th scope="row">Periodicity </th>
         <td>
           
             
@@ -1525,7 +1792,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Posljednji dostupni podaci </th>
+        <th scope="row">Earliest available data </th>
         <td>
           
             
@@ -1539,7 +1806,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Geografska pokrivenost </th>
+        <th scope="row">Geographical coverage </th>
         <td>
           
             
@@ -1553,7 +1820,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Link do izvora podataka </th>
+        <th scope="row">Link to data source </th>
         <td>
           
             
@@ -1576,7 +1843,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Datum izdavanja </th>
+        <th scope="row">Release date </th>
         <td>
           
             
@@ -1590,7 +1857,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Sljedeće izdanje </th>
+        <th scope="row">Next release </th>
         <td>
           
             
@@ -1604,7 +1871,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Statistička klasifikacija </th>
+        <th scope="row">Statistical classification </th>
         <td>
           
             
@@ -1618,7 +1885,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Kontakt podaci </th>
+        <th scope="row">Contact details </th>
         <td>
           
             
@@ -1632,7 +1899,7 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Ostale informacije </th>
+        <th scope="row">Other information </th>
         <td>
           
             
@@ -1723,11 +1990,11 @@ data-event-label="Change to Sources tab"
   
 
 
-  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/data/gross-domestic-product.csv">Uredi podatke</a>
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/data/air-transport.csv">Edit Data</a>
   
 
   
-  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/gross-domestic-product.md">Uredi metapodatke</a>
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/air-transport.md">Edit Metadata</a>
   
 
   
@@ -1749,15 +2016,15 @@ data-event-label="Change to Sources tab"
       <div class="col-xs-12">
         <div id="footerLinks">
           <ul>
-            <li><a href="https://open-sdg.org">Izgrađeno pomoću Open SDG-a</a></li>
+            <li><a href="https://open-sdg.org">Built using Open SDG</a></li>
             
               <li>
                 
-                  <a href="mailto:sdg@bhas.gov.ba" target="_blank">Kontaktirajte nas</a>
+                  <a href="mailto:sdg@bhas.gov.ba" target="_blank">Contact us</a>
                 
                 </li>
               <li>
-                <a href="/hr/about/cookies-and-privacy/">Kolačići</a>
+                <a href="/about/cookies-and-privacy/">Cookies</a>
                 
                 </li>
               
@@ -1789,17 +2056,17 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 <script>translations['general'] = translations['general'] || {};
-    translations['general']['hide'] = 'Sakriti';</script>
+    translations['general']['hide'] = 'hide';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Pretraživanje';</script>
+    translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20210122223025'></script>
+<script src='/assets/js/sdg.js?v=20210123195130'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210122223025"></script><script>
+    <script src="/assets/js/custom.js?v=20210123195130"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

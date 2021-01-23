@@ -2103,10 +2103,42 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "global_indicators.18-c-1-title",
+          "title": "global_indicators.18-c-10-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/gross-domestic-product",
+          "href": "/bs/covid-19-impact/railway-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "air-transport",
+          "title": "global_indicators.18-c-11-title",
+          "description": "",
+          "keywords": "",
+          "href": "/bs/covid-19-impact/air-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "railway-transport",
+          "title": "global_indicators.18-c-10-title",
+          "description": "",
+          "keywords": "",
+          "href": "/bs/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2119,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "global_indicators.18-c-2-title",
+          "title": "global_indicators.18-c-10-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/revenue-from-indirect-taxes",
+          "href": "/bs/covid-19-impact/railway-transport",
           "status": "complete"
         }]
     }
@@ -2263,7 +2295,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "global_indicators.18-c-11-title",
+          "title": "global_indicators.18-c-13-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/tourist-nights",
@@ -2279,7 +2311,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "global_indicators.18-c-12-title",
+          "title": "global_indicators.18-c-14-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/electricity-supply",
@@ -2295,7 +2327,7 @@
         
         {
           "id": "value-of-agricultural-products",
-          "title": "global_indicators.18-c-13-title",
+          "title": "global_indicators.18-c-15-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/value-of-agricultural-products",
