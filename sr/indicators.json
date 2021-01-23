@@ -2310,11 +2310,11 @@
       "indicators": [
         
         {
-          "id": "value-of-agricultural-products",
-          "title": "Вриједност пољопривредних производа продатих на зеленим пијацама према групама производа",
+          "id": "electricity-supply",
+          "title": "Снабдијевање електричном енергијом",
           "description": "",
           "keywords": "",
-          "href": "/sr/covid-19-impact/value-of-agricultural-products",
+          "href": "/sr/covid-19-impact/electricity-supply",
           "status": "complete"
         }]
     }
@@ -2326,11 +2326,11 @@
       "indicators": [
         
         {
-          "id": "electricity-supply",
-          "title": "Снабдијевање електричном енергијом",
+          "id": "value-of-agricultural-products",
+          "title": "Вриједност пољопривредних производа продатих на зеленим пијацама према групама производа",
           "description": "",
           "keywords": "",
-          "href": "/sr/covid-19-impact/electricity-supply",
+          "href": "/sr/covid-19-impact/value-of-agricultural-products",
           "status": "complete"
         }]
     }

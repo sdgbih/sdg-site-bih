@@ -2310,11 +2310,11 @@
       "indicators": [
         
         {
-          "id": "value-of-agricultural-products",
-          "title": "global_indicators.18-c-15-title",
+          "id": "electricity-supply",
+          "title": "global_indicators.18-c-14-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/value-of-agricultural-products",
+          "href": "/bs/covid-19-impact/electricity-supply",
           "status": "complete"
         }]
     }
@@ -2326,11 +2326,11 @@
       "indicators": [
         
         {
-          "id": "electricity-supply",
-          "title": "global_indicators.18-c-14-title",
+          "id": "value-of-agricultural-products",
+          "title": "global_indicators.18-c-15-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/electricity-supply",
+          "href": "/bs/covid-19-impact/value-of-agricultural-products",
           "status": "complete"
         }]
     }
