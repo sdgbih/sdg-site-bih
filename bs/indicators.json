@@ -2318,20 +2318,4 @@
           "status": "complete"
         }]
     }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
-          "id": "value-of-agricultural-products",
-          "title": "Vrijednost poljoprivrednih proizvoda prodatih na zelenim pijacama prema grupama proizvoda",
-          "description": "",
-          "keywords": "",
-          "href": "/bs/covid-19-impact/value-of-agricultural-products",
-          "status": "complete"
-        }]
-    }
   }]

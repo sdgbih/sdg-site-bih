@@ -2318,20 +2318,4 @@
           "status": "complete"
         }]
     }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
-          "id": "value-of-agricultural-products",
-          "title": "Value of agricultural products sold on green markets by groups of products",
-          "description": "",
-          "keywords": "",
-          "href": "/covid-19-impact/value-of-agricultural-products",
-          "status": "complete"
-        }]
-    }
   }]
