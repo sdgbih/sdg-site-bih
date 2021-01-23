@@ -2118,38 +2118,6 @@
       "indicators": [
         
         {
-          "id": "air-transport",
-          "title": "Air transport",
-          "description": "",
-          "keywords": "",
-          "href": "/covid-19-impact/air-transport",
-          "status": "complete"
-        }]
-    }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
-          "id": "railway-transport",
-          "title": "Railway transport",
-          "description": "",
-          "keywords": "",
-          "href": "/covid-19-impact/railway-transport",
-          "status": "complete"
-        }]
-    }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
           "id": "revenue-from-indirect-taxes",
           "title": "Revenues from indirect taxes",
           "description": "",
@@ -2267,6 +2235,38 @@
           "description": "",
           "keywords": "",
           "href": "/covid-19-impact/road-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "railway-transport",
+          "title": "Railway transport",
+          "description": "",
+          "keywords": "",
+          "href": "/covid-19-impact/railway-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "air-transport",
+          "title": "Air transport",
+          "description": "",
+          "keywords": "",
+          "href": "/covid-19-impact/air-transport",
           "status": "complete"
         }]
     }

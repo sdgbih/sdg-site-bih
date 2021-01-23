@@ -2118,38 +2118,6 @@
       "indicators": [
         
         {
-          "id": "air-transport",
-          "title": "Zračni transport",
-          "description": "",
-          "keywords": "",
-          "href": "/hr/covid-19-impact/air-transport",
-          "status": "complete"
-        }]
-    }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
-          "id": "railway-transport",
-          "title": "Žеljеznički transport",
-          "description": "",
-          "keywords": "",
-          "href": "/hr/covid-19-impact/railway-transport",
-          "status": "complete"
-        }]
-    }
-  },
-  {
-    "goal": {
-      "id": "",
-      "title": "",
-      "indicators": [
-        
-        {
           "id": "revenue-from-indirect-taxes",
           "title": "Prihodi od neizravnih poreza",
           "description": "",
@@ -2267,6 +2235,38 @@
           "description": "",
           "keywords": "",
           "href": "/hr/covid-19-impact/road-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "railway-transport",
+          "title": "Žеljеznički transport",
+          "description": "",
+          "keywords": "",
+          "href": "/hr/covid-19-impact/railway-transport",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "",
+      "title": "",
+      "indicators": [
+        
+        {
+          "id": "air-transport",
+          "title": "Zračni transport",
+          "description": "",
+          "keywords": "",
+          "href": "/hr/covid-19-impact/air-transport",
           "status": "complete"
         }]
     }
