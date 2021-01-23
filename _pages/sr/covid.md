@@ -18,7 +18,7 @@ standalone_indicators:
     - cross-border-traffic
     - tourist-nights
     - electricity-supply
-    - value-of-agricultural-products
+ 
 ---
 У сарадњи Министарства сигурности БиХ, Министарства цивилних
 послова, Министарства вањских послова БиХ и уз техничку и
