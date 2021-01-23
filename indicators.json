@@ -2103,10 +2103,10 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "Railway transport",
+          "title": "Gross domestic product – production approach",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/railway-transport",
+          "href": "/covid-19-impact/gross-domestic-product",
           "status": "complete"
         }]
     }
@@ -2151,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "Railway transport",
+          "title": "Revenues from indirect taxes",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/railway-transport",
+          "href": "/covid-19-impact/evenue-from-indirect-taxes",
           "status": "complete"
         }]
     }

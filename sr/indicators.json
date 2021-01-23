@@ -2103,10 +2103,10 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "Жељезнички саобраћај",
+          "title": "Бруто домаћи производ, производни приступ",
           "description": "",
           "keywords": "",
-          "href": "/sr/covid-19-impact/railway-transport",
+          "href": "/sr/covid-19-impact/gross-domestic-product",
           "status": "complete"
         }]
     }
@@ -2151,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "Жељезнички саобраћај",
+          "title": "Приходи од индиректних пореза",
           "description": "",
           "keywords": "",
-          "href": "/sr/covid-19-impact/railway-transport",
+          "href": "/sr/covid-19-impact/evenue-from-indirect-taxes",
           "status": "complete"
         }]
     }

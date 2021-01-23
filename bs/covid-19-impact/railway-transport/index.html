@@ -130,7 +130,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210123195146">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210123201628">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -402,13 +402,13 @@ var translations = {
     
 <div class="previous-next-links row">
     <div class="col-xs-3 col-md-3 col-lg-4 pull-left text-left">
-        <a class="btn btn-primary" href="/bs/17-19-2" aria-labelledby="previous-link">
+        <a class="btn btn-primary" href="/bs/covid-19-impact/air-transport" aria-labelledby="previous-link">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
             <span id="previous-link" class="hidden-sm hidden-xs">Prethodni indikator</span>
         </a>
     </div>
     <div class="col-xs-3 col-md-3 col-lg-4 pull-right text-right">
-        <a class="btn btn-primary" href="/bs/covid-19-impact/air-transport" aria-labelledby="next-link">
+        <a class="btn btn-primary" href="/bs/covid-19-impact/evenue-from-indirect-taxes" aria-labelledby="next-link">
             <i class="fa fa-chevron-right" aria-hidden="true"></i>
             <span id="next-link" class="hidden-sm hidden-xs">Sljedeći indikator</span>
         </a>
@@ -448,14 +448,14 @@ var translations = {
 
 <div class="row"
   id="indicatorData"
-  data-indicatorid='indicator_gross-domestic-product'
-  data-id="gross-domestic-product"
+  data-indicatorid='indicator_railway-transport'
+  data-id="railway-transport"
   data-country="National"
   data-charttitle="global_indicators.18-c-10-title"
   data-charttitles="null"
-  data-measurementunit="%"
+  data-measurementunit=""
   data-showdata="true"
-  data-graphtype="bar"
+  data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="null"
@@ -489,17 +489,285 @@ var translations = {
 
   <div id="datatables">
 
-    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/headline/gross-domestic-product.csv" class="btn btn-primary btn-download" download="indicator_gross-domestic-product.csv" tabindex="0" role="button">Preuzmite CSV naslov</a>
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/headline/railway-transport.csv" class="btn btn-primary btn-download" download="indicator_railway-transport.csv" tabindex="0" role="button">Preuzmite CSV naslov</a>
 
-    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/data/gross-domestic-product.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_gross-domestic-product.csv' tabindex='0' role='button'>Preuzmi izvor CSV</a>
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/data/railway-transport.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_railway-transport.csv' tabindex='0' role='button'>Preuzmi izvor CSV</a>
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
       <caption>global_indicators.18-c-10-title</caption>
       <thead>
         
+        
+        <th scope="col">{"1-2019 2020 jan"=>"a)2019 - 2020 Januar", "10-2019 2020 oct"=>"j)2019 - 2020 Oktobar", "11-2019 2020 nov"=>"k)2019 - 2020 Novembar", "12-2019 2020 dec"=>"l)2019 - 2020 Decembar", "2-2019 2020 feb"=>"b)2019 - 2020 Februar", "3-2019 2020 mar"=>"c)2019 - 2020 Mart", "4-2019 2020 apr"=>"d)2019 - 2020 April", "5-2019 2020 may"=>"e)2019 - 2020 Maj", "6-2019 2020 june"=>"f)2019 - 2020 Juni", "7-2019 2020 july"=>"g)2019 - 2020 Juli", "8-2019 2020 aug"=>"h)2019 - 2020 August", "9-2019 2020 sept"=>"i)2019 - 2020 Septembar", "April"=>"d)April", "August"=>"h)August", "December"=>"l)Decembar", "February"=>"b)Februar", "January"=>"a)Januar", "July"=>"g)Juli", "June"=>"f)Juni", "March"=>"c)Mart", "May"=>"e)Maj", "November"=>"k)Novembar", "October"=>"j)Oktobar", "September"=>"i)Septembar"}</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col" class="table-value">{"BOOL"=>"Logička ili binarna mjera", "CON_USD"=>"konstantni američki dolari", "CUR_LCU_M"=>"Lokalna valuta (milioni)", "CUR_NAC"=>"u KM", "CUR_NAC_1000"=>"u hiljadama KM", "GPERM3"=>"Mikrogrami po kubnom metru", "HA_TH"=>"Hiljade hektara", "IX"=>"Index", "KG"=>"Kilogrami", "KG_PER_CON_USD"=>"Kilogrami po konstanti američkog dolara", "KM2"=>"Kvadratnih kilometara", "LITRES"=>"Litri", "MILLIONS"=>"Milioni", "MJ_PER_GDP_CON_PPP_USD"=>"Megadžula po konstantni američkog dolara PPP BDP", "NUMBER"=>"Broj", "PER_1000000_POP"=>"Na milion stanovnika", "PER_100000_LIVE_BIRTHS"=>"Na 100 000 živorođenih", "PER_100000_POP"=>"Na 100 000 stanovnika", "PER_10000_POP"=>"Na 10 000 stanovnika", "PER_1000_LIVE_BIRTHS"=>"Na 1 000 živorođenih", "PER_1000_POP"=>"Na 1 000 stanovnika", "PER_1000_UNINFECTED_POP"=>"Na 1 000 nezaraženog stanovništva", "PER_100_POP"=>"Na 100 stanovnika", "PT"=>"Procenat", "P_KM"=>"Putnički kilometri", "RO"=>"Odnos", "SCORE"=>"Rezultat", "THOUSANDS"=>"Hiljade", "TONNES"=>"Tone", "TONNES_M"=>"Milioni tona", "TONNES_T"=>"OOOt", "T_KM"=>"Tonski kilometri", "UNIT_MEASURE"=>"Mjerna jedinica", "USD"=>"Američki dolar"}</th>
+        
+        
       </thead>
       <tbody>
+        
+        <tr>
+          
+          
+          <td>2003</td>
+          
+          
+          
+          <td>23.9562657328</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>
+          
+          
+          
+          <td>23.9562657328</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>
+          
+          
+          
+          <td>41.41298189</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>
+          
+          
+          
+          <td>44.200802904</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>
+          
+          
+          
+          <td>44.9060770735</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>
+          
+          
+          
+          <td>43.6400967956</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>
+          
+          
+          
+          <td>41.7375095023</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>42.8563874887</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>43.3316157281</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>43.7502030221</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>42.6582565862</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>43.8087208477</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>43.1510838982</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>42.7014657298</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>42.960209393</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>43.1099367098</td>
+          
+          
+          
+          <td class="table-value">%</td>
+          
+          
+        </tr>
         
       </tbody>
     </table>
@@ -510,8 +778,6 @@ var translations = {
     
     <p>Geografsko područje: National</p>
     
-    
-    <p>Mjerna jedinica: %</p>
     
     
   </div>
@@ -755,32 +1021,39 @@ opensdg.chartConfigAlter(function(config, info) {
 </script>
 
 <script>
+// For line charts, add the vertical line hover functionality.
 opensdg.chartConfigAlter(function(config, info) {
-  if (info.stackedDisaggregation) {
     var overrides = {
-      options: {
-        scales: {
-          xAxes: [{ stacked: true }],
-          yAxes: [{ stacked: true }],
-        }
-      }
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
     };
-    // If we have stackedDisaggregation, we need to group datasets into stacks.
-    config.data.datasets.forEach(function(dataset) {
-      var disaggregation = $.extend({}, dataset.disaggregation);
-      // We're going to "stringify" each combination of disaggregations in order
-      // to place them in their own "stacks". To place "stacked" disaggregations
-      // into the same stack, we set them as "samestack" before stringifying.
-      // Note that the string "samestack" is completely arbitrary.
-      if (typeof disaggregation[info.stackedDisaggregation] !== 'undefined') {
-        disaggregation[info.stackedDisaggregation] = 'samestack';
-      }
-      // Use the disaggregation as a unique id for each stack.
-      dataset.stack = JSON.stringify(disaggregation);
-    });
     // Add these overrides onto the normal config, and return it.
     $.extend(true, config, overrides);
-  }
 });
 </script>
 
@@ -800,9 +1073,6 @@ opensdg.chartConfigAlter(function(config, info) {
         <dd>National</dd>
         
 
-        
-        <dt>Mjerna jedinica:</dt>
-        <dd>%</dd>
         
 
         
@@ -842,9 +1112,6 @@ opensdg.chartConfigAlter(function(config, info) {
         <dd>National</dd>
         
 
-        
-        <dt>Mjerna jedinica:</dt>
-        <dd>%</dd>
         
 
         
@@ -964,7 +1231,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Mjerna jedinica </th>
         <td>
           
-            <p>%</p>
+            
 
           
         </td>
@@ -1105,7 +1372,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/218a8779dd8c2b7f1dd5028cd486fceaf7ee150e" target="_blank">
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/1e8b95ce31b39c97e49afa635dccd19dce62a7d2" target="_blank">
                 2021-01-23: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
               </a>
             
@@ -1266,7 +1533,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Broj podcilja </th>
         <td>
           
-            <p>gross-domestic-product</p>
+            <p>railway-transport</p>
 
           
         </td>
@@ -1723,11 +1990,11 @@ data-event-label="Change to Sources tab"
   
 
 
-  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/data/gross-domestic-product.csv">Uredi podatke</a>
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/data/railway-transport.csv">Uredi podatke</a>
   
 
   
-  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/gross-domestic-product.md">Uredi metapodatke</a>
+  <a class="btn btn-primary" href="http://prose.io/#sdgbih/sdg-data-bosnia/edit/develop/meta/railway-transport.md">Uredi metapodatke</a>
   
 
   
@@ -1794,12 +2061,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Pretraživanje';</script>
 
-<script src='/assets/js/sdg.js?v=20210123195146'></script>
+<script src='/assets/js/sdg.js?v=20210123201628'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210123195146"></script><script>
+    <script src="/assets/js/custom.js?v=20210123201628"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

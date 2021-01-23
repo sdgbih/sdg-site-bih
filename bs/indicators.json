@@ -2103,10 +2103,10 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "global_indicators.18-c-10-title",
+          "title": "global_indicators.18-c-1-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/railway-transport",
+          "href": "/bs/covid-19-impact/gross-domestic-product",
           "status": "complete"
         }]
     }
@@ -2151,10 +2151,10 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "global_indicators.18-c-10-title",
+          "title": "global_indicators.18-c-2-title",
           "description": "",
           "keywords": "",
-          "href": "/bs/covid-19-impact/railway-transport",
+          "href": "/bs/covid-19-impact/evenue-from-indirect-taxes",
           "status": "complete"
         }]
     }
