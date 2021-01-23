@@ -2310,11 +2310,11 @@
       "indicators": [
         
         {
-          "id": "electricity-supply",
-          "title": "Electricity supply",
+          "id": "value-of-agricultural-products",
+          "title": "Value of agricultural products sold on green markets by groups of products",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/electricity-supply",
+          "href": "/covid-19-impact/value-of-agricultural-products",
           "status": "complete"
         }]
     }
@@ -2326,11 +2326,11 @@
       "indicators": [
         
         {
-          "id": "value-of-agricultural-products",
-          "title": "Value of agricultural products sold on green markets by groups of products",
+          "id": "electricity-supply",
+          "title": "Electricity supply",
           "description": "",
           "keywords": "",
-          "href": "/covid-19-impact/value-of-agricultural-products",
+          "href": "/covid-19-impact/electricity-supply",
           "status": "complete"
         }]
     }
