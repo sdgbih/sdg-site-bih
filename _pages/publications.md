@@ -11,5 +11,7 @@ permalink: /publications/
         <li><a href="http://bhas.gov.ba/data/Publikacije/Bilteni/2019/SDG_00_2018_TB_0_BS.pdf" target="_blank">Sustainable development goal indicators, 2018</a> </li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Metodologije/SDG_00_2020_MD_0_EN.pdf" target="_blank">Road map</a> </li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Metodologije/SDG_00_2019_MD_0_EN.pdf" target="_blank">VNR</a> </li>
+        <li><a href="http://www.bhas.gov.ba/data/Publikacije/Bilteni/2021/SDG_00_2019_TB_0_BS.pdf" target="_blank">Sustainable development goal indicators, 2019</a></li>
+     <br>
     </ul>
 </div>
