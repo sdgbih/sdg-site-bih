@@ -5,8 +5,12 @@ permalink: /sr/about/
 layout: page
 ---
 
-This website is for disseminating SDG indicator data. We are at an Alpha stage in development, so the site is still 'work in progress'.
+Ова њеб страница служи за дисеминацију података о глобалним СДГ индикаторима за Босну и Херцеговину. Уз подршку Економске комисије Уједињених народа за Европу (УНЕЦЕ) страницу је креирала и одржава Агенција за статистику БиХ. 
 
-Other countries wishing to reuse this site's underlying platform are welcome to do so for free. Our [Guidance page]({{ site.baseurl }}/guidance/) highlights key information on how to do this, linking to detailed technical instructions available in the platform's [documentation](https://open-sdg.readthedocs.io). The [Center for Open Data Enterprise (CODE)](http://www.opendataenterprise.org/) can also provide guidance and support through their [SDG National Reporting Initiative](https://www.sdgreporting.org/).
+Босна и Херцеговина је 2016. године кренула на своје партиципативно и истраживачко путовање у 2030. Агенда 2030 и Циљеви одрживог развоја у Босни и Херцеговини званично су представљени у априлу 2017. године, на СДГ конференцији високог нивоа организованој под покровитељством Предсједништва Босне и Херцеговине.
 
-If you have any feedback on this website or SDG data then please contact us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>. The answers to some frequently asked questions are also available in our [FAQ]({{ site.baseurl }}/faq/).
+Први Добровољни извјештај Босне и Херцеговине о провођењу Агенде 2030. и циљева одрживог развоја представљен је у јулу 2019. године на Политичком форуму на високом нивоу (ХЛПФ) у Нењ Yорку. Документ су припремиле релевантне институције на свим административним нивоима у Босни и Херцеговини. Добровољни извјештај информише о процесу подузетом у земљи и даље се користи као референтни документ за све касније процесе стратешког планирања у институцијама Босне и Херцеговине и на свим осталим нивоима.
+
+Развој Оквира за реализацију циљева одрживог развоја у Босни и Херцеговини, као заједничког документа свих нивоа власти у БиХ, био је један од најважнијих корака за реализацију Агенде 2030. Вијеће министара БиХ усвојило је документ на 32. сједници одржаној у априлу 2021. године.
+
+Поред тога, Оквир сарадње за одрживи развој 2021-25 (ЦФ) усвојило је Вијеће министара БиХ на својој 22. сједници 16. децембра 2020. године и потврдило га Предсједништво БиХ на свом 114. ванредном засједању 5. марта 2021. године. Оквир сарадње осигурат ће наставак партнерства и рада према одрживијем, отпорнијем, инклузивнијем друштву, који ће свим људима у БиХ помоћи да живе дуже, здравије и просперитетније и сигурније животе, а истовремено и помоћи достизању Циљева одрживог развоја и Агенде 2030.
