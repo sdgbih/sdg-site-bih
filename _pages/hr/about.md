@@ -1,5 +1,5 @@
 ---
-title: About
+title: O nama
 language: hr
 permalink: /hr/about/
 layout: page
