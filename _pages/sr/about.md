@@ -1,5 +1,5 @@
 ---
-title: About
+title: О нама
 language: sr
 permalink: /sr/about/
 layout: page
