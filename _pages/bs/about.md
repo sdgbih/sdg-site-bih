@@ -6,7 +6,6 @@ layout: page
 ---
 
 Ova web stranica služi za diseminaciju podataka o globalnim SDG indikatorima za Bosnu i Hercegovinu. Uz podršku Ekonomske komisije Ujedinjenih naroda za Evropu (UNECE) stranicu je kreirala i održava Agencija za statistiku BiH. 
-
 Bosna i Hercegovina je 2016. godine krenula na svoje participativno i istraživačko putovanje u 2030. Agenda 2030 i Ciljevi održivog razvoja u Bosni i Hercegovini zvanično su predstavljeni u aprilu 2017. godine, na SDG konferenciji visokog nivoa organizovanoj pod pokroviteljstvom Predsjedništva Bosne i Hercegovine.
 
 Prvi Dobrovoljni izvještaj Bosne i Hercegovine o provođenju Agende 2030. i ciljeva održivog razvoja predstavljen je u julu 2019. godine na Političkom forumu na visokom nivou (HLPF) u New Yorku. Dokument su pripremile relevantne institucije na svim administrativnim nivoima u Bosni i Hercegovini. Dobrovoljni izvještaj informiše o procesu poduzetom u zemlji i dalje se koristi kao referentni dokument za sve kasnije procese strateškog planiranja u institucijama Bosne i Hercegovine i na svim ostalim nivoima.
