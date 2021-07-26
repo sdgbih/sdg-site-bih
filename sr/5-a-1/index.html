@@ -132,7 +132,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210726124039">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210726124323">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -469,9 +469,9 @@ var translations = {
   data-id="5-a-1"
   data-country="BiH"
   data-charttitle="а) удио укупног пољопривредног становништва са власништвом или заштићеним правима на пољопривредном земљишту, према полу; и (б) удио жена међу власницима или носиоцима права на пољопривредном земљишту, према врсти посједа"
-  data-charttitles="null"
+  data-charttitles="[{&quot;series&quot;:&quot;SERIES.SG_LGL_LNDFEMOD&quot;,&quot;title&quot;:&quot;SERIES.SG_LGL_LNDFEMOD&quot;}]"
   data-measurementunit=""
-  data-showdata="false"
+  data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap=""
@@ -480,10 +480,433 @@ var translations = {
   data-stackeddisaggregation=""
   data-graphannotations="null"
   data-indicatordownloads="null"
-  data-compositebreakdownlabel=""
+  data-compositebreakdownlabel="Назив незаразне болести"
 >
   
-  <div id="indicator-main" class="indicator-main col-md-12">
+  <span role="status" class="sr-only" id="indicator-data-view-status"></span>
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="serieses"></div>
+<div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Подкатегорије</h4>
+    <p>Одаберите категорије из  падајућег менија испод како бисте виђели различите пођеле података. Неки неће бити доступни док се не одабере виши степен.</p>
+  </span>
+  <div id="fields">
+    <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/sr/headline/5-a-1.csv" class="btn btn-primary btn-download" download="indicator_5-a-1.csv" tabindex="0" role="button">Преузмите CSV наслов</a>
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/sr/data/5-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-a-1.csv' tabindex='0' role='button'>Преузми извор CSV</a>
+
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>а) удио укупног пољопривредног становништва са власништвом или заштићеним правима на пољопривредном земљишту, према полу; и (б) удио жена међу власницима или носиоцима права на пољопривредном земљишту, према врсти посједа</caption>
+      <thead>
+        
+        
+        <th scope="col">{"1-2020 2019 jan"=>"a)2020/2019  Јануар", "1-2021 2020 jan"=>"m)2021/2020   Јануар", "10-2020 2019 oct"=>"j)2020/2019  Октобар", "10-2021 2020 oct"=>"v)2021/2020   Октобар", "11-2020 2019 nov"=>"k)2020/2019  Новембар", "11-2021 2020 nov"=>"w)2021/2020   Новембар", "12-2020 2019 dec"=>"l)2020/2019  Децембар", "12-2021 2020 dec"=>"x)2021/2020   Децембар", "2-2020 2019 feb"=>"b)2020/2019  Фебруар", "2-2021 2020 feb"=>"n)2021/2020   Фебруар", "2019 Q1"=>"a)2019 Q1", "2019 Q2"=>"b)2019 Q2", "2019 Q3"=>"c)2019 Q3", "2019 Q4"=>"d)2019 Q4", "2020 Q1"=>"e)2020 Q1", "2020 Q2"=>"f)2020 Q2", "2020 Q3"=>"g)2020 Q3", "2020 Q4"=>"h)2020 Q4", "2021 Q1"=>"i)2021 Q1", "2021 Q2"=>"j)2021 Q2", "2021 Q3"=>"k)2021 Q3", "2021 Q4"=>"l)2021 Q4", "3-2020 2019 mar"=>"c)2020/2019  Март", "3-2021 2020 mar"=>"o)2021/2020   Март", "4-2020 2019 apr"=>"d)2020/2019  Април", "4-2021 2020 apr"=>"p)2021/2020   Април", "5-2020 2019 may"=>"e)2020/2019  Мај", "5-2021 2020 may"=>"q)2021/2020   Мај", "6-2020 2019 june"=>"f)2020/2019  Јуни", "6-2021 2020 june"=>"r)2021/2020   Јуни", "7-2020 2019 july"=>"g)2020/2019  Јули", "7-2021 2020 july"=>"s)2021/2020   Јули", "8-2020 2019 aug"=>"h)2020/2019  Август", "8-2021 2020 aug"=>"t)2021/2020   Август", "9-2020 2019 sept"=>"i)2020/2019  Септембар", "9-2021 2020 sept"=>"u)2021/2020   Септембар", "April"=>"d)Април", "April_2019"=>"d)Април 2019", "April_2020"=>"p)Април 2020", "April_2021"=>"ab)Април 2021", "August"=>"h)Август", "August_2019"=>"h)Август 2019", "August_2020"=>"t)Август 2020", "August_2021"=>"af)Август 2021", "December"=>"l)Децембар", "December_2019"=>"l)Децембар 2019", "December_2020"=>"x)Децембар 2020", "December_2021"=>"aj)Децембар 2021", "February"=>"b)Фебруар", "February_2019"=>"b)Фебруар 2019", "February_2020"=>"n)Фебруар 2020", "February_2021"=>"z)Фебруар 2021", "January"=>"a)Јануар", "January_2019"=>"a)Јануар 2019", "January_2020"=>"m)Јануар 2020", "January_2021"=>"y)Јануар 2021", "July"=>"g)Јули", "July_2019"=>"g)Јули 2019", "July_2020"=>"s)Јули 2020", "July_2021"=>"ae)Јули 2021", "June"=>"f)Јуни", "June_2019"=>"f)Јуни 2019", "June_2020"=>"r)Јуни 2020", "June_2021"=>"ad)Јуни 2021", "March"=>"c)Март", "March_2019"=>"c)Март 2019", "March_2020"=>"o)Март 2020", "March_2021"=>"aa)Март 2021", "May"=>"e)Мај", "May_2019"=>"e)Мај 2019", "May_2020"=>"q)Мај 2020", "May_2021"=>"ac)Мај 2021", "November"=>"k)Новембар", "November_2019"=>"k)Новембар 2019", "November_2020"=>"w)Новембар 2020", "November_2021"=>"ai)Новембар 2021", "October"=>"j)Октобар", "October_2019"=>"j)Октобар 2019", "October_2020"=>"v)Октобар 2020", "October_2021"=>"ah)Октобар 2021", "September"=>"i)Септембар", "September_2019"=>"i)Септембар 2019", "September_2020"=>"u)Септембар 2020", "September_2021"=>"ag)Септембар 2021"}</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">{"BOOL"=>"Логичка или бинарна мјера", "CON_USD"=>"константни амерички долари", "CUR_LCU_M"=>"Локална валута (милиони)", "CUR_NAC"=>"у KM", "CUR_NAC_1000"=>"у хиљадама КМ", "GPERM3"=>"Микрограми по кубном метру", "GWh"=>"GWh", "HA_TH"=>"Хиљаде хектара", "IX"=>"Индеx", "KG"=>"Килограми", "KG_PER_CON_USD"=>"Килограми по константи америчког долара", "KM2"=>"Квадратних километара", "LITRES"=>"Литри", "MILLIONS"=>"Милиони", "MJ_PER_GDP_CON_PPP_USD"=>"Мегаџула по константни америчког долара ППП БДП", "NUMBER"=>"Број", "PER_1000000_POP"=>"На милион становника", "PER_100000_LIVE_BIRTHS"=>"На 100.000 живорођених", "PER_100000_POP"=>"На 100.000 становника", "PER_10000_POP"=>"На 10 000 становника", "PER_1000_LIVE_BIRTHS"=>"На 1.000 живорођених", "PER_1000_POP"=>"На 1.000 становника", "PER_1000_UNINFECTED_POP"=>"На 1.000 незараженог становништва", "PER_100_POP"=>"На 100 становника", "PT"=>"Проценат", "P_KM"=>"Путнички километри", "RO"=>"Однос", "SCORE"=>"Резултат", "THOUSANDS"=>"Хиљаде", "TONNES"=>"Тоне", "TONNES_M"=>"Милиони тона", "TONNES_T"=>"OOOт", "T_KM"=>"Тонски километри", "UNIT_MEASURE"=>"Мјерна јединица", "USD"=>"Амерички долар"}</th>
+        
+        
+        
+        <th scope="col" class="table-value">SERIES</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>3</td>
+          
+          
+          
+          <td>Резултат</td>
+          
+          
+          
+          <td class="table-value">SG_LGL_LNDFEMOD</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="datatableFooter">
+    
+    
+    
+    
+  </div>
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded spacer medium" style="display:none;">
+
+    <div style="display: none;">
+  <span id="table-alternative"></span>
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  <li role="presentation" class="nav-item active">
+    <a class="nav-link" data-toggle="tab" id="tab-chartview" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+ aria-describedby="table-alternative">Графикон</a>
+  </li>
+  <li role="presentation" class="nav-item">
+    <a class="nav-link" data-toggle="tab" id="tab-tableview" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+>Табела</a>
+  </li></ul>
+
+    <div class="tab-content data-view">
+  <div role="tabpanel" class="tab-pane active" id="chartview">
+    
+
+    <div id="dataset-size-warning" style="display:none" role="alert">
+      <i class="fa fa-bolt"><span class="sr-only"></span></i>
+      Превише је скупова података за приказ на графикону. Неће бити приказане све док не уклоните неке одабире.
+    </div>
+
+    
+    
+    <div id="selectionsChart">
+      <figure role="group">
+        <div id="chart-canvas">
+          <h4 id="chart-heading" class="chart-title">SERIES.SG_LGL_LNDFEMOD</h4>
+          <div id="chart" class="plot-container">
+            
+<canvas
+    role="img"
+    aria-labelledby="chart-heading"
+    aria-describedby="table-alternative chart-annotations"
+    tabindex="0"
+ ></canvas>
+
+<script>
+// Add a chart alteration to support the chart_graph_limits metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+  if (info.graphLimits && info.graphLimits.length > 0) {
+    var limit = _.findWhere(info.graphLimits, { unit: info.selectedUnit }) || info.graphLimits[0];
+    var overrides = {
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: limit.minimum,
+              max: limit.maximum,
+            }
+          }]
+        }
+      }
+    }
+    // Add these overrides onto the normal config.
+    $.extend(true, config, overrides);
+  }
+});
+</script>
+
+<span style="display: none;" id="chart-annotations" role="status"></span>
+<script>
+opensdg.annotationPresets = {
+    common: {
+        // This "common" preset is applied to all annotations automatically.
+        borderColor: '#505a5f',
+        type: 'line',
+        label: {
+            backgroundColor: 'black',
+            fontColor: 'white',
+        },
+        // This "highContrast" overrides colors when in high-contrast mode.
+        highContrast: {
+            label: {
+                backgroundColor: 'white',
+                fontColor: 'black'
+            }
+        },
+        // This callback is used to generate a generic description for screenreaders.
+        // This can be overridden to be a more specific string, eg:
+        //
+        //     description: 'Chart annotation showing a 2030 target of 15%'
+        //
+        description: function() {
+            var descriptionParts = [translations.indicator.chart_annotation];
+            if (this.label && this.label.content) {
+                descriptionParts.push(translations.t(this.label.content));
+            }
+            else {
+                // If there is no label, just specify whether it is a box or line.
+                if (this.type == 'line') {
+                    descriptionParts.push(this.mode + ' line');
+                }
+                if (this.type == 'box') {
+                    descriptionParts.push('box');
+                }
+            }
+            if (typeof this.value !== 'undefined') {
+                descriptionParts.push(this.value);
+            }
+            return descriptionParts.join(': ');
+        },
+    },
+    target_line: {
+        mode: 'horizontal',
+        borderDash: [5, 5],
+        label: {
+            position: 'right',
+            content: translations.indicator.annotation_2030_target,
+        },
+    },
+};
+
+// Add a chart alteration to support the chart_annotations metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+    if (info.graphAnnotations && info.graphAnnotations.length > 0) {
+        var annotations = info.graphAnnotations.filter(function(annotation) {
+            var match = true;
+            if (match && info.selectedUnit) {
+                match = (info.selectedUnit === annotation.unit);
+            }
+            if (match && info.selectedSeries) {
+                match = (info.selectedSeries === annotation.series);
+            }
+            return match;
+        });
+        // Apply some helpers/fixes to the annotations.
+        annotations = annotations.map(function(annotation) {
+            // Apply the "common" preset.
+            if (opensdg.annotationPresets.common) {
+                annotation = $.extend(true, {}, opensdg.annotationPresets.common, annotation);
+            }
+            // Apply any specified presets.
+            if (annotation.preset) {
+                var preset = annotation.preset;
+                if (opensdg.annotationPresets[preset]) {
+                    annotation = $.extend(true, {}, opensdg.annotationPresets[preset], annotation);
+                }
+            }
+            // Default to horizontal lines.
+            if (!annotation.mode && annotation.type === 'line') {
+                annotation.mode = 'horizontal';
+            }
+            // Provide the obscure scaleID properties on user's behalf.
+            if (!annotation.scaleID && annotation.type === 'line') {
+                if (annotation.mode === 'horizontal') {
+                    annotation.scaleID = 'y-axis-0';
+                }
+                if (annotation.mode === 'vertical') {
+                    annotation.scaleID = 'x-axis-0';
+                }
+            }
+            if (!annotation.xScaleID && annotation.type === 'box') {
+                annotation.xScaleID = 'x-axis-0';
+            }
+            if (!annotation.yScaleID && annotation.type === 'box') {
+                annotation.yScaleID = 'y-axis-0';
+            }
+            // Provide the "enabled" label property on the user's behalf.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.enabled = true;
+            }
+            // Translate any label content.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.content = translations.t(annotation.label.content);
+            }
+            // Save some original values for later used when contrast mode is switched.
+            if (typeof annotation.defaultContrast === 'undefined') {
+                annotation.defaultContrast = {};
+                if (annotation.borderColor) {
+                    annotation.defaultContrast.borderColor = annotation.borderColor;
+                }
+                if (annotation.backgroundColor) {
+                    annotation.defaultContrast.backgroundColor = annotation.backgroundColor;
+                }
+                if (annotation.label) {
+                    annotation.defaultContrast.label = {};
+                    if (annotation.label.fontColor) {
+                        annotation.defaultContrast.label.fontColor = annotation.label.fontColor;
+                    }
+                    if (annotation.label.backgroundColor) {
+                        annotation.defaultContrast.label.backgroundColor = annotation.label.backgroundColor;
+                    }
+                }
+            }
+            return annotation;
+        });
+        if (annotations.length > 0) {
+            var overrides = {
+                options: {
+                    annotation: {
+                        drawTime: 'afterDatasetsDraw',
+                        annotations: annotations
+                    }
+                }
+            };
+            // Add these overrides onto the normal config.
+            $.extend(true, config, overrides);
+
+            // Update the chart annotations element.
+            var descriptions = annotations.map(function(annotation) {
+                var description = '';
+                if (annotation.description) {
+                    if (typeof annotation.description === 'function') {
+                        description = annotation.description.call(annotation);
+                    }
+                    else {
+                        description = translations.t(annotation.description);
+                    }
+                }
+                return description;
+            }).filter(function(description) { return description != ''; });
+
+            var currentDescription = $('#chart-annotations').text();
+            var newDescription = descriptions.join('. ');
+            if (currentDescription != newDescription) {
+                $('#chart-annotations').text(newDescription);
+            }
+        }
+    }
+});
+</script>
+
+<script>
+// For line charts, add the vertical line hover functionality.
+opensdg.chartConfigAlter(function(config, info) {
+    var overrides = {
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
+    };
+    // Add these overrides onto the normal config, and return it.
+    $.extend(true, config, overrides);
+});
+</script>
+
+          </div>
+          <div id="plotLegend"></div>
+          
+
+
+
+<div id="selectionChartFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+        </div>
+      </figure>
+      <div id="chartSelectionDownload" class="clearfix">
+        <button id="btnSave" title="Преузми графикон као слику" class='btn btn-primary btn-download'>
+          Преузми слику графикона
+        </button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="tableview">
+    <div style="display: none;">
+      <span id="column-sort-info"></span>
+    </div>
+    <div id="selectionsTable"></div>
+
+
+
+
+<div id="selectionTableFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+<div id="tableSelectionDownload" class="clearfix"></div>
+
+  </div>
+</div>
+
+
+  </div>
+
+</section>
+
   
   <ul class="nav nav-tabs spacer medium" role="tablist">
 
@@ -711,8 +1134,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/41e1873b3d6b15127218db77e10993830f432dad" target="_blank">
-                2021-01-18: see changes on GitHub <span class="visuallyhidden">отвара се у новом прозору</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/504059631a0f00dc69001cb71c39a0159ac97d4d" target="_blank">
+                2021-07-26: see changes on GitHub <span class="visuallyhidden">отвара се у новом прозору</span>
               </a>
             
 
@@ -738,8 +1161,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/41e1873b3d6b15127218db77e10993830f432dad" target="_blank">
-                2021-01-18: see changes on GitHub <span class="visuallyhidden">отвара се у новом прозору</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/57db3fae2925a8153fc94981a2c077fc8ee8e710" target="_blank">
+                2021-07-26: see changes on GitHub <span class="visuallyhidden">отвара се у новом прозору</span>
               </a>
             
 
@@ -1169,12 +1592,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Претраживање';</script>
 
-<script src='/assets/js/sdg.js?v=20210726124039'></script>
+<script src='/assets/js/sdg.js?v=20210726124323'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210726124039"></script><script>
+    <script src="/assets/js/custom.js?v=20210726124323"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
