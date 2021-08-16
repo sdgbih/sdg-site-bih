@@ -132,7 +132,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210816120844">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210816121851">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -469,9 +469,9 @@ var translations = {
   data-id="13-3-1"
   data-country="BiH"
   data-charttitle="Broj zemalja koje su integrirale pitanja (i) obrazovanja globalnog građanstva i (ii) obrazovanja za održivi razvoj integrirano je u (a) nacionalne obrazovne politike; (b) nastavne programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje učenika"
-  data-charttitles="null"
+  data-charttitles="[{&quot;series&quot;:&quot;Mjera do koje su obrazovanje o globalnom građanstvu i obrazovanje o održivom razvoju integrirani u nacionalne obrazovne politike&quot;,&quot;title&quot;:&quot;Mjera do koje su obrazovanje o globalnom građanstvu i obrazovanje o održivom razvoju integrirani u nacionalne obrazovne politike&quot;},{&quot;series&quot;:&quot;Mjera do koje su obrazovanje o globalnom građanstvu i obrazovanje o održivom razvoju integrirani u ocjenjivanje učenika&quot;,&quot;title&quot;:&quot;Mjera do koje su obrazovanje o globalnom građanstvu i obrazovanje o održivom razvoju integrirani u ocjenjivanje učenika&quot;}]"
   data-measurementunit=""
-  data-showdata="false"
+  data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap=""
@@ -483,7 +483,426 @@ var translations = {
   data-compositebreakdownlabel=""
 >
   
-  <div id="indicator-main" class="indicator-main col-md-12">
+  <span role="status" class="sr-only" id="indicator-data-view-status"></span>
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="serieses"></div>
+<div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Podkategorije</h4>
+    <p>Odaberite kategorije iz  padajućeg menija ispod kako biste vidjeli različite podjele podataka. Neki neće biti dostupni dok se ne odabere viši nivo.</p>
+  </span>
+  <div id="fields">
+    <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/headline/13-3-1.csv" class="btn btn-primary btn-download" download="indicator_13-3-1.csv" tabindex="0" role="button">Preuzmite CSV naslov</a>
+
+    <a href="https://sdgbih.github.io/sdg-data-bosnia/bs/data/13-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_13-3-1.csv' tabindex='0' role='button'>Preuzmi izvor CSV</a>
+
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Broj zemalja koje su integrirale pitanja (i) obrazovanja globalnog građanstva i (ii) obrazovanja za održivi razvoj integrirano je u (a) nacionalne obrazovne politike; (b) nastavne programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje učenika</caption>
+      <thead>
+        
+        
+        <th scope="col">{"1-2020 2019 jan"=>"a)2020/2019  Januar", "1-2021 2020 jan"=>"m)2021/2020   Januar", "10-2020 2019 oct"=>"j)2020/2019  Oktobar", "10-2021 2020 oct"=>"v)2021/2020   Oktobar", "11-2020 2019 nov"=>"k)2020/2019  Novembar", "11-2021 2020 nov"=>"w)2021/2020   Novembar", "12-2020 2019 dec"=>"l)2020/2019  Decembar", "12-2021 2020 dec"=>"x)2021/2020   Decembar", "2-2020 2019 feb"=>"b)2020/2019  Februar", "2-2021 2020 feb"=>"n)2021/2020   Februar", "2019 Q1"=>"a)2019 Q1", "2019 Q2"=>"b)2019 Q2", "2019 Q3"=>"c)2019 Q3", "2019 Q4"=>"d)2019 Q4", "2020 Q1"=>"e)2020 Q1", "2020 Q2"=>"f)2020 Q2", "2020 Q3"=>"g)2020 Q3", "2020 Q4"=>"h)2020 Q4", "2021 Q1"=>"i)2021 Q1", "2021 Q2"=>"j)2021 Q2", "2021 Q3"=>"k)2021 Q3", "2021 Q4"=>"l)2021 Q4", "3-2020 2019 mar"=>"c)2020/2019  Mart", "3-2021 2020 mar"=>"o)2021/2020   Mart", "4-2020 2019 apr"=>"d)2020/2019  April", "4-2021 2020 apr"=>"p)2021/2020   April", "5-2020 2019 may"=>"e)2020/2019  Maj", "5-2021 2020 may"=>"q)2021/2020   Maj", "6-2020 2019 june"=>"f)2020/2019  Juni", "6-2021 2020 june"=>"r)2021/2020   Juni", "7-2020 2019 july"=>"g)2020/2019  Juli", "7-2021 2020 july"=>"s)2021/2020   Juli", "8-2020 2019 aug"=>"h)2020/2019  August", "8-2021 2020 aug"=>"t)2021/2020   August", "9-2020 2019 sept"=>"i)2020/2019  Septembar", "9-2021 2020 sept"=>"u)2021/2020   Septembar", "April"=>"d)April", "April_2019"=>"d)April 2019", "April_2020"=>"p)April 2020", "April_2021"=>"ab)April 2021", "August"=>"h)August", "August_2019"=>"h)August 2019", "August_2020"=>"t)August 2020", "August_2021"=>"af)August 2021", "December"=>"l)Decembar", "December_2019"=>"l)Decembar 2019", "December_2020"=>"x)Decembar 2020", "December_2021"=>"aj)Decembar 2021", "February"=>"b)Februar", "February_2019"=>"b)Februar 2019", "February_2020"=>"n)Februar 2020", "February_2021"=>"z)Februar 2021", "January"=>"a)Januar", "January_2019"=>"a)Januar 2019", "January_2020"=>"m)Januar 2020", "January_2021"=>"y)Januar 2021", "July"=>"g)Juli", "July_2019"=>"g)Juli 2019", "July_2020"=>"s)Juli 2020", "July_2021"=>"ae)Juli 2021", "June"=>"f)Juni", "June_2019"=>"f)Juni 2019", "June_2020"=>"r)Juni 2020", "June_2021"=>"ad)Juni 2021", "March"=>"c)Mart", "March_2019"=>"c)Mart 2019", "March_2020"=>"o)Mart 2020", "March_2021"=>"aa)Mart 2021", "May"=>"e)Maj", "May_2019"=>"e)Maj 2019", "May_2020"=>"q)Maj 2020", "May_2021"=>"ac)Maj 2021", "November"=>"k)Novembar", "November_2019"=>"k)Novembar 2019", "November_2020"=>"w)Novembar 2020", "November_2021"=>"ai)Novembar 2021", "October"=>"j)Oktobar", "October_2019"=>"j)Oktobar 2019", "October_2020"=>"v)Oktobar 2020", "October_2021"=>"ah)Oktobar 2021", "September"=>"i)Septembar", "September_2019"=>"i)Septembar 2019", "September_2020"=>"u)Septembar 2020", "September_2021"=>"ag)Septembar 2021"}</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td class="table-value">2</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td class="table-value">2</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="datatableFooter">
+    
+    
+    
+    
+  </div>
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded spacer medium" style="display:none;">
+
+    <div style="display: none;">
+  <span id="table-alternative"></span>
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  <li role="presentation" class="nav-item active">
+    <a class="nav-link" data-toggle="tab" id="tab-chartview" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+ aria-describedby="table-alternative">Grafikon</a>
+  </li>
+  <li role="presentation" class="nav-item">
+    <a class="nav-link" data-toggle="tab" id="tab-tableview" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+>Tabela</a>
+  </li></ul>
+
+    <div class="tab-content data-view">
+  <div role="tabpanel" class="tab-pane active" id="chartview">
+    
+
+    <div id="dataset-size-warning" style="display:none" role="alert">
+      <i class="fa fa-bolt"><span class="sr-only"></span></i>
+      Previše je skupova podataka za prikaz na grafikonu. Neće biti prikazane sve dok ne uklonite neke odabire.
+    </div>
+
+    
+    
+    <div id="selectionsChart">
+      <figure role="group">
+        <div id="chart-canvas">
+          <h4 id="chart-heading" class="chart-title">Mjera do koje su obrazovanje o globalnom građanstvu i obrazovanje o održivom razvoju integrirani u nacionalne obrazovne politike</h4>
+          <div id="chart" class="plot-container">
+            
+<canvas
+    role="img"
+    aria-labelledby="chart-heading"
+    aria-describedby="table-alternative chart-annotations"
+    tabindex="0"
+ ></canvas>
+
+<script>
+// Add a chart alteration to support the chart_graph_limits metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+  if (info.graphLimits && info.graphLimits.length > 0) {
+    var limit = _.findWhere(info.graphLimits, { unit: info.selectedUnit }) || info.graphLimits[0];
+    var overrides = {
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: limit.minimum,
+              max: limit.maximum,
+            }
+          }]
+        }
+      }
+    }
+    // Add these overrides onto the normal config.
+    $.extend(true, config, overrides);
+  }
+});
+</script>
+
+<span style="display: none;" id="chart-annotations" role="status"></span>
+<script>
+opensdg.annotationPresets = {
+    common: {
+        // This "common" preset is applied to all annotations automatically.
+        borderColor: '#505a5f',
+        type: 'line',
+        label: {
+            backgroundColor: 'black',
+            fontColor: 'white',
+        },
+        // This "highContrast" overrides colors when in high-contrast mode.
+        highContrast: {
+            label: {
+                backgroundColor: 'white',
+                fontColor: 'black'
+            }
+        },
+        // This callback is used to generate a generic description for screenreaders.
+        // This can be overridden to be a more specific string, eg:
+        //
+        //     description: 'Chart annotation showing a 2030 target of 15%'
+        //
+        description: function() {
+            var descriptionParts = [translations.indicator.chart_annotation];
+            if (this.label && this.label.content) {
+                descriptionParts.push(translations.t(this.label.content));
+            }
+            else {
+                // If there is no label, just specify whether it is a box or line.
+                if (this.type == 'line') {
+                    descriptionParts.push(this.mode + ' line');
+                }
+                if (this.type == 'box') {
+                    descriptionParts.push('box');
+                }
+            }
+            if (typeof this.value !== 'undefined') {
+                descriptionParts.push(this.value);
+            }
+            return descriptionParts.join(': ');
+        },
+    },
+    target_line: {
+        mode: 'horizontal',
+        borderDash: [5, 5],
+        label: {
+            position: 'right',
+            content: translations.indicator.annotation_2030_target,
+        },
+    },
+};
+
+// Add a chart alteration to support the chart_annotations metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+    if (info.graphAnnotations && info.graphAnnotations.length > 0) {
+        var annotations = info.graphAnnotations.filter(function(annotation) {
+            var match = true;
+            if (match && info.selectedUnit) {
+                match = (info.selectedUnit === annotation.unit);
+            }
+            if (match && info.selectedSeries) {
+                match = (info.selectedSeries === annotation.series);
+            }
+            return match;
+        });
+        // Apply some helpers/fixes to the annotations.
+        annotations = annotations.map(function(annotation) {
+            // Apply the "common" preset.
+            if (opensdg.annotationPresets.common) {
+                annotation = $.extend(true, {}, opensdg.annotationPresets.common, annotation);
+            }
+            // Apply any specified presets.
+            if (annotation.preset) {
+                var preset = annotation.preset;
+                if (opensdg.annotationPresets[preset]) {
+                    annotation = $.extend(true, {}, opensdg.annotationPresets[preset], annotation);
+                }
+            }
+            // Default to horizontal lines.
+            if (!annotation.mode && annotation.type === 'line') {
+                annotation.mode = 'horizontal';
+            }
+            // Provide the obscure scaleID properties on user's behalf.
+            if (!annotation.scaleID && annotation.type === 'line') {
+                if (annotation.mode === 'horizontal') {
+                    annotation.scaleID = 'y-axis-0';
+                }
+                if (annotation.mode === 'vertical') {
+                    annotation.scaleID = 'x-axis-0';
+                }
+            }
+            if (!annotation.xScaleID && annotation.type === 'box') {
+                annotation.xScaleID = 'x-axis-0';
+            }
+            if (!annotation.yScaleID && annotation.type === 'box') {
+                annotation.yScaleID = 'y-axis-0';
+            }
+            // Provide the "enabled" label property on the user's behalf.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.enabled = true;
+            }
+            // Translate any label content.
+            if (annotation.label && annotation.label.content) {
+                annotation.label.content = translations.t(annotation.label.content);
+            }
+            // Save some original values for later used when contrast mode is switched.
+            if (typeof annotation.defaultContrast === 'undefined') {
+                annotation.defaultContrast = {};
+                if (annotation.borderColor) {
+                    annotation.defaultContrast.borderColor = annotation.borderColor;
+                }
+                if (annotation.backgroundColor) {
+                    annotation.defaultContrast.backgroundColor = annotation.backgroundColor;
+                }
+                if (annotation.label) {
+                    annotation.defaultContrast.label = {};
+                    if (annotation.label.fontColor) {
+                        annotation.defaultContrast.label.fontColor = annotation.label.fontColor;
+                    }
+                    if (annotation.label.backgroundColor) {
+                        annotation.defaultContrast.label.backgroundColor = annotation.label.backgroundColor;
+                    }
+                }
+            }
+            return annotation;
+        });
+        if (annotations.length > 0) {
+            var overrides = {
+                options: {
+                    annotation: {
+                        drawTime: 'afterDatasetsDraw',
+                        annotations: annotations
+                    }
+                }
+            };
+            // Add these overrides onto the normal config.
+            $.extend(true, config, overrides);
+
+            // Update the chart annotations element.
+            var descriptions = annotations.map(function(annotation) {
+                var description = '';
+                if (annotation.description) {
+                    if (typeof annotation.description === 'function') {
+                        description = annotation.description.call(annotation);
+                    }
+                    else {
+                        description = translations.t(annotation.description);
+                    }
+                }
+                return description;
+            }).filter(function(description) { return description != ''; });
+
+            var currentDescription = $('#chart-annotations').text();
+            var newDescription = descriptions.join('. ');
+            if (currentDescription != newDescription) {
+                $('#chart-annotations').text(newDescription);
+            }
+        }
+    }
+});
+</script>
+
+<script>
+// For line charts, add the vertical line hover functionality.
+opensdg.chartConfigAlter(function(config, info) {
+    var overrides = {
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
+    };
+    // Add these overrides onto the normal config, and return it.
+    $.extend(true, config, overrides);
+});
+</script>
+
+          </div>
+          <div id="plotLegend"></div>
+          
+
+
+
+<div id="selectionChartFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+        </div>
+      </figure>
+      <div id="chartSelectionDownload" class="clearfix">
+        <button id="btnSave" title="Preuzmi grafikon kao sliku" class='btn btn-primary btn-download'>
+          Preuzmi sliku grafikona
+        </button>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="tableview">
+    <div style="display: none;">
+      <span id="column-sort-info"></span>
+    </div>
+    <div id="selectionsTable"></div>
+
+
+
+
+<div id="selectionTableFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+
+        
+
+        
+
+        
+
+        
+    <dl>
+</div>
+
+<div id="tableSelectionDownload" class="clearfix"></div>
+
+  </div>
+</div>
+
+
+  </div>
+
+</section>
+
   
   <ul class="nav nav-tabs spacer medium" role="tablist">
 
@@ -738,8 +1157,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/41e1873b3d6b15127218db77e10993830f432dad" target="_blank">
-                2021-01-18: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/047c93be98f240b63c1d25699f60ffcd0f1b5ea6" target="_blank">
+                2021-08-16: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
               </a>
             
 
@@ -1169,12 +1588,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Pretraživanje';</script>
 
-<script src='/assets/js/sdg.js?v=20210816120844'></script>
+<script src='/assets/js/sdg.js?v=20210816121851'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210816120844"></script><script>
+    <script src="/assets/js/custom.js?v=20210816121851"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
