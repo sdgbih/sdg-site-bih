@@ -132,7 +132,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210816093238">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210816093443">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -469,7 +469,7 @@ var translations = {
   data-id="12-4-2"
   data-country="BiH"
   data-charttitle="Opasni otpad stvoren po stanovniku i udio tretiranog opasnog otpada prema vrsti obrade"
-  data-charttitles="[{&quot;series&quot;:&quot;Proizvedeni elektronički otpad (tone)&quot;,&quot;title&quot;:&quot;Proizvedeni elektronički otpad (tone)&quot;},{&quot;series&quot;:&quot;Proizvedeni elektronički otpad, po stanovniku (Kg)&quot;,&quot;title&quot;:&quot;Proizvedeni elektronički otpad, po stanovniku (Kg)&quot;},{&quot;series&quot;:&quot;Reciklaža elektroničkog otpada (tone)&quot;,&quot;title&quot;:&quot;Reciklaža elektroničkog otpada (tone)&quot;},{&quot;series&quot;:&quot;Reciklaža elektroničkog otpada, po stanovniku (Kg)&quot;,&quot;title&quot;:&quot;Reciklaža elektroničkog otpada, po stanovniku (Kg)&quot;},{&quot;series&quot;:&quot;Reciklaža elektroničkog otpada, stopa (%)&quot;,&quot;title&quot;:&quot;Reciklaža elektroničkog otpada, stopa (%)&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad (tone)&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad (tone)&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad, po stanovniku (Kg)&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad, po stanovniku (Kg)&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad, po jedinici BDP-a&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad, po jedinici BDP-a&quot;}]"
+  data-charttitles="[{&quot;series&quot;:&quot;Izvoz opasnog otpada&quot;,&quot;title&quot;:&quot;Izvoz opasnog otpada&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad (tone)&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad (tone)&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad, po stanovniku (Kg)&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad, po stanovniku (Kg)&quot;},{&quot;series&quot;:&quot;Proizvedeni opasni otpad, po jedinici BDP-a&quot;,&quot;title&quot;:&quot;Proizvedeni opasni otpad, po jedinici BDP-a&quot;},{&quot;series&quot;:&quot;Uvoz opasnog otpada&quot;,&quot;title&quot;:&quot;Uvoz opasnog otpada&quot;},{&quot;series&quot;:&quot;SERIES.EN_HAZ_TREATV&quot;,&quot;title&quot;:&quot;SERIES.EN_HAZ_TREATV&quot;},{&quot;series&quot;:&quot;Prikupljeni komunalni otpad&quot;,&quot;title&quot;:&quot;Prikupljeni komunalni otpad&quot;},{&quot;series&quot;:&quot;Obrađeni komunalni otpad prema vrsti obrade&quot;,&quot;title&quot;:&quot;Obrađeni komunalni otpad prema vrsti obrade&quot;},{&quot;series&quot;:&quot;Ukupno stvaranje otpada, prema djelatnostima&quot;,&quot;title&quot;:&quot;Ukupno stvaranje otpada, prema djelatnostima&quot;}]"
   data-measurementunit=""
   data-showdata="true"
   data-graphtype="line"
@@ -1609,7 +1609,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Proizvedeni elektronički otpad (tone)</h4>
+          <h4 id="chart-heading" class="chart-title">Izvoz opasnog otpada</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -2169,8 +2169,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/68356bad743c3c436b2f8d70ce1e3d543704052b" target="_blank">
-                2021-01-18: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/6b2ad7a730724cb7f302151ec170a4da452e10df" target="_blank">
+                2021-08-16: see changes on GitHub <span class="visuallyhidden">otvara se u novom prozoru</span>
               </a>
             
 
@@ -2866,12 +2866,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Pretraživanje';</script>
 
-<script src='/assets/js/sdg.js?v=20210816093238'></script>
+<script src='/assets/js/sdg.js?v=20210816093443'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210816093238"></script><script>
+    <script src="/assets/js/custom.js?v=20210816093443"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
