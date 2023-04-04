@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Procenat stanovništva koji žive ispod međunarodne linije siromaštva po polu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano/ruralno)",
+          "title": "Procenat stanovništva koji žive ispod međunarodne linije siromastva po polu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano / ruralno)",
           "description": "",
           "keywords": "",
           "href": "/bs/1-1-1",
@@ -111,7 +111,7 @@
         },
         {
           "id": "1-c-7",
-          "title": "Procenat stanovništva koji žive ispod međunarodne linije siromaštva po polu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano/ruralno)",
+          "title": "Procenat stanovništva koji žive ispod međunarodne linije siromastva po polu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano / ruralno)",
           "description": "",
           "keywords": "",
           "href": "/bs/1-c-7",
@@ -495,7 +495,7 @@
         },
         {
           "id": "4-2-1",
-          "title": "Udio djece u dobi od 24 do 59 mjeseci koja su u razvoju na pravom putu prema zdravlju, učenju i psihosocijalnoj dobrobiti, prema polu",
+          "title": "Udio djece uzrasta 24-59 meseci koja su u razvoju u zdravlju, učenju i psihosocijalnom blagostanju, prema polu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-2-1",
@@ -739,7 +739,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/6-4-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "6-4-2",
@@ -1215,11 +1215,11 @@
         },
         {
           "id": "11-2-1",
-          "title": "Udio stanovništva koje ima odgovarajući pristup +B171 javnom saobraćaju, po polu, starosti i invaliditetu",
+          "title": "Udio stanovništva koji ima povoljan pristup javnom prevozu, prema polu, starosti i osobama sa invaliditetom",
           "description": "",
           "keywords": "",
           "href": "/bs/11-2-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "11-3-1",
@@ -1243,7 +1243,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/11-4-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "11-5-1",
@@ -1435,7 +1435,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/12-c-1",
-          "status": "notstarted"
+          "status": "complete"
         }]
     }
   },
@@ -1451,7 +1451,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/13-1-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "13-1-2",
@@ -1555,7 +1555,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/14-5-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "14-6-1",
@@ -1871,7 +1871,7 @@
         },
         {
           "id": "16-9-1",
-          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u civilnim organima, prema starosnoj dobi",
+          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u matičnim knigama, prema starosnoj dobi",
           "description": "",
           "keywords": "",
           "href": "/bs/16-9-1",

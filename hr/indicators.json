@@ -495,7 +495,7 @@
         },
         {
           "id": "4-2-1",
-          "title": "Udio djece u dobi od 24 do 59 mjeseci koja su u razvoju na pravom putu prema zdravlju, učenju i psihosocijalnoj dobrobiti, prema polu",
+          "title": "Udio djece u dobi od 24-59 mjeseci koja su u razvoju u zdravlju, učenju i psihosocijalnom blagostanju, prema spolu",
           "description": "",
           "keywords": "",
           "href": "/hr/4-2-1",
@@ -739,7 +739,7 @@
           "description": "",
           "keywords": "",
           "href": "/hr/6-4-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "6-4-2",
@@ -1215,11 +1215,11 @@
         },
         {
           "id": "11-2-1",
-          "title": "Udio stanovništva koje ima odgovarajući pristup +B171 javnom saobraćaju, po polu, starosti i invaliditetu",
+          "title": "Udio stanovništva koje ima pogodan pristup javnom prijevozu, prema spolu, dobi i osobama s invaliditetom",
           "description": "",
           "keywords": "",
           "href": "/hr/11-2-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "11-3-1",
@@ -1243,7 +1243,7 @@
           "description": "",
           "keywords": "",
           "href": "/hr/11-4-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "11-5-1",
@@ -1435,7 +1435,7 @@
           "description": "",
           "keywords": "",
           "href": "/hr/12-c-1",
-          "status": "notstarted"
+          "status": "complete"
         }]
     }
   },
@@ -1451,7 +1451,7 @@
           "description": "",
           "keywords": "",
           "href": "/hr/13-1-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "13-1-2",
@@ -1555,7 +1555,7 @@
           "description": "",
           "keywords": "",
           "href": "/hr/14-5-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "14-6-1",
@@ -1871,7 +1871,7 @@
         },
         {
           "id": "16-9-1",
-          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u civilnim organima, prema starosnoj dobi",
+          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u matičnim knigama, prema starosnoj dobi",
           "description": "",
           "keywords": "",
           "href": "/hr/16-9-1",
