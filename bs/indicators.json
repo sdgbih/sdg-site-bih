@@ -471,7 +471,7 @@
         
         {
           "id": "4-1-1",
-          "title": "Srazmjer djece i mladih: (a) u razredima 2/3; (b) na kraju osnovnog; i (c) na kraju nižeg srednjeg obrazovanja koja postižu najmanje minimalnog nivoa znanja u (i) čitanju i (ii) matematici, po polu",
+          "title": "Udio djece i mladih: (a) u 2./3. razredu; (b) na kraju osnovnog obrazovanja; i (c) na kraju nižeg srednjeg obrazovanja, koji su postigli barem osnovni nivo znanja (i) čitanja i (ii) matematike, prema spolu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-1-1",
@@ -479,7 +479,7 @@
         },
         {
           "id": "4-1-2",
-          "title": "Stopa završenih studija (osnovno obrazovanje, niže srednje obrazovanje, srednje obrazovanje)",
+          "title": "Stopa završetka (osnovno obrazovanje, niže srednje obrazovanje, više srednje obrazovanje)",
           "description": "",
           "keywords": "",
           "href": "/bs/4-1-2",
@@ -487,7 +487,7 @@
         },
         {
           "id": "4-2-1",
-          "title": "Udio djece uzrasta 36-59 meseci koja su u razvoju u zdravlju, učenju i psihosocijalnom blagostanju, prema polu",
+          "title": "Udio djece  uzrasta od 24 do 59 mjeseci koja su u razvoju u zdravlju, učenju i psihosocijalnom blagostanju, prema spolu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-2-1",
@@ -495,7 +495,7 @@
         },
         {
           "id": "4-2-2",
-          "title": "Stopa učešća u organiziranom učenju (godinu dana prije službenog osnovnog uzrasta), prema polu",
+          "title": "Stopa učešća u organizovanom učenju (godinu dana prije zvanične dobi za ulazak u osnovnu školu), prema spolu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-2-2",
@@ -503,7 +503,7 @@
         },
         {
           "id": "4-3-1",
-          "title": "Stopa učešća mladih i odraslih u formalnom i neformalnom obrazovanju i obuci u prethodnih 12 mjeseci, prema polu",
+          "title": "Stopa učešća mladih i odraslih u formalnom i neformalnom obrazovanju i obuci u prethodnih 12 mjeseci, prema spolu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-3-1",
@@ -511,7 +511,7 @@
         },
         {
           "id": "4-4-1",
-          "title": "Udio mladih i odraslih sa vještinama informacionih i komunikacionih tehnologija (IKT), prema vrsti vještine",
+          "title": "Udio mladih i odraslih sa vještinama informacijsko-komunikacijskih tehnologija (IKT), prema vrsti vještina",
           "description": "",
           "keywords": "",
           "href": "/bs/4-4-1",
@@ -519,7 +519,7 @@
         },
         {
           "id": "4-5-1",
-          "title": "Indeksi pariteta (ženske/muškarci, ruralna/urbana, najniži/najviši kvintil bogatstva i drugi kao što su status invalidnosti, autohtoni narodi i pogođeni sukobima, kada podaci postanu dostupni) za sve indikatore obrazovanja na ovoj listi koji mogu biti razvrstani",
+          "title": "Indeksi pariteta (žene/muškarci, ruralna/urbana područja, najniži/najviši kvintil blagostanja i drugi kao što su status invalidnosti, autohtoni narodi i ugroženi sukobima, zavisno od dostupnosti podataka) za sve indikatore obrazovanja sa ove liste koji se mogu razvrstati",
           "description": "",
           "keywords": "",
           "href": "/bs/4-5-1",
@@ -527,7 +527,7 @@
         },
         {
           "id": "4-6-1",
-          "title": "Udio stanovništva u datoj starosnoj grupi koja postiže najmanje fiksni nivo znanja u funkcionalnim vještinama (a) pismenosti i (b) računanja, prema polu",
+          "title": "Udio stanovništva određene starosne grupe koje je dostiglo najmanji fiksni nivo postignuća u funkcionalnoj  (a) pismenosti i (b) matematičkim vještinama, prema spolu",
           "description": "",
           "keywords": "",
           "href": "/bs/4-6-1",
@@ -535,7 +535,7 @@
         },
         {
           "id": "4-7-1",
-          "title": "Mjera u kojoj su na svim nivoima integrisani obrazovanje za (i) pripadnost globalnoj zajednici i (ii) održivi razvoj, uključujući i rodnu ravnopravnost i ljudska prava na svim nivoima: (a) nacionalnih obrazovnih politika; (b) kurikuluma; (c) obrazovanja nastavnika; i (d) procjene učenika i studenata",
+          "title": "Mjera u kojoj su (i) obrazovanje o globalnom građanstvu i (ii) obrazovanje za održivi razvoj uključeni u (a) nacionalne obrazovne politike; (b) nastavne planove i programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje učenika",
           "description": "",
           "keywords": "",
           "href": "/bs/4-7-1",
@@ -543,7 +543,7 @@
         },
         {
           "id": "4-a-1",
-          "title": "Udio škola koje nude osnovne usluge, prema vrsti usluge",
+          "title": "Udio škola koje nude osnovne usluge, prema vrsti usluga",
           "description": "",
           "keywords": "",
           "href": "/bs/4-a-1",
@@ -551,7 +551,7 @@
         },
         {
           "id": "4-b-1",
-          "title": "Obim službene razvojne pomoći za stipendije po sektorima i vrstama studija",
+          "title": "Iznos službene razvojne pomoći za stipendiranje, po sektorima i vrsti obrazovanja",
           "description": "",
           "keywords": "",
           "href": "/bs/4-b-1",
@@ -559,7 +559,7 @@
         },
         {
           "id": "4-c-1",
-          "title": "Proporcija učitelja sa minimalno potrebnim kvalifikacijama, prema nivou obrazovanja",
+          "title": "Udio nastavnika sa minimalno potrebnim kvalifikacijama, prema nivou obrazovanja",
           "description": "",
           "keywords": "",
           "href": "/bs/4-c-1",
