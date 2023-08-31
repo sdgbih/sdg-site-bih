@@ -247,7 +247,7 @@
         },
         {
           "id": "3-1-2",
-          "title": "Udio poroda uz prisustvo kvalifikovanih zdravstvenih radnika",
+          "title": "Udio rođenih uz pomoć stručnog zdravstvenog osoblja",
           "description": "",
           "keywords": "",
           "href": "/hr/3-1-2",
@@ -255,7 +255,7 @@
         },
         {
           "id": "3-2-1",
-          "title": "Stopa smrtnosti ispod pet godina",
+          "title": "Stopa smrtnosti djece ispod 5 godina",
           "description": "",
           "keywords": "",
           "href": "/hr/3-2-1",
@@ -263,7 +263,7 @@
         },
         {
           "id": "3-2-2",
-          "title": "Stopa neonatalne smrtnosti",
+          "title": "Stopa smrtnosti novorođenčadi",
           "description": "",
           "keywords": "",
           "href": "/hr/3-2-2",
@@ -271,7 +271,7 @@
         },
         {
           "id": "3-3-1",
-          "title": "Broj novih HIV infekcija na 1.000 neinficiranih stanovnika, po polu, starosti i ključnim populacijama",
+          "title": "Broj novih slučajeva zaraze HIV-om na 1 000 nezaraženih osoba, prema spolu, dobi I određenim grupama stanovništva",
           "description": "",
           "keywords": "",
           "href": "/hr/3-3-1",
@@ -279,7 +279,7 @@
         },
         {
           "id": "3-3-2",
-          "title": "Učestalost tuberkuloze na 100.000 stanovnika",
+          "title": "Učestalost tuberkuloze na 100 000 stanovnika",
           "description": "",
           "keywords": "",
           "href": "/hr/3-3-2",
@@ -287,7 +287,7 @@
         },
         {
           "id": "3-3-3",
-          "title": "Učestalost malarije na 1.000 stanovnika",
+          "title": "Učestalost malarije na 1000 stanovnika",
           "description": "",
           "keywords": "",
           "href": "/hr/3-3-3",
@@ -303,7 +303,7 @@
         },
         {
           "id": "3-3-5",
-          "title": "Broj ljudi kojima su potrebne intervencije protiv zanemarenih tropskih bolesti",
+          "title": "Broj osoba koje su zatražile intervencije protiv zanemarenih tropskih bolesti",
           "description": "",
           "keywords": "",
           "href": "/hr/3-3-5",
@@ -311,7 +311,7 @@
         },
         {
           "id": "3-4-1",
-          "title": "Stopa smrtnosti koja se pripisuje kardiovaskularnim bolestima, karcinomu, dijabetesu ili hroničnim respiratornim bolestima",
+          "title": "Stopa smrtnosti od kardiovaskularnih bolesti, raka, dijabetesa ili kroničnih bolesti dišnog sustava",
           "description": "",
           "keywords": "",
           "href": "/hr/3-4-1",
@@ -319,7 +319,7 @@
         },
         {
           "id": "3-4-2",
-          "title": "Stopa smrtnosti samoubistava",
+          "title": "Stopa smrtnosti od samoubojstava",
           "description": "",
           "keywords": "",
           "href": "/hr/3-4-2",
@@ -327,7 +327,7 @@
         },
         {
           "id": "3-5-1",
-          "title": "Pokrivanje intervencijskih tretmana (farmakološke, psihosocijalne,rehabilitacione i naknadne usluge) za poremećaje upotrebe supstanci",
+          "title": "Pokrivenost intervencijama liječenja (farmakološkim, psihosocijalnim i rehabilitacijskim te naknadnim uslugama) poremećaja uzrokovanih uporabom supstanci",
           "description": "",
           "keywords": "",
           "href": "/hr/3-5-1",
@@ -335,7 +335,7 @@
         },
         {
           "id": "3-5-2",
-          "title": "Potrošnja alkohola po stanovniku (starosti od 15 i više godina) u kalendarskoj godini u litrima čistog alkohola",
+          "title": "Potrošnja alkohola po stanovniku (u dobi od 15 godina i više) u kalendarskoj godini izražena u litrama čistog alkohola",
           "description": "",
           "keywords": "",
           "href": "/hr/3-5-2",
@@ -343,7 +343,7 @@
         },
         {
           "id": "3-6-1",
-          "title": "Stopa smrtnosti zbog povreda u drumskom saobraćaju",
+          "title": "Stopa smrtnosti uslijed ozljeda u cestovnom prometu",
           "description": "",
           "keywords": "",
           "href": "/hr/3-6-1",
@@ -351,7 +351,7 @@
         },
         {
           "id": "3-7-1",
-          "title": "Udio žena reproduktivnog uzrasta (u dobi od 15 do 49 godina) koji su svoju potrebu za planiranje porodice zadovoljile sa modernim metodama",
+          "title": "Udio žena u reproduktivnoj dobi (od 15 do 49 godina) koje planiraju obitelj suvremenim metodama",
           "description": "",
           "keywords": "",
           "href": "/hr/3-7-1",
@@ -359,7 +359,7 @@
         },
         {
           "id": "3-7-2",
-          "title": "Stopa nataliteta adolescenata (starosti od 10-14 godina; starosti od 15-19 godina) na 1.000 žena u toj starosnoj grupi",
+          "title": "Stopa nataliteta adolescenata (u dobi od 10 do 14 godina; u dobi od 15 do 19 godina) na 1000 žena u toj dobnoj skupini",
           "description": "",
           "keywords": "",
           "href": "/hr/3-7-2",
@@ -367,7 +367,7 @@
         },
         {
           "id": "3-8-1",
-          "title": "Pokrivenost osnovnih zdravstvenih usluga",
+          "title": "Pokrivenost osnovnim zdravstvenim uslugama",
           "description": "",
           "keywords": "",
           "href": "/hr/3-8-1",
@@ -375,7 +375,7 @@
         },
         {
           "id": "3-8-2",
-          "title": "Udio stanovništva s velikim izdacima domaćinstva za zdravstvo kao udio u ukupnim izdacima ili prihodima domaćinstva",
+          "title": "Udio stanovnika s velikim izdacima za zdravstvo kao udio u ukupnim izdacima ili dohotku kućanstva",
           "description": "",
           "keywords": "",
           "href": "/hr/3-8-2",
@@ -383,7 +383,7 @@
         },
         {
           "id": "3-9-1",
-          "title": "Stopa smrtnosti uzrokovana zagađenjem domaćinstvima i zraka u okolini",
+          "title": "Stopa smrtnosti zbog onečišćenja zraka u kućanstvu ili okolini",
           "description": "",
           "keywords": "",
           "href": "/hr/3-9-1",
@@ -391,7 +391,7 @@
         },
         {
           "id": "3-9-2",
-          "title": "Stopa smrtnosti uzrokovana nebezbijednom vodom, nebezjbednoj sanitaciji i nedostatku higijene (izlaganje nebezbjednimVodama, Sanitaciji i Higijeni za Sve (WASH) uslugama)",
+          "title": "Stopa smrtnosti zbog onečišćenja vode te loših sanitarnih i higijenskih uvjeta (nedostatak usluga WASH - pitke vode, prikladnih sanitarnih i higijenskih uvjeta)",
           "description": "",
           "keywords": "",
           "href": "/hr/3-9-2",
@@ -399,7 +399,7 @@
         },
         {
           "id": "3-9-3",
-          "title": "Stopa smrtnosti uzrokovana nenamjernim trovanjem",
+          "title": "Stopa smrtnosti koja se pripisuje nenamjernom trovanju",
           "description": "",
           "keywords": "",
           "href": "/hr/3-9-3",
@@ -407,7 +407,7 @@
         },
         {
           "id": "3-a-1",
-          "title": "Starosna standardizirana rasprostranjenost trenutne upotrebe duhana među osobama od 15 godina i više",
+          "title": "Dobno standardizirana prevalencija pušenja duhana među osobama u dobi od 15 godina i više",
           "description": "",
           "keywords": "",
           "href": "/hr/3-a-1",
@@ -415,7 +415,7 @@
         },
         {
           "id": "3-b-1",
-          "title": "Udio ciljane populacije obuhvaćene svim vakcinama uključenih u nacionalnim programa",
+          "title": "Udio ciljne populacije cijepljene svim cjepivima uključenim u njihov nacionalni program",
           "description": "",
           "keywords": "",
           "href": "/hr/3-b-1",
@@ -423,7 +423,7 @@
         },
         {
           "id": "3-b-2",
-          "title": "Ukupna neto službena razvojna pomoć medicinskim istraživanjima i osnovnim zdravstvenim sektorima",
+          "title": "Ukupna neto zvanična razvojna pomoć za medicinska istraživanja i osnovne zdravstvene sektore",
           "description": "",
           "keywords": "",
           "href": "/hr/3-b-2",
@@ -431,7 +431,7 @@
         },
         {
           "id": "3-b-3",
-          "title": "Udio zdravstvenih ustanova koje imaju osnovni paket relevantnih esencijalnih lijekova koji su priuštivi i dostupni na održivoj osnovi",
+          "title": "Udio zdravstvenih ustanova koje imaju osnovni skup relevantnih neophodnih lijekova koji su dostupni i pristupačni na održivoj osnovi",
           "description": "",
           "keywords": "",
           "href": "/hr/3-b-3",
@@ -439,7 +439,7 @@
         },
         {
           "id": "3-c-1",
-          "title": "Gustina i distribucija zdravstvenih radnika",
+          "title": "Gustoća i raspodjela broja zdravstvenih radnika",
           "description": "",
           "keywords": "",
           "href": "/hr/3-c-1",
@@ -447,7 +447,7 @@
         },
         {
           "id": "3-d-1",
-          "title": "Kapacitet međunarodnih zdravstvenih propisa (IHR) i spremnost za hitne slučajeve u zdravstvu",
+          "title": "Međunarodni zdravstveni propisi (IHR) i spremnost na hitne slučajeve u zdravstvu",
           "description": "",
           "keywords": "",
           "href": "/hr/3-d-1",
@@ -455,7 +455,7 @@
         },
         {
           "id": "3-d-2",
-          "title": "Procenat infekcija krvotoka zbog odabranih organizama otpornih na antimikrobne bolesti",
+          "title": "Postotak infekcija koje se prenose krvlju uzrokovane specifičnim mikroorganizmima otpornim na lijekove",
           "description": "",
           "keywords": "",
           "href": "/hr/3-d-2",
