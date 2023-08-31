@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Procenat stanovništva koji žive ispod međunarodne linije siromastva po polu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano / ruralno)",
+          "title": "Udio stanovništva koji živi ispod međunarodne linije siromaštva prema spolu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano/ruralno)",
           "description": "",
           "keywords": "",
           "href": "/bs/1-1-1",
@@ -23,7 +23,7 @@
         },
         {
           "id": "1-2-2",
-          "title": "Udio muškaraca, žena i djece svih dobnih skupina koji žive u siromaštvu u svim njegovim dimenzijama prema nacionalnim definicijama",
+          "title": "Udio muškaraca, žena i djece svih uzrasta koji žive u siromaštvu u svim njegovim dimenzijama prema nacionalnim definicijama",
           "description": "",
           "keywords": "",
           "href": "/bs/1-2-2",
@@ -31,7 +31,7 @@
         },
         {
           "id": "1-3-1",
-          "title": "Procenat stanovništva pokrivenih sistemima socijalne zaštite, po polu, razlikovanju djece, nezaposlenih lica, starijih osoba, osoba sa invaliditetom, trudnica, novorođenčadi, žrtava povrede na radu i siromašnih i ranjivih",
+          "title": "Procenat stanovništva pokrivenih sistemima socijalne zaštite, po polu, uz razlikovanje djece, nezaposlenih lica, starijih osoba, osoba sa invaliditetom, trudnica, novorođenčadi, žrtava povrede na radu i siromašnih i ranjivih",
           "description": "",
           "keywords": "",
           "href": "/bs/1-3-1",
@@ -55,7 +55,7 @@
         },
         {
           "id": "1-5-1",
-          "title": "Broj smrti, nestalih osoba i direktno pogođenih lica pripisanih katastrofama na 100.000 stanovnika",
+          "title": "Broj umrlih osoba, nestalih osoba i osoba direktno pogođenih katastrofama na 100.000 stanovnika",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-1",
@@ -63,7 +63,7 @@
         },
         {
           "id": "1-5-2",
-          "title": "Direktni ekonomski gubitak uzrokovan nesrećama u odnosu na globalni bruto domaći proizvod (BDP)",
+          "title": "Direktni ekonomski gubici koji se pripisuju katastrofama u odnosu na globalni bruto domaći proizvod (BDP)",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-2",
@@ -79,7 +79,7 @@
         },
         {
           "id": "1-5-4",
-          "title": "Udio lokalnih samouprava koje usvajaju i sprovode strategije za smanjenje rizika od katastrofa u skladu sa nacionalnim strategijama za smanjenje rizika od katastrofa",
+          "title": "Udio jedinica lokalne samouprave koje donose i sprovode lokalne strategije za smanjenje rizika od katastrofa u skladu sa nacionalnim strategijama za smanjenje rizika od katastrofa",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-4",
@@ -87,7 +87,7 @@
         },
         {
           "id": "1-a-1",
-          "title": "Ukupni grantovi službene razvojne pomoći svih donatora koji su usmjereni na smanjenje siromaštva kao udio u bruto nacionalnom dohotku zemlje primaoca",
+          "title": "Ukupni grantovi službene razvojne pomoći od svih donatora koji se fokusiraju na smanjenje siromaštva kao udio u bruto nacionalnom dohotku zemlje primaoca",
           "description": "",
           "keywords": "",
           "href": "/bs/1-a-1",
@@ -103,7 +103,7 @@
         },
         {
           "id": "1-b-1",
-          "title": "Javna socijalna potrošnja u korist siromašnih",
+          "title": "Javna socijalna potrošnja za siromašne",
           "description": "",
           "keywords": "",
           "href": "/bs/1-b-1",
