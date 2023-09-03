@@ -863,7 +863,7 @@
         },
         {
           "id": "8-3-1",
-          "title": "Udio neformalnog zapošljavanja u ukupnoj zaposlenosti, prema sektorima i polu",
+          "title": "Udio neformalne zaposlenosti u ukupnoj zaposlenosti, prema sektorima i spolu",
           "description": "",
           "keywords": "",
           "href": "/hr/8-3-1",
@@ -879,7 +879,7 @@
         },
         {
           "id": "8-4-2",
-          "title": "Potrošnja domaćeg materijala, potrošnja domaćeg materijala po glavi stanovnika i potrošnja domaćeg materijala po BDP-u",
+          "title": "Domaća potrošnja materijala, domaća potrošnja materijala po stanovniku i domaća potrošnja materijala po BDP-u",
           "description": "",
           "keywords": "",
           "href": "/hr/8-4-2",
@@ -887,7 +887,7 @@
         },
         {
           "id": "8-5-1",
-          "title": "Prosječna zarada po satu zaposlenih, prema polu, starosti, zanimanju i osobama sa invaliditetom",
+          "title": "Prosječna zarada po satu zaposlenika prema spolu, zanimanju,starosti i invaliditetu",
           "description": "",
           "keywords": "",
           "href": "/hr/8-5-1",
@@ -895,7 +895,7 @@
         },
         {
           "id": "8-5-2",
-          "title": "Stopa nezaposlenosti prema polu, starosti i osobama sa invaliditetom",
+          "title": "Stopa nezaposlenosti prema spolu i dobi i stopa nezaposlenosti osoba sa invaliditetom",
           "description": "",
           "keywords": "",
           "href": "/hr/8-5-2",
@@ -903,7 +903,7 @@
         },
         {
           "id": "8-6-1",
-          "title": "Procenat mladih (u dobi od 15-24 godine) koji nisu u obrazovanju, zapošljavanju ili obuci",
+          "title": "Udio mladih (u dobi od 15-24) koji nisu zaposleni, ne obrazuju se i ne osposobljavaju se",
           "description": "",
           "keywords": "",
           "href": "/hr/8-6-1",
@@ -911,7 +911,7 @@
         },
         {
           "id": "8-7-1",
-          "title": "Udio i broj djece uzrasta 5-17 godina angažovanih u dječijem radu, prema polu i starosti",
+          "title": "Udio i ukupan broj djece u dobi od 5 do 17 godina koja su uključena u dječji rad, prema spolu i dobi",
           "description": "",
           "keywords": "",
           "href": "/hr/8-7-1",
@@ -919,7 +919,7 @@
         },
         {
           "id": "8-8-1",
-          "title": "Fatalne i nefatalne povrede na radu na 100.000 radnika, prema polu i migrantskom statusu",
+          "title": "Smrtonosne i nesmrtonosne ozljede na radu na 100 000 radnika, prema spolu i migrantskom statusu",
           "description": "",
           "keywords": "",
           "href": "/hr/8-8-1",
@@ -927,7 +927,7 @@
         },
         {
           "id": "8-8-2",
-          "title": "Nivo nacionalne usklađenosti radnih prava (sloboda udruživanja i kolektivnog pregovaranja) na osnovu tekstualnih izvora Međunarodne organizacije rada (ILO) i nacionalnog zakonodavstva, prema polu i statusu migranata",
+          "title": "Stupanj usklađenosti radnih prava na nacionalnoj razini (pravo na udruživanje i kolektivno pregovaranje) s dokumentima Međunarodne organizacije rada (ILO) i nacionalnim zakonodavstvom, prema spolu i migrantskom statusu",
           "description": "",
           "keywords": "",
           "href": "/hr/8-8-2",
@@ -935,7 +935,7 @@
         },
         {
           "id": "8-9-1",
-          "title": "Turizam direktnog BDP-a kao procenat ukupnog BDP-a i stope rasta",
+          "title": "Dio BDP-a koji se odnosi na turizam kao udio u ukupnom BDP-u i stopi rasta",
           "description": "",
           "keywords": "",
           "href": "/hr/8-9-1",
@@ -943,7 +943,7 @@
         },
         {
           "id": "8-10-1",
-          "title": "(a) Broj filijala komercijalnih banaka na 100.000 odraslih i (b) broj automatizovanih bankomata na 100.000 odraslih",
+          "title": "(a) Broj podružnica komercijalnih banaka na 100 000 odraslih stanovnika i (b) broj automatizovanih bankomata (ATM) na 100 000 odraslih stanovnika",
           "description": "",
           "keywords": "",
           "href": "/hr/8-10-1",
@@ -951,7 +951,7 @@
         },
         {
           "id": "8-10-2",
-          "title": "Udio odraslih (15 i više godina) sa računom u banci ili drugoj finansijskoj instituciji ili sa pružaocem usluge mobilnih novčanih usluga",
+          "title": "Udio odraslih stanovnika (u dobi od 15 godina i više) koji imaju račun u banci ili nekoj drugoj financijskoj instituciji ili kod pružatelja mobilnih novčanih usluga",
           "description": "",
           "keywords": "",
           "href": "/hr/8-10-2",
@@ -959,7 +959,7 @@
         },
         {
           "id": "8-a-1",
-          "title": "Pomoć za trgovinske obaveze i isplate",
+          "title": "Preuzete obveze i isplate u okviru Pomoći za trgovinu",
           "description": "",
           "keywords": "",
           "href": "/hr/8-a-1",
@@ -967,7 +967,7 @@
         },
         {
           "id": "8-b-1",
-          "title": "Postojanje razvijene i operacionalizovane nacionalne strategije za zapošljavanje mladih, kao posebna strategija ili kao dio nacionalne strategije zapošljavanja",
+          "title": "Postojanje razvijene i operacionalizirane nacionalne strategije za zapošljavanje mladih, kao zasebne strategije ili sastavnog dijela nacionalne strategije zapošljavanja",
           "description": "",
           "keywords": "",
           "href": "/hr/8-b-1",
