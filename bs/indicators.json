@@ -1087,7 +1087,7 @@
         
         {
           "id": "10-1-1",
-          "title": "Stopa rasta potrošnje domaćinstava ili prihoda po glavi stanovnika među donjih 40 posto stanovništva i ukupnom stanovništvu",
+          "title": "Stopa rasta potrošnje domaćinstava ili prihoda po članu domaćinstva donjih 40% stanovništva i ukupnog stanovništva",
           "description": "",
           "keywords": "",
           "href": "/bs/10-1-1",
@@ -1095,7 +1095,7 @@
         },
         {
           "id": "10-2-1",
-          "title": "Udio ljudi koji žive ispod 50 procenata srednje vrijednosti prihoda, po polu, starosti i osobama sa invaliditetom",
+          "title": "Udio stanovništva koji živi ispod 50% medijane prihoda, prema spolu, starosti i invalidnosti",
           "description": "",
           "keywords": "",
           "href": "/bs/10-2-1",
@@ -1103,7 +1103,7 @@
         },
         {
           "id": "10-3-1",
-          "title": "Udio stanovništva koje je prijavilo da se lično osjeća diskriminiranim ili maltretiranim u prethodnih 12 mjeseci na osnovu diskriminacije zabranjene međunarodnim ljudskim pravima",
+          "title": "Udio stanovništva koje je izjavilo da se lično osjećalo diskriminirano ili uznemiravano u posljednjih 12 mjeseci na osnovu diskriminacije zabranjene međunarodnim pravom o ljudskim pravima",
           "description": "",
           "keywords": "",
           "href": "/bs/10-3-1",
@@ -1111,7 +1111,7 @@
         },
         {
           "id": "10-4-1",
-          "title": "Udio radne snage u BDP-u",
+          "title": "Udio prihoda od rada u BDP-u",
           "description": "",
           "keywords": "",
           "href": "/bs/10-4-1",
@@ -1127,7 +1127,7 @@
         },
         {
           "id": "10-6-1",
-          "title": "Udio članova i prava glasa zemalja u razvoju u međunarodnim organizacijama",
+          "title": "Udio članova i glasačkih prava zemalja u razvoju u međunarodnim organizacijama",
           "description": "",
           "keywords": "",
           "href": "/bs/10-6-1",
@@ -1135,7 +1135,7 @@
         },
         {
           "id": "10-7-1",
-          "title": "Troškovi zapošljavanja koje snose zaposleni u odnosu na godišnji prihod ostvaren u zemlji odredišta",
+          "title": "Troškovi zapošljavanja koje snose zaposleni u odnosu na mjesečna primanja ostvarena u zemlji odredišta",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-1",
@@ -1143,7 +1143,7 @@
         },
         {
           "id": "10-7-2",
-          "title": "Broj zemalja s migracijskim politikama koje omogućavaju uređenu, sigurnu, redovnu i odgovornu migraciju i mobilnost ljudi",
+          "title": "Broj zemalja sa migracionim politikama koje omogućavaju urednu, sigurnu, redovnu i odgovornu migraciju i mobilnost ljudi",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-2",
@@ -1159,7 +1159,7 @@
         },
         {
           "id": "10-7-4",
-          "title": "Udio stanovništva izbjeglica, prema zemlji porijekla",
+          "title": "Udio izbjegličke populacije, prema zemlji porijekla",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-4",
@@ -1167,7 +1167,7 @@
         },
         {
           "id": "10-a-1",
-          "title": "Udio tarifnih linija primjenjen na uvoz iz najmanje razvijenih zemalja i zemalja u razvoju sa nultom tarifom",
+          "title": "Udio tarifnih stavki koje se primjenjuju na uvoz iz najmanje razvijenih zemalja i zemalja u razvoju sa nultom stopom carine",
           "description": "",
           "keywords": "",
           "href": "/bs/10-a-1",
@@ -1175,7 +1175,7 @@
         },
         {
           "id": "10-b-1",
-          "title": "Ukupni tokovi resursa za razvoj, prema zemljama primaocima i zemljama donatorima i vrsta toka (npr. zvanična razvojna pomoć, strane direktne investicije i drugi tokovi)",
+          "title": "Ukupni finansijski tokovi za razvoj, prema primaocima i zemljama donatorima, kao i prema vrsti tokova (npr. zvanična razvojna pomoć, direktne strane investicije i drugi tokovi)",
           "description": "",
           "keywords": "",
           "href": "/bs/10-b-1",
@@ -1183,7 +1183,7 @@
         },
         {
           "id": "10-c-1",
-          "title": "Troškovi doznaka kao proporcija doznačenog iznosa",
+          "title": "Troškovi prenosa sredstava kao udio u prenesenom iznosu",
           "description": "",
           "keywords": "",
           "href": "/bs/10-c-1",
