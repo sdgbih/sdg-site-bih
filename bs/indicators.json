@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Udio stanovništva koji živi ispod međunarodne linije siromaštva prema spolu, starosti, statusu zaposlenja i geografskoj lokaciji (urbano/ruralno)",
+          "title": "global_indicators.1-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-1-1",
@@ -15,7 +15,7 @@
         },
         {
           "id": "1-2-1",
-          "title": "Udio stanovništva koja živi ispod nacionalne linije siromaštva, po polu i starosti",
+          "title": "global_indicators.1-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-2-1",
@@ -23,7 +23,7 @@
         },
         {
           "id": "1-2-2",
-          "title": "Udio muškaraca, žena i djece svih uzrasta koji žive u siromaštvu u svim njegovim dimenzijama prema nacionalnim definicijama",
+          "title": "global_indicators.1-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-2-2",
@@ -31,7 +31,7 @@
         },
         {
           "id": "1-3-1",
-          "title": "Procenat stanovništva pokrivenih sistemima socijalne zaštite, po polu, uz razlikovanje djece, nezaposlenih lica, starijih osoba, osoba sa invaliditetom, trudnica, novorođenčadi, žrtava povrede na radu i siromašnih i ranjivih",
+          "title": "global_indicators.1-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-3-1",
@@ -39,7 +39,7 @@
         },
         {
           "id": "1-4-1",
-          "title": "Udio stanovništva koji žive u domaćinstvima sa pristupom osnovnim uslugama",
+          "title": "global_indicators.1-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-4-1",
@@ -47,7 +47,7 @@
         },
         {
           "id": "1-4-2",
-          "title": "Udio ukupne populacije odraslih osoba koje imaju sigurna zemljišna prava, (a) sa zakonski priznatom dokumentacijom, i (b) koji smatraju da su njihova zemljišna prava sigurna, po spolu i vrsti prava na zemlji",
+          "title": "global_indicators.1-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-4-2",
@@ -55,7 +55,7 @@
         },
         {
           "id": "1-5-1",
-          "title": "Broj umrlih osoba, nestalih osoba i osoba direktno pogođenih katastrofama na 100.000 stanovnika",
+          "title": "global_indicators.1-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-1",
@@ -63,7 +63,7 @@
         },
         {
           "id": "1-5-2",
-          "title": "Direktni ekonomski gubici koji se pripisuju katastrofama u odnosu na globalni bruto domaći proizvod (BDP)",
+          "title": "global_indicators.1-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-2",
@@ -71,7 +71,7 @@
         },
         {
           "id": "1-5-3",
-          "title": "Broj zemalja koje usvajaju i implementiraju nacionalne strategije za smanjenje rizika od katastrofa u skladu sa Sendai Okvirom za smanjenje rizika od katastrofa 2015-2030",
+          "title": "global_indicators.1-5-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-3",
@@ -79,7 +79,7 @@
         },
         {
           "id": "1-5-4",
-          "title": "Udio jedinica lokalne samouprave koje donose i sprovode lokalne strategije za smanjenje rizika od katastrofa u skladu sa nacionalnim strategijama za smanjenje rizika od katastrofa",
+          "title": "global_indicators.1-5-4-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-5-4",
@@ -87,7 +87,7 @@
         },
         {
           "id": "1-a-1",
-          "title": "Ukupni grantovi službene razvojne pomoći od svih donatora koji se fokusiraju na smanjenje siromaštva kao udio u bruto nacionalnom dohotku zemlje primaoca",
+          "title": "global_indicators.1-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-a-1",
@@ -95,7 +95,7 @@
         },
         {
           "id": "1-a-2",
-          "title": "Udio ukupne državne potrošnje na osnovne usluge (obrazovanje, zdravstvo i socijalna zaštita)",
+          "title": "global_indicators.1-a-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-a-2",
@@ -103,7 +103,7 @@
         },
         {
           "id": "1-b-1",
-          "title": "Javna socijalna potrošnja za siromašne",
+          "title": "global_indicators.1-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/1-b-1",
@@ -119,7 +119,7 @@
         
         {
           "id": "2-1-1",
-          "title": "Prevalencija (iskorjenjivanje) pothranjenosti",
+          "title": "global_indicators.2-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-1-1",
@@ -127,7 +127,7 @@
         },
         {
           "id": "2-1-2",
-          "title": "Prevalencija (iskorjenjivanje) umjerene ili teške nesigurnosti hrane u stanovništvu, prema Skali iskustva nesigurnosti hrane (FIES)",
+          "title": "global_indicators.2-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-1-2",
@@ -135,7 +135,7 @@
         },
         {
           "id": "2-2-1",
-          "title": "Prevalencija zaostajanja u razvoju (visina za uzrast <-2 standardne devijacije od srednje vrijednosti prema standardima Svjetske zdravstvene organizacije (WHO)) među djecom mlađom od 5 godina",
+          "title": "global_indicators.2-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-2-1",
@@ -143,7 +143,7 @@
         },
         {
           "id": "2-2-2",
-          "title": "Prevalencija pothranjenosti (težina prema visini >+2 ili <-2 standardne devijacije od medijana prema Standardu rasta djece Svjetske zdravstvene organizacije (WHO) među djecom mlađom od 5 godina, prema vrsti (pothranjenost i prekomjerna težina)",
+          "title": "global_indicators.2-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-2-2",
@@ -151,7 +151,7 @@
         },
         {
           "id": "2-2-3",
-          "title": "Prevalencija anemije kod žena u dobi od 15 do 49 godina, prema statusu trudnoće (%)",
+          "title": "global_indicators.2-2-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-2-3",
@@ -159,7 +159,7 @@
         },
         {
           "id": "2-3-1",
-          "title": "Obim proizvodnje po jedinici rada po klasama veličine poljoprivrednog/stočarskog/šumarskog preduzeća",
+          "title": "global_indicators.2-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-3-1",
@@ -167,7 +167,7 @@
         },
         {
           "id": "2-3-2",
-          "title": "Prosječni prihod malih proizvođača hrane, prema spolu i autohtonom statusu",
+          "title": "global_indicators.2-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-3-2",
@@ -175,7 +175,7 @@
         },
         {
           "id": "2-4-1",
-          "title": "Udio poljoprivrednih površina pod produktivnom i održivom poljoprivredom",
+          "title": "global_indicators.2-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-4-1",
@@ -183,7 +183,7 @@
         },
         {
           "id": "2-5-1",
-          "title": "Broj (a) biljnih i (b) životinjskih genetičkih resursa za hranu i poljoprivredu osiguranih u objektima za srednjoročno ili dugoročno očuvanje",
+          "title": "global_indicators.2-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-5-1",
@@ -191,7 +191,7 @@
         },
         {
           "id": "2-5-2",
-          "title": "Udio lokalnih pasmina klasifikovanih kao ugrožene od nestajanja",
+          "title": "global_indicators.2-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-5-2",
@@ -199,7 +199,7 @@
         },
         {
           "id": "2-a-1",
-          "title": "Orijentacioni poljoprivredni indeks za državne troškove",
+          "title": "global_indicators.2-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-a-1",
@@ -207,7 +207,7 @@
         },
         {
           "id": "2-a-2",
-          "title": "Ukupni zvanični tokovi sredstava (zvanična razvojna pomoć i druga zvanična sredstva) u sektoru poljoprivrede",
+          "title": "global_indicators.2-a-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-a-2",
@@ -215,7 +215,7 @@
         },
         {
           "id": "2-b-1",
-          "title": "Subvencije za izvoz poljoprivrednih proizvoda",
+          "title": "global_indicators.2-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-b-1",
@@ -223,7 +223,7 @@
         },
         {
           "id": "2-c-1",
-          "title": "Pokazatelj anomalija cijena hrane",
+          "title": "global_indicators.2-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/2-c-1",
@@ -239,7 +239,7 @@
         
         {
           "id": "3-1-1",
-          "title": "Stopa smrtnosti majki",
+          "title": "global_indicators.3-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-1-1",
@@ -247,7 +247,7 @@
         },
         {
           "id": "3-1-2",
-          "title": "Udio porođaja uz prisustvo kvalifikovanih zdravstvenih radnika",
+          "title": "global_indicators.3-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-1-2",
@@ -255,7 +255,7 @@
         },
         {
           "id": "3-2-1",
-          "title": "Stopa smrtnosti djece ispod 5 godina",
+          "title": "global_indicators.3-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-2-1",
@@ -263,7 +263,7 @@
         },
         {
           "id": "3-2-2",
-          "title": "Stopa neonatalne smrtnosti",
+          "title": "global_indicators.3-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-2-2",
@@ -271,7 +271,7 @@
         },
         {
           "id": "3-3-1",
-          "title": "Broj novih slučajeva infekcijom HIV-om na 1.000 nezaraženih osoba, po spolu, dobi i određenim grupama stanovništva",
+          "title": "global_indicators.3-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-3-1",
@@ -279,7 +279,7 @@
         },
         {
           "id": "3-3-2",
-          "title": "Učestalost tuberkuloze na 100.000 stanovnika",
+          "title": "global_indicators.3-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-3-2",
@@ -287,7 +287,7 @@
         },
         {
           "id": "3-3-3",
-          "title": "Učestalost malarije na 1.000 stanovnika",
+          "title": "global_indicators.3-3-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-3-3",
@@ -295,7 +295,7 @@
         },
         {
           "id": "3-3-4",
-          "title": "Učestalost hepatitisa B na 100.000 stanovnika",
+          "title": "global_indicators.3-3-4-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-3-4",
@@ -303,7 +303,7 @@
         },
         {
           "id": "3-3-5",
-          "title": "Broj osoba koje su tražile intervencije protiv zanemarenih tropskih bolesti",
+          "title": "global_indicators.3-3-5-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-3-5",
@@ -311,7 +311,7 @@
         },
         {
           "id": "3-4-1",
-          "title": "Stopa smrtnosti koja se pripisuje kardiovaskularnim bolestima, raku, dijabetesu ili kroničnoj respiratornoj bolesti",
+          "title": "global_indicators.3-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-4-1",
@@ -319,7 +319,7 @@
         },
         {
           "id": "3-4-2",
-          "title": "Stopa smrtnosti od samoubistava",
+          "title": "global_indicators.3-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-4-2",
@@ -327,7 +327,7 @@
         },
         {
           "id": "3-5-1",
-          "title": "Pokrivenost intervencijama liječenja (farmakološke, psihosocijalne i rehabilitacijske i prateće usluge) poremećaja uzrokovanih upotrebom supstanci",
+          "title": "global_indicators.3-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-5-1",
@@ -335,7 +335,7 @@
         },
         {
           "id": "3-5-2",
-          "title": "Potrošnja alkohola po stanovniku (starosti od 15 i više godina) u kalendarskoj godini u litrima čistog alkohola",
+          "title": "global_indicators.3-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-5-2",
@@ -343,7 +343,7 @@
         },
         {
           "id": "3-6-1",
-          "title": "Stopa smrtnosti zbog povreda u cestovnom saobraćaju",
+          "title": "global_indicators.3-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-6-1",
@@ -351,7 +351,7 @@
         },
         {
           "id": "3-7-1",
-          "title": "Udio žena u reproduktivnom dobu (starosti 15–49 godina) koje imaju potrebu za planiranjem porodice savremenim metodama",
+          "title": "global_indicators.3-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-7-1",
@@ -359,7 +359,7 @@
         },
         {
           "id": "3-7-2",
-          "title": "Stopa nataliteta adolescenata (starosti od 10-14 godina; starosti od 15-19 godina) na 1.000 žena u toj starosnoj grupi",
+          "title": "global_indicators.3-7-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-7-2",
@@ -367,7 +367,7 @@
         },
         {
           "id": "3-8-1",
-          "title": "Pokrivenost osnovnih zdravstvenih usluga",
+          "title": "global_indicators.3-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-8-1",
@@ -375,7 +375,7 @@
         },
         {
           "id": "3-8-2",
-          "title": "Udio stanovnika sa velikim izdacima za zdravstvo kao udio u ukupnim rashodima ili prihodima domaćinsava",
+          "title": "global_indicators.3-8-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-8-2",
@@ -383,7 +383,7 @@
         },
         {
           "id": "3-9-1",
-          "title": "Stopa smrtnosti zbog zagađenja vazduha u domaćinstvu i okolišu",
+          "title": "global_indicators.3-9-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-9-1",
@@ -391,7 +391,7 @@
         },
         {
           "id": "3-9-2",
-          "title": "Stopa smrtnosti koja se pripisuje neispravnoj vodi, nesigurnim sanitarnim uslovima i nedostatku higijene (nedostatak usluga WASH - pitke vode, prikladnih sanitarnih i higijenskih uslova)",
+          "title": "global_indicators.3-9-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-9-2",
@@ -399,7 +399,7 @@
         },
         {
           "id": "3-9-3",
-          "title": "Stopa smrtnosti pripisana nenamjernom trovanju",
+          "title": "global_indicators.3-9-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-9-3",
@@ -407,7 +407,7 @@
         },
         {
           "id": "3-a-1",
-          "title": "Dobno standardizirana prevalencija pušenja duhana među osobama starijim od 15 godina",
+          "title": "global_indicators.3-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-a-1",
@@ -415,7 +415,7 @@
         },
         {
           "id": "3-b-1",
-          "title": "Udio ciljne populacije cijepljene svim vakcinama uključenim u njihov nacionalni program",
+          "title": "global_indicators.3-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-b-1",
@@ -423,7 +423,7 @@
         },
         {
           "id": "3-b-2",
-          "title": "Ukupna neto zvanična razvojna pomoć medicinskim istraživanjima i osnovnim zdravstvenim sektorima",
+          "title": "global_indicators.3-b-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-b-2",
@@ -431,7 +431,7 @@
         },
         {
           "id": "3-b-3",
-          "title": "Udio zdravstvenih ustanova koje imaju osnovni set relevantnih esencijalnih lijekova dostupnih i pristupačnih na održivoj osnovi",
+          "title": "global_indicators.3-b-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-b-3",
@@ -439,7 +439,7 @@
         },
         {
           "id": "3-c-1",
-          "title": "Gustoća i raspodjela zdravstvenih radnika",
+          "title": "global_indicators.3-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-c-1",
@@ -447,7 +447,7 @@
         },
         {
           "id": "3-d-1",
-          "title": "Međunarodni zdravstveni propisi (IHR) i spremnost za hitne zdravstvene situacije",
+          "title": "global_indicators.3-d-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-d-1",
@@ -455,7 +455,7 @@
         },
         {
           "id": "3-d-2",
-          "title": "Postotak infekcija koje se šire krvotokom, a uzrokovane su specifičnim mikroorganizmima otpornim na lijekove",
+          "title": "global_indicators.3-d-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/3-d-2",
@@ -471,7 +471,7 @@
         
         {
           "id": "4-1-1",
-          "title": "Udio djece i mladih: (a) u 2./3. razredu; (b) na kraju osnovnog obrazovanja; i (c) na kraju nižeg srednjeg obrazovanja, koji su postigli barem osnovni nivo znanja (i) čitanja i (ii) matematike, prema spolu",
+          "title": "global_indicators.4-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-1-1",
@@ -479,7 +479,7 @@
         },
         {
           "id": "4-1-2",
-          "title": "Stopa završavanja (osnovno obrazovanje, niže srednje obrazovanje, više srednje obrazovanje)",
+          "title": "global_indicators.4-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-1-2",
@@ -487,7 +487,7 @@
         },
         {
           "id": "4-2-1",
-          "title": "Udio djece  uzrasta od 24 do 59 mjeseci koja su u razvoju u zdravlju, učenju i psihosocijalnom blagostanju, prema spolu",
+          "title": "global_indicators.4-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-2-1",
@@ -495,7 +495,7 @@
         },
         {
           "id": "4-2-2",
-          "title": "Stopa učešća u organizovanom učenju (godinu dana prije zvanične dobi za ulazak u osnovnu školu), prema spolu",
+          "title": "global_indicators.4-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-2-2",
@@ -503,7 +503,7 @@
         },
         {
           "id": "4-3-1",
-          "title": "Stopa učešća mladih i odraslih u formalnom i neformalnom obrazovanju i obuci u prethodnih 12 mjeseci, prema spolu",
+          "title": "global_indicators.4-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-3-1",
@@ -511,7 +511,7 @@
         },
         {
           "id": "4-4-1",
-          "title": "Udio mladih i odraslih sa vještinama informacijsko-komunikacijskih tehnologija (IKT), prema vrsti vještina",
+          "title": "global_indicators.4-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-4-1",
@@ -519,7 +519,7 @@
         },
         {
           "id": "4-5-1",
-          "title": "Indeksi pariteta (žene/muškarci, ruralna/urbana područja, najniži/najviši kvintil blagostanja i drugi kao što su status invalidnosti, autohtoni narodi i ugroženi sukobima, zavisno od dostupnosti podataka) za sve indikatore obrazovanja sa ove liste koji se mogu razvrstati",
+          "title": "global_indicators.4-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-5-1",
@@ -527,7 +527,7 @@
         },
         {
           "id": "4-6-1",
-          "title": "Udio stanovništva određene starosne grupe koje je dostiglo najmanji fiksni nivo postignuća u funkcionalnoj  (a) pismenosti i (b) matematičkim vještinama, prema spolu",
+          "title": "global_indicators.4-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-6-1",
@@ -535,7 +535,7 @@
         },
         {
           "id": "4-7-1",
-          "title": "Mjera u kojoj su (i) obrazovanje o globalnom građanstvu i (ii) obrazovanje za održivi razvoj uključeni u (a) nacionalne obrazovne politike; (b) nastavne planove i programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje učenika",
+          "title": "global_indicators.4-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-7-1",
@@ -543,7 +543,7 @@
         },
         {
           "id": "4-a-1",
-          "title": "Udio škola koje nude osnovne usluge, prema vrsti usluga",
+          "title": "global_indicators.4-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-a-1",
@@ -551,7 +551,7 @@
         },
         {
           "id": "4-b-1",
-          "title": "Iznos službene razvojne pomoći za stipendiranje, po sektorima i vrsti obrazovanja",
+          "title": "global_indicators.4-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-b-1",
@@ -559,7 +559,7 @@
         },
         {
           "id": "4-c-1",
-          "title": "Udio nastavnika sa minimalno potrebnim kvalifikacijama, prema nivou obrazovanja",
+          "title": "global_indicators.4-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/4-c-1",
@@ -575,7 +575,7 @@
         
         {
           "id": "5-1-1",
-          "title": "Postoje li ili ne zakonski okviri za promicanje, jačanje i praćenje ravnopravnosti i nediskriminacije na osnovu spola",
+          "title": "global_indicators.5-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-1-1",
@@ -583,7 +583,7 @@
         },
         {
           "id": "5-2-1",
-          "title": "Udio žena i djevojčica u dobi od 15 godina i više koje su ikada imale partnera, a koje su bile izložene fizičkom, seksualnom ili psihičkom nasilju od strane sadašnjeg ili bivšeg intimnog partnera u prethodnih 12 mjeseci, prema obliku nasilja i prema godinama",
+          "title": "global_indicators.5-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-2-1",
@@ -591,7 +591,7 @@
         },
         {
           "id": "5-2-2",
-          "title": "Udio žena i djevojčica od 15 godina i više koje su bile izložene seksualnom nasilju od strane osoba koje nisu intimni partner u prethodnih 12 mjeseci, prema dobi i mjestu događaja",
+          "title": "global_indicators.5-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-2-2",
@@ -599,7 +599,7 @@
         },
         {
           "id": "5-3-1",
-          "title": "Udio žena u dobi od 20 do 24 godine koje su stupile u brak ili u vanbračnu zajednicu prije 15 godine i prije 18 godine",
+          "title": "global_indicators.5-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-3-1",
@@ -607,7 +607,7 @@
         },
         {
           "id": "5-3-2",
-          "title": "Udio djevojčica i žena u dobi od 15 do 49 godina koje su podvrgnute sakaćenju ženskih genitalija, prema dobi",
+          "title": "global_indicators.5-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-3-2",
@@ -615,7 +615,7 @@
         },
         {
           "id": "5-4-1",
-          "title": "Udio vremena provedenog na neplaćenom radu u kući i neplaćenoj njezi, prema spolu, dobi i lokaciji",
+          "title": "global_indicators.5-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-4-1",
@@ -623,7 +623,7 @@
         },
         {
           "id": "5-5-1",
-          "title": "Udio mjesta koje imaju žene u (a) nacionalnim parlamentima i (b) lokalnim samoupravama",
+          "title": "global_indicators.5-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-5-1",
@@ -631,7 +631,7 @@
         },
         {
           "id": "5-5-2",
-          "title": "Udio žena na rukovodećim radnim mjestima",
+          "title": "global_indicators.5-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-5-2",
@@ -639,7 +639,7 @@
         },
         {
           "id": "5-6-1",
-          "title": "Udio žena u dobi od 15 do 49 godina koje donose vlastite informirane odluke u vezi sa seksualnim odnosima, upotrebom kontracepcije i brigom o reproduktivnom zdravlju",
+          "title": "global_indicators.5-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-6-1",
@@ -647,7 +647,7 @@
         },
         {
           "id": "5-6-2",
-          "title": "Broj zemalja sa zakonima i propisima koji garantuju ženama i muškarcima u dobi od 15 godina i više potpun i jednak pristup seksualnoj i reproduktivnoj zdravstvenoj zaštiti, informacijama i obrazovanju",
+          "title": "global_indicators.5-6-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-6-2",
@@ -655,7 +655,7 @@
         },
         {
           "id": "5-a-1",
-          "title": "(a) Udio stanovništva koje se bavi poljoprivredom sa vlasništvom ili sigurnim pravima nad poljoprivrednim zemljištem, prema spolu; i (b) udio žena među vlasnicima ili nosiocima prava na poljoprivredno zemljište, prema vrsti posjeda",
+          "title": "global_indicators.5-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-a-1",
@@ -663,7 +663,7 @@
         },
         {
           "id": "5-a-2",
-          "title": "Udio zemalja u kojima pravni okvir (uključujući običajno pravo) garantuje ženama jednaka prava na vlasništvo nad zemljom i/ili kontrolu",
+          "title": "global_indicators.5-a-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-a-2",
@@ -671,7 +671,7 @@
         },
         {
           "id": "5-b-1",
-          "title": "Udio pojedinaca koji posjeduju mobilni telefon, prema spolu",
+          "title": "global_indicators.5-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-b-1",
@@ -679,7 +679,7 @@
         },
         {
           "id": "5-c-1",
-          "title": "Udio zemalja sa sistemima za praćenje i objavljivanje javnih izdvajanja za rodnu ravnopravnost i osnaživanje žena",
+          "title": "global_indicators.5-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/5-c-1",
@@ -695,7 +695,7 @@
         
         {
           "id": "6-1-1",
-          "title": "Udio stanovništva koji koristi vodu za piće iz sistema kojima se sigurno upravlja",
+          "title": "global_indicators.6-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-1-1",
@@ -703,7 +703,7 @@
         },
         {
           "id": "6-2-1",
-          "title": "Udio stanovništva koji koristi (a) sigurno vođene sanitarne usluge i (b) objekte za pranje ruku sapunom i vodom",
+          "title": "global_indicators.6-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-2-1",
@@ -711,7 +711,7 @@
         },
         {
           "id": "6-3-1",
-          "title": "Udio prečišćenih otpadnih voda iz domaćinstava i industrije",
+          "title": "global_indicators.6-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-3-1",
@@ -719,7 +719,7 @@
         },
         {
           "id": "6-3-2",
-          "title": "Udio vodnih površina sa dobrim kvalitetom vode",
+          "title": "global_indicators.6-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-3-2",
@@ -727,7 +727,7 @@
         },
         {
           "id": "6-4-1",
-          "title": "Promjena u efikasnosti korištenja vode tokom vremena",
+          "title": "global_indicators.6-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-4-1",
@@ -735,7 +735,7 @@
         },
         {
           "id": "6-4-2",
-          "title": "Nivo vodnog stresa: povlačenje slatke vode kao udio raspoloživih slatkovodnih resursa",
+          "title": "global_indicators.6-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-4-2",
@@ -743,7 +743,7 @@
         },
         {
           "id": "6-5-1",
-          "title": "Stepen integrisanog upravljanja vodnim resursima",
+          "title": "global_indicators.6-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-5-1",
@@ -751,7 +751,7 @@
         },
         {
           "id": "6-5-2",
-          "title": "Udio područja pod prekograničnim slivovima i sa operativnim aranžmanima za vodnu saradnju",
+          "title": "global_indicators.6-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-5-2",
@@ -759,7 +759,7 @@
         },
         {
           "id": "6-6-1",
-          "title": "Promjena u obimu vodnih ekosistema tokom vremena",
+          "title": "global_indicators.6-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-6-1",
@@ -767,7 +767,7 @@
         },
         {
           "id": "6-a-1",
-          "title": "Iznos zvanične razvojne pomoći u vezi sa vodosnabdijevanjem i odvodnjom koji je dio vladinog usklađenog plana potrošnje",
+          "title": "global_indicators.6-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-a-1",
@@ -775,7 +775,7 @@
         },
         {
           "id": "6-b-1",
-          "title": "Udio lokalnih administrativnih jedinica sa uspostavljenim operativnim politikama i procedurama za učešće lokalnih zajednica u upravljanju vodama i kanalizacijom",
+          "title": "global_indicators.6-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/6-b-1",
@@ -791,7 +791,7 @@
         
         {
           "id": "7-1-1",
-          "title": "Udio stanovništva sa pristupom električnoj energiji",
+          "title": "global_indicators.7-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-1-1",
@@ -799,7 +799,7 @@
         },
         {
           "id": "7-1-2",
-          "title": "Udio stanovništva koje se primarno oslanja na čista goriva i tehnologiju",
+          "title": "global_indicators.7-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-1-2",
@@ -807,7 +807,7 @@
         },
         {
           "id": "7-2-1",
-          "title": "Udio obnovljive energije u ukupnoj finalnoj potrošnji energije",
+          "title": "global_indicators.7-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-2-1",
@@ -815,7 +815,7 @@
         },
         {
           "id": "7-3-1",
-          "title": "Energetski intenzitet mjeren kroz primarnu energiju i BDP",
+          "title": "global_indicators.7-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-3-1",
@@ -823,7 +823,7 @@
         },
         {
           "id": "7-a-1",
-          "title": "Međunarodni finansijski tokovi prema zemljama u razvoju kao podrška istraživanju i razvoju čiste energije i proizvodnji obnovljive energije, uključujući hibridne sisteme",
+          "title": "global_indicators.7-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-a-1",
@@ -831,7 +831,7 @@
         },
         {
           "id": "7-b-1",
-          "title": "Instalirani kapaciteti za proizvodnju obnovljive energije u zemljama u razvoju (u vatima po glavi stanovnika)",
+          "title": "global_indicators.7-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/7-b-1",
@@ -847,7 +847,7 @@
         
         {
           "id": "8-1-1",
-          "title": "Godišnja stopa rasta realnog BDP-a po glavi stanovnika",
+          "title": "global_indicators.8-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-1-1",
@@ -855,7 +855,7 @@
         },
         {
           "id": "8-2-1",
-          "title": "Godišnja stopa rasta realnog BDP-a po zaposlenoj osobi",
+          "title": "global_indicators.8-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-2-1",
@@ -863,7 +863,7 @@
         },
         {
           "id": "8-3-1",
-          "title": "Udio neformalne zaposlenosti u ukupnoj zaposlenosti, po sektoru i polu",
+          "title": "global_indicators.8-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-3-1",
@@ -871,7 +871,7 @@
         },
         {
           "id": "8-4-1",
-          "title": "Materijalni otisak, materijalni otisak po glavi stanovnika i materijalni otisak po BDP-u",
+          "title": "global_indicators.8-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-4-1",
@@ -879,7 +879,7 @@
         },
         {
           "id": "8-4-2",
-          "title": "Domaća potrošnja materijala, domaća potrošnja materijala po stanovniku i domaća potrošnja materijala po BDP-u",
+          "title": "global_indicators.8-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-4-2",
@@ -887,7 +887,7 @@
         },
         {
           "id": "8-5-1",
-          "title": "Prosječne zarade zaposlenih po satu, prema polu, starosti, zanimanju i invaliditetu",
+          "title": "global_indicators.8-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-5-1",
@@ -895,7 +895,7 @@
         },
         {
           "id": "8-5-2",
-          "title": "Stopa nezaposlenosti po spolu i starosti i stopa nezaposlenosti osoba sa invaliditetom",
+          "title": "global_indicators.8-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-5-2",
@@ -903,7 +903,7 @@
         },
         {
           "id": "8-6-1",
-          "title": "Udio mladih (uzrasta od 15-24) koji nisu zaposleni, ne obrazuju se ili obučavaju",
+          "title": "global_indicators.8-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-6-1",
@@ -911,7 +911,7 @@
         },
         {
           "id": "8-7-1",
-          "title": "Udio i ukupan broj djece uzrasta od 5 do 17 godina koja su uključena u dječji rad, prema spolu i starosti",
+          "title": "global_indicators.8-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-7-1",
@@ -919,7 +919,7 @@
         },
         {
           "id": "8-8-1",
-          "title": "Smrtonosne i nesmrtonosne povrede na radu na 100.000 radnika, prema spolu i migrantskom statusu",
+          "title": "global_indicators.8-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-8-1",
@@ -927,7 +927,7 @@
         },
         {
           "id": "8-8-2",
-          "title": "Stepen usklađenosti radnih prava na nacionalnom nivou (pravo na udruživanje i kolektivno pregovaranje) sa dokumentima Međunarodne organizacije rada (ILO) i nacionalnim zakonodavstvom, prema spolu i migrantskom statusu",
+          "title": "global_indicators.8-8-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-8-2",
@@ -935,7 +935,7 @@
         },
         {
           "id": "8-9-1",
-          "title": "Dio BDP-a koji se odnosi na turizam kao udio u ukupnom BDP-u i stopi rasta",
+          "title": "global_indicators.8-9-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-9-1",
@@ -943,7 +943,7 @@
         },
         {
           "id": "8-10-1",
-          "title": "(a) Broj filijala komercijalnih banaka na 100.000 odraslih stanovnika i (b) broj automatizovanih bankomata (ATM) na 100.000 odraslih stanovnika",
+          "title": "global_indicators.8-10-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-10-1",
@@ -951,7 +951,7 @@
         },
         {
           "id": "8-10-2",
-          "title": "Udio odraslih stanovnika (starih 15 i više godina) koji imaju račun u banci ili drugoj finansijskoj instituciji ili kod pružaoca mobilnih novčanih usluga",
+          "title": "global_indicators.8-10-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-10-2",
@@ -959,7 +959,7 @@
         },
         {
           "id": "8-a-1",
-          "title": "Preuzete obaveze i isplate u okviru Pomoći za trgovinu",
+          "title": "global_indicators.8-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-a-1",
@@ -967,7 +967,7 @@
         },
         {
           "id": "8-b-1",
-          "title": "Postojanje razvijene i operacionalizovane nacionalne strategije za zapošljavanje mladih, kao posebne strategije ili kao dijela nacionalne strategije zapošljavanja",
+          "title": "global_indicators.8-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/8-b-1",
@@ -983,7 +983,7 @@
         
         {
           "id": "9-1-1",
-          "title": "Udio ruralnog stanovništva koje živi u krugu od 2 km od puta koji je funkcionalan tokom cijele godine",
+          "title": "global_indicators.9-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-1-1",
@@ -991,7 +991,7 @@
         },
         {
           "id": "9-1-2",
-          "title": "Obim putnika i tereta, prema vrsti transporta",
+          "title": "global_indicators.9-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-1-2",
@@ -999,7 +999,7 @@
         },
         {
           "id": "9-2-1",
-          "title": "Dodatna vrijednost prerađivačke industrije kao udio BDP-a i po glavi stanovnika",
+          "title": "global_indicators.9-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-2-1",
@@ -1007,7 +1007,7 @@
         },
         {
           "id": "9-2-2",
-          "title": "Zaposlenost u prerađivačkoj industriji kao udio u ukupnoj zaposlenosti",
+          "title": "global_indicators.9-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-2-2",
@@ -1015,7 +1015,7 @@
         },
         {
           "id": "9-3-1",
-          "title": "Udio malih preduzeća u ukupnoj dodanoj vrijednosti prerađivačke industrije",
+          "title": "global_indicators.9-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-3-1",
@@ -1023,7 +1023,7 @@
         },
         {
           "id": "9-3-2",
-          "title": "Udio malih industrijskih preduzeća koja imaju kredit ili kreditnu liniju",
+          "title": "global_indicators.9-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-3-2",
@@ -1031,7 +1031,7 @@
         },
         {
           "id": "9-4-1",
-          "title": "Emisija CO2 po jedinici dodane vrijednosti",
+          "title": "global_indicators.9-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-4-1",
@@ -1039,7 +1039,7 @@
         },
         {
           "id": "9-5-1",
-          "title": "Izdaci za istraživanje i razvoj kao udio u BDP-u",
+          "title": "global_indicators.9-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-5-1",
@@ -1047,7 +1047,7 @@
         },
         {
           "id": "9-5-2",
-          "title": "Istraživači izraženi ekvivalentom pune zaposlenosti na milion stanovnika",
+          "title": "global_indicators.9-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-5-2",
@@ -1055,7 +1055,7 @@
         },
         {
           "id": "9-a-1",
-          "title": "Ukupna zvanična međunarodna podrška (zvanična razvojna pomoć plus drugi službeni tokovi) za infrastrukturu",
+          "title": "global_indicators.9-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-a-1",
@@ -1063,7 +1063,7 @@
         },
         {
           "id": "9-b-1",
-          "title": "Udio dodane vrijednosti u srednje i visoko tehnološkim industrijama u ukupnoj dodanoj vrijednosti",
+          "title": "global_indicators.9-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-b-1",
@@ -1071,7 +1071,7 @@
         },
         {
           "id": "9-c-1",
-          "title": "Udio stanovništva pokrivenog mobilnom mrežom, prema tehnologijama",
+          "title": "global_indicators.9-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/9-c-1",
@@ -1087,7 +1087,7 @@
         
         {
           "id": "10-1-1",
-          "title": "Stopa rasta potrošnje domaćinstava ili prihoda po članu domaćinstva donjih 40% stanovništva i ukupnog stanovništva",
+          "title": "global_indicators.10-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-1-1",
@@ -1095,7 +1095,7 @@
         },
         {
           "id": "10-2-1",
-          "title": "Udio stanovništva koji živi ispod 50% medijane prihoda, prema spolu, starosti i invalidnosti",
+          "title": "global_indicators.10-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-2-1",
@@ -1103,7 +1103,7 @@
         },
         {
           "id": "10-3-1",
-          "title": "Udio stanovništva koje je izjavilo da se lično osjećalo diskriminirano ili uznemiravano u posljednjih 12 mjeseci na osnovu diskriminacije zabranjene međunarodnim pravom o ljudskim pravima",
+          "title": "global_indicators.10-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-3-1",
@@ -1111,7 +1111,7 @@
         },
         {
           "id": "10-4-1",
-          "title": "Udio prihoda od rada u BDP-u",
+          "title": "global_indicators.10-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-4-1",
@@ -1119,7 +1119,7 @@
         },
         {
           "id": "10-4-2",
-          "title": "Redistributivni uticaj fiskalne politike, Gini indeks (%)",
+          "title": "global_indicators.10-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-4-2",
@@ -1127,7 +1127,7 @@
         },
         {
           "id": "10-5-1",
-          "title": "Indikatori finansijske stabilnosti",
+          "title": "global_indicators.10-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-5-1",
@@ -1135,7 +1135,7 @@
         },
         {
           "id": "10-6-1",
-          "title": "Udio članova i glasačkih prava zemalja u razvoju u međunarodnim organizacijama",
+          "title": "global_indicators.10-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-6-1",
@@ -1143,7 +1143,7 @@
         },
         {
           "id": "10-7-1",
-          "title": "Troškovi zapošljavanja koje snose zaposleni u odnosu na mjesečna primanja ostvarena u zemlji odredišta",
+          "title": "global_indicators.10-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-1",
@@ -1151,7 +1151,7 @@
         },
         {
           "id": "10-7-2",
-          "title": "Broj zemalja sa migracionim politikama koje omogućavaju urednu, sigurnu, redovnu i odgovornu migraciju i mobilnost ljudi",
+          "title": "global_indicators.10-7-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-2",
@@ -1159,7 +1159,7 @@
         },
         {
           "id": "10-7-3",
-          "title": "Broj ljudi koji su umrli ili nestali u procesu migracije prema međunarodnoj destinaciji",
+          "title": "global_indicators.10-7-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-3",
@@ -1167,7 +1167,7 @@
         },
         {
           "id": "10-7-4",
-          "title": "Udio izbjegličke populacije, prema zemlji porijekla",
+          "title": "global_indicators.10-7-4-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-7-4",
@@ -1175,7 +1175,7 @@
         },
         {
           "id": "10-a-1",
-          "title": "Udio tarifnih stavki koje se primjenjuju na uvoz iz najmanje razvijenih zemalja i zemalja u razvoju sa nultom stopom carine",
+          "title": "global_indicators.10-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-a-1",
@@ -1183,7 +1183,7 @@
         },
         {
           "id": "10-b-1",
-          "title": "Ukupni finansijski tokovi za razvoj, prema primaocima i zemljama donatorima, kao i prema vrsti tokova (npr. zvanična razvojna pomoć, direktne strane investicije i drugi tokovi)",
+          "title": "global_indicators.10-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-b-1",
@@ -1191,7 +1191,7 @@
         },
         {
           "id": "10-c-1",
-          "title": "Troškovi prenosa sredstava kao udio u prenesenom iznosu",
+          "title": "global_indicators.10-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/10-c-1",
@@ -1207,7 +1207,7 @@
         
         {
           "id": "11-1-1",
-          "title": "Udio gradskog stanovništva koje živi u sirotinjskim četvrtima, neformalnim naseljima ili neadekvatnim stambenim uslovima",
+          "title": "global_indicators.11-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-1-1",
@@ -1215,7 +1215,7 @@
         },
         {
           "id": "11-2-1",
-          "title": "Udio stanovništva sa adekvatnim pristupom javnom prijevozu, prema polu, starosti i invaliditetu",
+          "title": "global_indicators.11-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-2-1",
@@ -1223,7 +1223,7 @@
         },
         {
           "id": "11-3-1",
-          "title": "Odnos stope korištenja zemljišta i stope rasta stanovništva",
+          "title": "global_indicators.11-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-3-1",
@@ -1231,7 +1231,7 @@
         },
         {
           "id": "11-3-2",
-          "title": "Udio gradova koji imaju strukture za direktno učešće civilnog društva u urbanističkom planiranju i upravljanju koje funkcionišu redovno i na demokratski način",
+          "title": "global_indicators.11-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-3-2",
@@ -1239,7 +1239,7 @@
         },
         {
           "id": "11-4-1",
-          "title": "Ukupni izdaci po glavi stanovnika utrošeni na očuvanje i zaštitu cjelokupnog kulturnog i prirodnog nasljeđa, prema vrsti finansiranja (javno, privatno), prema vrsti baštine (kulturna, prirodna), i nivou upravljanja (nacionalni, regionalni i lokalni)",
+          "title": "global_indicators.11-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-4-1",
@@ -1247,7 +1247,7 @@
         },
         {
           "id": "11-5-1",
-          "title": "Broj smrtnih slučajeva, nestalih i direktno pogođenih nesrećama na 100.000 stanovnika",
+          "title": "global_indicators.11-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-5-1",
@@ -1255,7 +1255,7 @@
         },
         {
           "id": "11-5-2",
-          "title": "Direktni ekonomski gubitak koji se pripisuje katastrofama u odnosu na globalni bruto domaći proizvod (BDP)",
+          "title": "global_indicators.11-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-5-2",
@@ -1263,7 +1263,7 @@
         },
         {
           "id": "11-5-3",
-          "title": "(a) Oštećenja kritične infrastrukture i (b) broj poremećaja u osnovnim uslugama koji se pripisuju katastrofama",
+          "title": "global_indicators.11-5-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-5-3",
@@ -1271,7 +1271,7 @@
         },
         {
           "id": "11-6-1",
-          "title": "Udio čvrstog komunalnog otpada koji se sakuplja i kojim se adekvatno upravlja u kontroliranim objektima u ukupnom proizvedenom komunalnom otpadu, po gradovima",
+          "title": "global_indicators.11-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-6-1",
@@ -1279,7 +1279,7 @@
         },
         {
           "id": "11-6-2",
-          "title": "Godišnje srednje vrijednosti finih čestica (npr. PM2,5 i PM10) u gradovima (ponderisani broj stanovnika)",
+          "title": "global_indicators.11-6-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-6-2",
@@ -1287,7 +1287,7 @@
         },
         {
           "id": "11-7-1",
-          "title": "Prosječan udio otvorenih javnih površina u izgrađenim površinama gradova, prema spolu, starosti i invaliditetu",
+          "title": "global_indicators.11-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-7-1",
@@ -1295,7 +1295,7 @@
         },
         {
           "id": "11-7-2",
-          "title": "Udio osoba koje su žrtve fizičkog ili seksualnog uznemiravanja, po spolu, starosti, invaliditetu, i mjestu dešavanja, tokom prethodnih 12 mjeseci",
+          "title": "global_indicators.11-7-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-7-2",
@@ -1303,7 +1303,7 @@
         },
         {
           "id": "11-a-1",
-          "title": "Broj zemalja koje imaju nacionalne urbane politike ili planove regionalnog razvoja koji (a) odgovaraju na dinamiku stanovništva; (b) osiguravaju uravnotežen teritorijalni razvoj; i (c) povećavaju lokalni fiskalni prostor",
+          "title": "global_indicators.11-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-a-1",
@@ -1311,7 +1311,7 @@
         },
         {
           "id": "11-b-1",
-          "title": "Broj zemalja koje usvajaju i provode nacionalne strategije smanjenja rizika od katastrofa u skladu sa Sendai okvirom za smanjenje rizika od katastrofa za period 2015-2030",
+          "title": "global_indicators.11-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-b-1",
@@ -1319,7 +1319,7 @@
         },
         {
           "id": "11-b-2",
-          "title": "Udio jedinica lokalne samouprave koje donose i provode lokalne strategije za smanjenje rizika od katastrofa u skladu s nacionalnom strategijom za smanjenje rizika od katastrofa",
+          "title": "global_indicators.11-b-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-b-2",
@@ -1327,7 +1327,7 @@
         },
         {
           "id": "11-c-1",
-          "title": "Trenutno nema dostupnih podataka za ovaj indikator i njegova metodologija je još uvijek u fazi razvoja",
+          "title": "global_indicators.11-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-c-1",
@@ -1343,7 +1343,7 @@
         
         {
           "id": "12-1-1",
-          "title": "Broj zemalja koje razvijaju, usvajaju ili provode instrumente politike čiji je cilj podrška prelasku na održivu potrošnju i proizvodnju",
+          "title": "global_indicators.12-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-1-1",
@@ -1351,7 +1351,7 @@
         },
         {
           "id": "12-2-1",
-          "title": "Materijalni otisak, materijalni otisak po glavi stanovnika i materijalni otisak po BDP-u",
+          "title": "global_indicators.12-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-2-1",
@@ -1359,7 +1359,7 @@
         },
         {
           "id": "12-2-2",
-          "title": "Domaća potrošnja materijala, domaća potrošnja materijala po stanovniku i domaća potrošnja materijala po BDP-u",
+          "title": "global_indicators.12-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-2-2",
@@ -1367,7 +1367,7 @@
         },
         {
           "id": "12-3-1",
-          "title": "(a) Indeks gubitka hrane (b) Indeks otpada od hrane",
+          "title": "global_indicators.12-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-3-1",
@@ -1375,7 +1375,7 @@
         },
         {
           "id": "12-4-1",
-          "title": "Broj zemalja potpisnica međunarodnih multilateralnih sporazuma o upravljanju opasnim otpadom i hemikalijama koje ispunjavaju svoje obaveze u pogledu prijenosa informacija, kako se zahtijeva svakim relevantnim sporazumom",
+          "title": "global_indicators.12-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-4-1",
@@ -1383,7 +1383,7 @@
         },
         {
           "id": "12-4-2",
-          "title": "(a) Količina proizvedenog opasnog otpada po glavi stanovnika; i (b) udio tretiranog opasnog otpada prema vrsti tretmana",
+          "title": "global_indicators.12-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-4-2",
@@ -1391,7 +1391,7 @@
         },
         {
           "id": "12-5-1",
-          "title": "Nacionalna stopa recikliranja, tone recikliranog materijala",
+          "title": "global_indicators.12-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-5-1",
@@ -1399,7 +1399,7 @@
         },
         {
           "id": "12-6-1",
-          "title": "Broj kompanija koje objavljuju izvještaje o održivosti",
+          "title": "global_indicators.12-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-6-1",
@@ -1407,7 +1407,7 @@
         },
         {
           "id": "12-7-1",
-          "title": "Broj zemalja koje provode politike i akcione planove održivih javnih nabavki",
+          "title": "global_indicators.12-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-7-1",
@@ -1415,7 +1415,7 @@
         },
         {
           "id": "12-8-1",
-          "title": "Mjera u kojoj su obrazovanje za (i) pripadnost globalnoj zajednici i (ii) održivi razvoj uključeni u (a) nacionalne obrazovne politike; (b) nastavne planove i programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje studenata",
+          "title": "global_indicators.12-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-8-1",
@@ -1423,7 +1423,7 @@
         },
         {
           "id": "12-a-1",
-          "title": "Instalirani kapaciteti za proizvodnju obnovljive energije u zemljama u razvoju (u vatima po glavi stanovnika)",
+          "title": "global_indicators.12-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-a-1",
@@ -1431,7 +1431,7 @@
         },
         {
           "id": "12-b-1",
-          "title": "Primjena standardnih računovodstvenih alata za praćenje ekonomskih i ekoloških aspekata održivosti turizma",
+          "title": "global_indicators.12-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-b-1",
@@ -1439,7 +1439,7 @@
         },
         {
           "id": "12-c-1",
-          "title": "Iznos subvencija za fosilna goriva (proizvodnja i potrošnja) po jedinici BDP-a",
+          "title": "global_indicators.12-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/12-c-1",
@@ -1455,7 +1455,7 @@
         
         {
           "id": "13-1-1",
-          "title": "Broj umrlih, nestalih osoba i direktno pogođenih lica uzrokovanih katastrofama na 100.000 stanovnika",
+          "title": "global_indicators.13-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-1-1",
@@ -1463,7 +1463,7 @@
         },
         {
           "id": "13-1-2",
-          "title": "Broj zemalja koje usvajaju i provode nacionalne strategije za smanjenje rizika od katastrofa u skladu sa Sendai okvirom za smanjenje rizika od katastrofa 2015-2030",
+          "title": "global_indicators.13-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-1-2",
@@ -1471,7 +1471,7 @@
         },
         {
           "id": "13-1-3",
-          "title": "Udio lokalnih samouprava koje usvajaju i sprovode strategije za smanjenje rizika od katastrofa u skladu sa nacionalnim strategijama za smanjenje rizika od katastrofa",
+          "title": "global_indicators.13-1-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-1-3",
@@ -1479,7 +1479,7 @@
         },
         {
           "id": "13-2-1",
-          "title": "Broj zemalja s utvrđenim nacionalnim doprinosima, dugoročnim strategijama, nacionalnim planovima adaptacije, strategijama kako je prijavljeno u komunikacijama o prilagodbi i nacionalnim komunikacijama",
+          "title": "global_indicators.13-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-2-1",
@@ -1495,7 +1495,7 @@
         },
         {
           "id": "13-3-1",
-          "title": "Broj zemalja koje su integrirale pitanja (i) obrazovanja globalnog građanstva i (ii) obrazovanja za održivi razvoj integrirano je u (a) nacionalne obrazovne politike; (b) nastavne programe; (c) obrazovanje nastavnika; i (d) ocjenjivanje učenika",
+          "title": "global_indicators.13-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-3-1",
@@ -1503,7 +1503,7 @@
         },
         {
           "id": "13-a-1",
-          "title": "Iznos osiguranih i mobilisanih američkih dolara godišnje u odnosu na nastavljeni postojeći kolektivni cilj mobilizacije od 100 milijardi dolara preuzetih obaveza do 2025. godine",
+          "title": "global_indicators.13-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-a-1",
@@ -1511,7 +1511,7 @@
         },
         {
           "id": "13-b-1",
-          "title": "Broj najnerazvijenijih zemalja i malih ostrvskih zemalja u razvoju s utvrđenim nacionalnim doprinosima dugoročnim strategijama, nacionalnim planovima adaptacije, strategijama kako je navedeno u komunikacijskim adaptacijama i nacionalnim komunikacijama",
+          "title": "global_indicators.13-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/13-b-1",
@@ -1527,7 +1527,7 @@
         
         {
           "id": "14-1-1",
-          "title": "Indeks eutrofikacije obale i gustine plastičnog otpada",
+          "title": "global_indicators.14-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-1-1",
@@ -1535,7 +1535,7 @@
         },
         {
           "id": "14-2-1",
-          "title": "Broj zemalja koje koriste pristupe zasnovane na ekosistemima u upravljanju morskim područjima",
+          "title": "global_indicators.14-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-2-1",
@@ -1543,7 +1543,7 @@
         },
         {
           "id": "14-3-1",
-          "title": "Prosječna pomorska kiselina (pH) mjerena na dogovorenom paketu reprezentativnih stanica za uzorkovanj",
+          "title": "global_indicators.14-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-3-1",
@@ -1551,7 +1551,7 @@
         },
         {
           "id": "14-4-1",
-          "title": "Udio ribljeg fonda na biološki održivim nivoima",
+          "title": "global_indicators.14-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-4-1",
@@ -1559,7 +1559,7 @@
         },
         {
           "id": "14-5-1",
-          "title": "Pokrivenost zaštićenih područja u odnosu na morska područja",
+          "title": "global_indicators.14-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-5-1",
@@ -1567,7 +1567,7 @@
         },
         {
           "id": "14-6-1",
-          "title": "Stepen primjene međunarodnih instrumenata usmjerenih na borbu protiv nezakonitog, neprijavljenog i neregulisanog ribolova",
+          "title": "global_indicators.14-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-6-1",
@@ -1575,7 +1575,7 @@
         },
         {
           "id": "14-7-1",
-          "title": "Održivo ribolov kao procenat BDP-a u malim ostrvskim državama u razvoju, najmanje razvijenim zemljama i svim zemljama",
+          "title": "global_indicators.14-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-7-1",
@@ -1583,7 +1583,7 @@
         },
         {
           "id": "14-a-1",
-          "title": "Udio ukupnog istraživačkog budžeta namjenjenog istraživanjima u oblasti pomorske tehnologije",
+          "title": "global_indicators.14-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-a-1",
@@ -1591,7 +1591,7 @@
         },
         {
           "id": "14-b-1",
-          "title": "Napredak zemalja u stepenu primjene pravnog/regulatornog /političkog/institucionalnog okvira koji prepoznaje i štiti pristupna prava za mala ribarstvo",
+          "title": "global_indicators.14-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-b-1",
@@ -1599,7 +1599,7 @@
         },
         {
           "id": "14-c-1",
-          "title": "Broj zemalja koje ostvaruju napredak u ratifikaciji, prihvatanju i provođenju, kroz zakonske, političke, i institucionalne okvire, instrumenata koji se odnose na okeane a služe provođenju međunarodnog prava, onako kako to predviđa Konvencija Ujedinjenih nacija o pomorskom pravu, za očuvanje i održivu upotrebu okeana i njihovih resursa",
+          "title": "global_indicators.14-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/14-c-1",
@@ -1615,7 +1615,7 @@
         
         {
           "id": "15-1-1",
-          "title": "Područje šuma kao udio ukupne površine zemljišta",
+          "title": "global_indicators.15-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-1-1",
@@ -1623,7 +1623,7 @@
         },
         {
           "id": "15-1-2",
-          "title": "Udio važnih lokacija za kopneni i slatkovodni biodiverzitet koji pokrivaju zaštićena područja, prema tipu ekosistema",
+          "title": "global_indicators.15-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-1-2",
@@ -1631,7 +1631,7 @@
         },
         {
           "id": "15-2-1",
-          "title": "Napredak ka održivom upravljanju šumama",
+          "title": "global_indicators.15-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-2-1",
@@ -1639,7 +1639,7 @@
         },
         {
           "id": "15-3-1",
-          "title": "Udio zemljišta koje je degradirano na ukupnoj površini zemljišta",
+          "title": "global_indicators.15-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-3-1",
@@ -1647,7 +1647,7 @@
         },
         {
           "id": "15-4-1",
-          "title": "Pokrivenost zaštićenim područjima važnih lokacija za planinski biodiverzitet",
+          "title": "global_indicators.15-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-4-1",
@@ -1655,7 +1655,7 @@
         },
         {
           "id": "15-4-2",
-          "title": "Indeks zelenog pokrivača",
+          "title": "global_indicators.15-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-4-2",
@@ -1663,7 +1663,7 @@
         },
         {
           "id": "15-5-1",
-          "title": "Indeks crvene liste",
+          "title": "global_indicators.15-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-5-1",
@@ -1671,7 +1671,7 @@
         },
         {
           "id": "15-6-1",
-          "title": "Broj zemalja koje su usvojile zakonske, administrativne i političke okvire kako bi se osigurala pravična i ravnopravna podjela naknada",
+          "title": "global_indicators.15-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-6-1",
@@ -1679,7 +1679,7 @@
         },
         {
           "id": "15-7-1",
-          "title": "Udio divljih vrsta kojima se trguje, a koje potiču iz krivolova ili nezakonite trgovine",
+          "title": "global_indicators.15-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-7-1",
@@ -1687,7 +1687,7 @@
         },
         {
           "id": "15-8-1",
-          "title": "Udio zemalja koje usvajaju u nacionalno zakonodavstvo i adekvatno obezbeđuju sredstva za prevenciju ili kontrolu invazivnih vrsta",
+          "title": "global_indicators.15-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-8-1",
@@ -1695,7 +1695,7 @@
         },
         {
           "id": "15-9-1",
-          "title": "Broj zemalja koje su utvrdile nacionalne ciljeve u skladu sa ili slične cilju 2 Aichi biodiverziteta Strateškom Plana za biološku raznolikost 2011-2020 u svojoj nacionalnoj strategiji i akcionim planovima za biološku raznolikost i izvještavanju o napretku prema tim ciljevima i integracija biodiverziteta u nacionalne sisteme računovodstva i izvještavanja, definisanih kao implementacija Sistema ekološko-ekonomskog računovodstva",
+          "title": "global_indicators.15-9-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-9-1",
@@ -1703,7 +1703,7 @@
         },
         {
           "id": "15-a-1",
-          "title": "Službena razvojna pomoć za očuvanje i održivu upotrebu biodiverziteta i prihod i finansiranje mobilizirano od ekonomskih instrumenata bitnih za biološku raznolikost",
+          "title": "global_indicators.15-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-a-1",
@@ -1711,7 +1711,7 @@
         },
         {
           "id": "15-b-1",
-          "title": "Službena razvojna pomoć i javni izdaci za očuvanje i održivo korištenje biodiverziteta i ekosistema",
+          "title": "global_indicators.15-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-b-1",
@@ -1719,7 +1719,7 @@
         },
         {
           "id": "15-c-1",
-          "title": "Udio divljih vrsta kojima se trguje, a koje potiču iz krivolova ili nezakonite trgovine",
+          "title": "global_indicators.15-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/15-c-1",
@@ -1735,7 +1735,7 @@
         
         {
           "id": "16-1-1",
-          "title": "Broj žrtava ubistava s namjerom na 100.000 stanovnika, prema polu i starosti",
+          "title": "global_indicators.16-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-1-1",
@@ -1743,7 +1743,7 @@
         },
         {
           "id": "16-1-2",
-          "title": "Umrli povezane sa sukobima na 100.000 stanovnika, prema polu, starosti i uzroku",
+          "title": "global_indicators.16-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-1-2",
@@ -1751,7 +1751,7 @@
         },
         {
           "id": "16-1-3",
-          "title": "Udio stanovništva izloženog (a) fizičkom nasilju, (b) psihičkom nasilju i (c) seksualnom nasilju u prethodnih 12 mjeseci",
+          "title": "global_indicators.16-1-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-1-3",
@@ -1759,7 +1759,7 @@
         },
         {
           "id": "16-1-4",
-          "title": "Udio stanovništva koji se osjećaju sigurno da se kreću sami oko područja u kojem žive",
+          "title": "global_indicators.16-1-4-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-1-4",
@@ -1767,7 +1767,7 @@
         },
         {
           "id": "16-2-1",
-          "title": "Udio djece u dobi od 1 do 17 godina koja su u proteklih mjesec dana doživjela bilo kakve fizičke kazne i/ili psihološku agresiju od strane njegovatelja",
+          "title": "global_indicators.16-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-2-1",
@@ -1775,7 +1775,7 @@
         },
         {
           "id": "16-2-2",
-          "title": "Broj žrtava trgovine ljudima na 100.000 stanovnika, prema polu, starosti i obliku eksploatacije",
+          "title": "global_indicators.16-2-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-2-2",
@@ -1783,7 +1783,7 @@
         },
         {
           "id": "16-2-3",
-          "title": "Udio mladih žena i muškaraca u dobi od 18-29 godina koji su iskusili seksualno nasilje do 18 godina",
+          "title": "global_indicators.16-2-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-2-3",
@@ -1791,7 +1791,7 @@
         },
         {
           "id": "16-3-1",
-          "title": "Udio žrtava nasilja u zadnjih 12 mjeseci koji su nasilje prijavili nadležnim organima ili drugim zvanično priznatim mehanizmima za rješavanje sukoba",
+          "title": "global_indicators.16-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-3-1",
@@ -1799,7 +1799,7 @@
         },
         {
           "id": "16-3-2",
-          "title": "Neosuđeni pritvorenici kao udio u ukupnoj zatvorskoj populaciji",
+          "title": "global_indicators.16-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-3-2",
@@ -1807,7 +1807,7 @@
         },
         {
           "id": "16-4-1",
-          "title": "Ukupna vrijednost dolaznih i odlaznih nezakonitih finansijskih tokova (u tekućoj vrijednosti USD)",
+          "title": "global_indicators.16-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-4-1",
@@ -1815,7 +1815,7 @@
         },
         {
           "id": "16-4-2",
-          "title": "Udio zaplijenjenog, pronađenog i predatog vatrenog oružja za koje su nadležni organi utvrdili nezakonito poreklo ili kontekst u skladu sa međunarodnim instrumentima",
+          "title": "global_indicators.16-4-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-4-2",
@@ -1823,7 +1823,7 @@
         },
         {
           "id": "16-5-1",
-          "title": "Udio osoba koje su imale najmanje jedan kontakt sa državnim službenikom i koje su platile mito državnom službeniku ili su im državni službenici tražili mito tokom prethodnih 12 mjeseci",
+          "title": "global_indicators.16-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-5-1",
@@ -1831,7 +1831,7 @@
         },
         {
           "id": "16-5-2",
-          "title": "Udio preduzeća koja su imala najmanje jedan kontakt sa državnim službenikom i koja su platila mito državnom službeniku ili su im državni službenici tražili mito tokom prethodnih 12 mjeseci",
+          "title": "global_indicators.16-5-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-5-2",
@@ -1839,7 +1839,7 @@
         },
         {
           "id": "16-6-1",
-          "title": "Primarni državni rashodi kao dio prvobitnog odobrenog budžeta, po sektorima (ili po budžetskim kodovima ili slično)",
+          "title": "global_indicators.16-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-6-1",
@@ -1847,7 +1847,7 @@
         },
         {
           "id": "16-6-2",
-          "title": "Udio stanovništva zadovoljnog svojim posljednjim iskustvom u pružanju javnih usluga",
+          "title": "global_indicators.16-6-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-6-2",
@@ -1855,7 +1855,7 @@
         },
         {
           "id": "16-7-1",
-          "title": "Udio položaja u nacionalnim i lokalnim institucijama, uključujući (a) zakonodavna tijela; (b) javnu službu; i (c) pravosuđe, u poređenju sa nacionalnim distribucijama, prema polu, starosti, osobama sa invaliditetom i grupama stanovništva",
+          "title": "global_indicators.16-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-7-1",
@@ -1863,7 +1863,7 @@
         },
         {
           "id": "16-7-2",
-          "title": "Udio stanovništva koji vjeruje da je donošenje odluka inkluzivno i odgovara na potrebe, po polu, starosti, invaliditetu ili populacionim grupama",
+          "title": "global_indicators.16-7-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-7-2",
@@ -1871,7 +1871,7 @@
         },
         {
           "id": "16-8-1",
-          "title": "Udio članova i prava glasa zemalja u razvoju u međunarodnim organizacijama",
+          "title": "global_indicators.16-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-8-1",
@@ -1879,7 +1879,7 @@
         },
         {
           "id": "16-9-1",
-          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u matičnim knigama, prema starosnoj dobi",
+          "title": "global_indicators.16-9-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-9-1",
@@ -1887,7 +1887,7 @@
         },
         {
           "id": "16-10-1",
-          "title": "Broj potvrđenih slučajeva ubistava, kidnapovanja, prisilnog nestanka, proizvoljnog zatvaranja i mučenja novinara, pripadnika medijskog osoblja, sindikata i zagovornika ljudskih prava u prethodnih 12 mjeseci",
+          "title": "global_indicators.16-10-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-10-1",
@@ -1895,7 +1895,7 @@
         },
         {
           "id": "16-10-2",
-          "title": "Broj zemalja koje usvajaju i sprovode ustavne, zakonske i/ili političke garancije za javni pristup informacijama",
+          "title": "global_indicators.16-10-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-10-2",
@@ -1903,7 +1903,7 @@
         },
         {
           "id": "16-a-1",
-          "title": "Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima",
+          "title": "global_indicators.16-a-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-a-1",
@@ -1911,7 +1911,7 @@
         },
         {
           "id": "16-b-1",
-          "title": "Procenat izvještavanja o stanovništvu koje je lično bilo diskriminirano ili uznemiravano u prethodnih 12 mjeseci na osnovu diskriminacije zabranjene međunarodnim zakonom o ljudskim pravima",
+          "title": "global_indicators.16-b-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/16-b-1",
@@ -1927,7 +1927,7 @@
         
         {
           "id": "17-1-1",
-          "title": "Ukupni državni prihodi kao procenat BDP-a, po izvoru",
+          "title": "global_indicators.17-1-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-1-1",
@@ -1935,7 +1935,7 @@
         },
         {
           "id": "17-1-2",
-          "title": "Udio domaćeg budžeta koji se finansira iz domaćih poreza",
+          "title": "global_indicators.17-1-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-1-2",
@@ -1943,7 +1943,7 @@
         },
         {
           "id": "17-2-1",
-          "title": "Neto zvanična razvojna pomoć, ukupno i najmanje razvijenim zemljama, kao dio Organizacije za ekonomsku saradnju i razvoj (OECD) pomoći Komiteta za razvojnu pomoćbruto nacionalnog dohodka donatora (GNI)",
+          "title": "global_indicators.17-2-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-2-1",
@@ -1951,7 +1951,7 @@
         },
         {
           "id": "17-3-1",
-          "title": "Direktna strana ulaganja, službena razvojna pomoć i saradnja jug-jug kao udio u bruto nacionalnom dohotku",
+          "title": "global_indicators.17-3-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-3-1",
@@ -1959,7 +1959,7 @@
         },
         {
           "id": "17-3-2",
-          "title": "Obim doznaka (u američkim dolarima) kao udio u ukupnom BDP-u",
+          "title": "global_indicators.17-3-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-3-2",
@@ -1967,7 +1967,7 @@
         },
         {
           "id": "17-4-1",
-          "title": "Servis duga kao dio izvoza roba i usluga",
+          "title": "global_indicators.17-4-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-4-1",
@@ -1975,7 +1975,7 @@
         },
         {
           "id": "17-5-1",
-          "title": "Broj zemalja koje usvajaju i provode režime promocije investicija za zemlje u razvoju, uključujući i najmanje razvijene zemlje",
+          "title": "global_indicators.17-5-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-5-1",
@@ -1983,7 +1983,7 @@
         },
         {
           "id": "17-6-1",
-          "title": "Pretplata na fiksni internet širokopojasnog pristupa na 100 stanovnika, brzinom",
+          "title": "global_indicators.17-6-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-6-1",
@@ -1991,7 +1991,7 @@
         },
         {
           "id": "17-7-1",
-          "title": "Ukupan iznos odobrenog finansiranja za zemlje u razvoju za promovisanje, prijenos i širenje ekološki prihvatljivih tehnologija",
+          "title": "global_indicators.17-7-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-7-1",
@@ -1999,7 +1999,7 @@
         },
         {
           "id": "17-8-1",
-          "title": "Udio pojedinaca koji koriste internet (%)",
+          "title": "global_indicators.17-8-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-8-1",
@@ -2007,7 +2007,7 @@
         },
         {
           "id": "17-9-1",
-          "title": "Vrijednost finansijske i tehničke pomoći u dolarima (uključujući kroz sjever-jug, jug-jug i trouglastu saradnju) posvećena zemljama u razvoju",
+          "title": "global_indicators.17-9-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-9-1",
@@ -2015,7 +2015,7 @@
         },
         {
           "id": "17-10-1",
-          "title": "Svetski ponderirani carinski prosjek",
+          "title": "global_indicators.17-10-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-10-1",
@@ -2023,7 +2023,7 @@
         },
         {
           "id": "17-11-1",
-          "title": "Udio zemalja u razvoju i najmanje razvijenih zemalja u globalnom izvozu",
+          "title": "global_indicators.17-11-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-11-1",
@@ -2031,7 +2031,7 @@
         },
         {
           "id": "17-12-1",
-          "title": "Prosječne carine s kojima se suočavaju zemlje u razvoju, najnerazvijenije zemlje, i male ostrvske zemlje u razvoju",
+          "title": "global_indicators.17-12-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-12-1",
@@ -2039,7 +2039,7 @@
         },
         {
           "id": "17-13-1",
-          "title": "Glavni makroekonomski pokazatelji",
+          "title": "global_indicators.17-13-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-13-1",
@@ -2047,7 +2047,7 @@
         },
         {
           "id": "17-14-1",
-          "title": "Broj zemalja koje imaju   mehanizme za unapređenje koherentnosti mjera politike za održivi razvoj",
+          "title": "global_indicators.17-14-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-14-1",
@@ -2055,7 +2055,7 @@
         },
         {
           "id": "17-15-1",
-          "title": "Obim korišćenja okvira državnih rezultata i planiranih alata od strane pružalaca razvojne saradnje",
+          "title": "global_indicators.17-15-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-15-1",
@@ -2063,7 +2063,7 @@
         },
         {
           "id": "17-16-1",
-          "title": "Broj zemalja koje prijavljuju napredak u višekorisničkom razvoju efektivnosti koji podržavaju postizanje ciljeva održivog razvoja",
+          "title": "global_indicators.17-16-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-16-1",
@@ -2071,7 +2071,7 @@
         },
         {
           "id": "17-17-1",
-          "title": "Iznos u američkim dolarima opredijeljen javno-privatnom partnerstvu za infrastrukturu",
+          "title": "global_indicators.17-17-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-17-1",
@@ -2079,7 +2079,7 @@
         },
         {
           "id": "17-18-1",
-          "title": "Indikator statističkih kapaciteta za praćenje ciljeva održivog razvoja",
+          "title": "global_indicators.17-18-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-18-1",
@@ -2087,7 +2087,7 @@
         },
         {
           "id": "17-18-2",
-          "title": "Broj zemalja koje imaju nacionalno statističko zakonodavstvo koje je u skladu sa Osnovnim principima zvanične statistike",
+          "title": "global_indicators.17-18-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-18-2",
@@ -2095,7 +2095,7 @@
         },
         {
           "id": "17-18-3",
-          "title": "Broj zemalja sa nacionalnim statističkim planom koji je u potpunosti finansiran i koji se implementira prema izvorima finansiranja",
+          "title": "global_indicators.17-18-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-18-3",
@@ -2103,7 +2103,7 @@
         },
         {
           "id": "17-19-1",
-          "title": "Dolarska vrijednost svih izvora sredstava dostupnih za jačanje statističkih kapaciteta u zemljama razvoja",
+          "title": "global_indicators.17-19-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-19-1",
@@ -2111,7 +2111,7 @@
         },
         {
           "id": "17-19-2",
-          "title": "Procenat zemalja koje su: (a) provele najmanje jedan popis stanovništva i stanova u posljednjih 10 godina; i (b) postigli 100 procenata registracije rođenih i 80 procenata smrti",
+          "title": "global_indicators.17-19-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/17-19-2",
@@ -2127,7 +2127,7 @@
         
         {
           "id": "gross-domestic-product",
-          "title": "Bruto domaći proizvod, proizvodni pristup",
+          "title": "global_indicators.18-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/gross-domestic-product",
@@ -2143,7 +2143,7 @@
         
         {
           "id": "revenue-from-indirect-taxes",
-          "title": "Prihodi od indirektnih poreza",
+          "title": "global_indicators.18-c-2-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/evenue-from-indirect-taxes",
@@ -2159,7 +2159,7 @@
         
         {
           "id": "bih-exports-imports",
-          "title": "Izvoz i uvoz u BiH",
+          "title": "global_indicators.18-c-3-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/bih-exports-imports",
@@ -2175,7 +2175,7 @@
         
         {
           "id": "industrial-turnover",
-          "title": "Promet industrije – godišnje stope promjena izračunate iz kalendarski prilagođenih indeksa",
+          "title": "global_indicators.18-c-4-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/industrial-turnover",
@@ -2191,7 +2191,7 @@
         
         {
           "id": "monthly-producer-price",
-          "title": "Mjesečni indeksi proizvođačkih cijena industrije",
+          "title": "global_indicators.18-c-5-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/monthly-producer-price",
@@ -2207,7 +2207,7 @@
         
         {
           "id": "retail-trade-indices",
-          "title": "Indeksi prometa trgovine na malo, 2015=100",
+          "title": "global_indicators.18-c-6-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/retail-trade-indices",
@@ -2223,7 +2223,7 @@
         
         {
           "id": "average-monthly-earnings",
-          "title": "Prosječne mjesečne plaće zaposlenih",
+          "title": "global_indicators.18-c-7-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/average-monthly-earnings",
@@ -2239,7 +2239,7 @@
         
         {
           "id": "labour-force-of-bih",
-          "title": "Radna snaga u BiH prema administrativnim izvorima",
+          "title": "global_indicators.18-c-8-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/labour-force-of-bih",
@@ -2255,7 +2255,7 @@
         
         {
           "id": "road-transport",
-          "title": "Cestovni saobraćaj",
+          "title": "global_indicators.18-c-9-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/road-transport",
@@ -2271,7 +2271,7 @@
         
         {
           "id": "railway-transport",
-          "title": "Žеljеznički saobraćaj",
+          "title": "global_indicators.18-c-10-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/railway-transport",
@@ -2287,7 +2287,7 @@
         
         {
           "id": "air-transport",
-          "title": "Vаzdušni saobraćaj",
+          "title": "global_indicators.18-c-11-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/air-transport",
@@ -2303,7 +2303,7 @@
         
         {
           "id": "cross-border-traffic",
-          "title": "Granični promet putnika",
+          "title": "global_indicators.18-c-12-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/cross-border-traffic",
@@ -2319,7 +2319,7 @@
         
         {
           "id": "tourist-nights",
-          "title": "Noćenja turista",
+          "title": "global_indicators.18-c-13-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/tourist-nights",
@@ -2335,7 +2335,7 @@
         
         {
           "id": "electricity-supply",
-          "title": "Snabdijevanje električnom energijom",
+          "title": "global_indicators.18-c-14-title",
           "description": "",
           "keywords": "",
           "href": "/bs/covid-19-impact/electricity-supply",
