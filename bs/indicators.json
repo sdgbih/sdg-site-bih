@@ -1207,7 +1207,7 @@
         
         {
           "id": "11-1-1",
-          "title": "Udio urbane populacije koja živi u neformalnim naseljima ili imaju neadekvatne uslove  stanovanja",
+          "title": "Udio gradskog stanovništva koje živi u sirotinjskim četvrtima, neformalnim naseljima ili neadekvatnim stambenim uslovima",
           "description": "",
           "keywords": "",
           "href": "/bs/11-1-1",
@@ -1215,7 +1215,7 @@
         },
         {
           "id": "11-2-1",
-          "title": "Udio stanovništva koji ima povoljan pristup javnom prevozu, prema polu, starosti i osobama sa invaliditetom",
+          "title": "Udio stanovništva sa adekvatnim pristupom javnom prijevozu, prema polu, starosti i invaliditetu",
           "description": "",
           "keywords": "",
           "href": "/bs/11-2-1",
@@ -1223,7 +1223,7 @@
         },
         {
           "id": "11-3-1",
-          "title": "Koeficijent stope korištenja zemljišta u odnosu na stopu rasta stanovništva",
+          "title": "Odnos stope korištenja zemljišta i stope rasta stanovništva",
           "description": "",
           "keywords": "",
           "href": "/bs/11-3-1",
@@ -1231,7 +1231,7 @@
         },
         {
           "id": "11-3-2",
-          "title": "Udio gradova sa strukturom direktnog učešća civilnih društava u urbanističkom planiranju i upravljanju koje funkcionišu redovno i na demokratski način",
+          "title": "Udio gradova koji imaju strukture za direktno učešće civilnog društva u urbanističkom planiranju i upravljanju koje funkcionišu redovno i na demokratski način",
           "description": "",
           "keywords": "",
           "href": "/bs/11-3-2",
@@ -1239,7 +1239,7 @@
         },
         {
           "id": "11-4-1",
-          "title": "Ukupni izdaci po glavi stanovnika za očuvanje, zaštitu i konzervaciju cjelokupne kulturne i prirodne baštine, po vrstama, vrsti naslijeđa i nivou upravljanja (nacionalni, regionalni i lokalni/općinski)",
+          "title": "Ukupni izdaci po glavi stanovnika utrošeni na očuvanje i zaštitu cjelokupnog kulturnog i prirodnog nasljeđa, prema vrsti finansiranja (javno, privatno), prema vrsti baštine (kulturna, prirodna), i nivou upravljanja (nacionalni, regionalni i lokalni)",
           "description": "",
           "keywords": "",
           "href": "/bs/11-4-1",
@@ -1247,7 +1247,7 @@
         },
         {
           "id": "11-5-1",
-          "title": "Broj umrlih, nestalih osoba i direktno pogođenih lica uzrokovan katastrofama na 100.000 stanovnika",
+          "title": "Broj smrtnih slučajeva, nestalih i direktno pogođenih nesrećama na 100.000 stanovnika",
           "description": "",
           "keywords": "",
           "href": "/bs/11-5-1",
@@ -1255,7 +1255,7 @@
         },
         {
           "id": "11-5-2",
-          "title": "Neposredni ekonomski gubici u odnosu na globalni BDP, oštećenja kritične infrastrukture i broj prekida osnovne usluge, uzrokovano katastrofama",
+          "title": "Direktni ekonomski gubitak koji se pripisuje katastrofama u odnosu na globalni bruto domaći proizvod (BDP)",
           "description": "",
           "keywords": "",
           "href": "/bs/11-5-2",
@@ -1271,7 +1271,7 @@
         },
         {
           "id": "11-6-1",
-          "title": "Udio sakupljenog urbanog otpadasa adekvatnim finalnim odlaganjem u odnosu na ukupni urbani čvrsti otpad, po gradovima",
+          "title": "Udio čvrstog komunalnog otpada koji se sakuplja i kojim se adekvatno upravlja u kontroliranim objektima u ukupnom proizvedenom komunalnom otpadu, po gradovima",
           "description": "",
           "keywords": "",
           "href": "/bs/11-6-1",
@@ -1279,7 +1279,7 @@
         },
         {
           "id": "11-6-2",
-          "title": "Godišnji srednji nivoi finih čestica (npr. PM2.5 i PM10) u gradovima (ponderisana populacija)",
+          "title": "Godišnje srednje vrijednosti finih čestica (npr. PM2,5 i PM10) u gradovima (ponderisani broj stanovnika)",
           "description": "",
           "keywords": "",
           "href": "/bs/11-6-2",
@@ -1303,7 +1303,7 @@
         },
         {
           "id": "11-a-1",
-          "title": "Broj zemalja koje imaju nacionalne urbane politike ili planove regionalnog razvoja koji (a) odgovaraju na dinamiku stanovništva; (b) osiguravaju uravnotežen teritorijalni razvoj; i (c) povećava lokalni fiskalni prostor",
+          "title": "Broj zemalja koje imaju nacionalne urbane politike ili planove regionalnog razvoja koji (a) odgovaraju na dinamiku stanovništva; (b) osiguravaju uravnotežen teritorijalni razvoj; i (c) povećavaju lokalni fiskalni prostor",
           "description": "",
           "keywords": "",
           "href": "/bs/11-a-1",
@@ -1311,7 +1311,7 @@
         },
         {
           "id": "11-b-1",
-          "title": "Broj zemalja koje usvajaju i implementiraju nacionalne strategije za smanjenje rizika od katastrofa u skladu sa Sendai Okvirom za smanjenje rizika od katastrofa 2015-2030",
+          "title": "Broj zemalja koje usvajaju i provode nacionalne strategije smanjenja rizika od katastrofa u skladu sa Sendai okvirom za smanjenje rizika od katastrofa za period 2015-2030",
           "description": "",
           "keywords": "",
           "href": "/bs/11-b-1",
@@ -1319,7 +1319,7 @@
         },
         {
           "id": "11-b-2",
-          "title": "Udio lokalnih samouprava koje usvajaju i sprovede strategije za smanjenje rizika od katastrofa u skladu sa nacionalnim strategijama za smanjenje rizika od katastrofa",
+          "title": "Udio jedinica lokalne samouprave koje donose i provode lokalne strategije za smanjenje rizika od katastrofa u skladu s nacionalnom strategijom za smanjenje rizika od katastrofa",
           "description": "",
           "keywords": "",
           "href": "/bs/11-b-2",
@@ -1327,7 +1327,7 @@
         },
         {
           "id": "11-c-1",
-          "title": "Udio finansijske podrške najnerazvijenijim zemljama koji se raspoređuje za izgradnju i rekonstrukciju održivih, otpornih i resursno-efikasnih objekata koristeći lokalne materijale",
+          "title": "global_indicators.11-c-1-title",
           "description": "",
           "keywords": "",
           "href": "/bs/11-c-1",
@@ -2035,7 +2035,7 @@
           "description": "",
           "keywords": "",
           "href": "/bs/17-12-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "17-13-1",
