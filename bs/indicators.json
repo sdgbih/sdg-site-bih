@@ -1927,7 +1927,7 @@
         
         {
           "id": "17-1-1",
-          "title": "Ukupni državni prihodi kao procenat BDP-a, po izvoru",
+          "title": "Ukupni državni prihod kao udio u BDP-u, po izvoru",
           "description": "",
           "keywords": "",
           "href": "/bs/17-1-1",
@@ -1935,7 +1935,7 @@
         },
         {
           "id": "17-1-2",
-          "title": "Udio domaćeg budžeta koji se finansira iz domaćih poreza",
+          "title": "Udio domaćeg budžeta koji se finansira prihodima od domaćih poreza",
           "description": "",
           "keywords": "",
           "href": "/bs/17-1-2",
@@ -1943,7 +1943,7 @@
         },
         {
           "id": "17-2-1",
-          "title": "Neto zvanična razvojna pomoć, ukupno i najmanje razvijenim zemljama, kao dio Organizacije za ekonomsku saradnju i razvoj (OECD) pomoći Komiteta za razvojnu pomoćbruto nacionalnog dohodka donatora (GNI)",
+          "title": "Neto zvanična razvojna pomoć, ukupna i pomoć najmanje razvijenim zemljama, kao udio u bruto nacionalnom dohotku (GNI) donatora Komiteta razvojne pomoći Organizacije za ekonomsku saradnju i razvoj (OECD)",
           "description": "",
           "keywords": "",
           "href": "/bs/17-2-1",
@@ -1951,7 +1951,7 @@
         },
         {
           "id": "17-3-1",
-          "title": "Direktna strana ulaganja, službena razvojna pomoć i saradnja jug-jug kao udio u bruto nacionalnom dohotku",
+          "title": "Dodatna finansijska sredstva mobilizirana za zemlje u razvoju iz više izvora",
           "description": "",
           "keywords": "",
           "href": "/bs/17-3-1",
@@ -1959,7 +1959,7 @@
         },
         {
           "id": "17-3-2",
-          "title": "Obim doznaka (u američkim dolarima) kao udio u ukupnom BDP-u",
+          "title": "Iznos doznaka (USD) kao udio u ukupnom BDP-u",
           "description": "",
           "keywords": "",
           "href": "/bs/17-3-2",
@@ -1967,7 +1967,7 @@
         },
         {
           "id": "17-4-1",
-          "title": "Servis duga kao dio izvoza roba i usluga",
+          "title": "Otplata duga kao udio u izvozu roba i usluga",
           "description": "",
           "keywords": "",
           "href": "/bs/17-4-1",
@@ -1975,7 +1975,7 @@
         },
         {
           "id": "17-5-1",
-          "title": "Broj zemalja koje usvajaju i provode režime promocije investicija za zemlje u razvoju, uključujući i najmanje razvijene zemlje",
+          "title": "Broj zemalja koje usvajaju i provode programe promocije ulaganja za zemlje u razvoju, uključujući najmanje razvijene zemlje",
           "description": "",
           "keywords": "",
           "href": "/bs/17-5-1",
@@ -1983,7 +1983,7 @@
         },
         {
           "id": "17-6-1",
-          "title": "Pretplata na fiksni internet širokopojasnog pristupa na 100 stanovnika, brzinom",
+          "title": "Broj pretplatnika fiksnog širokopojasnog interneta na 100 stanovnika, prema brzini",
           "description": "",
           "keywords": "",
           "href": "/bs/17-6-1",
@@ -1991,7 +1991,7 @@
         },
         {
           "id": "17-7-1",
-          "title": "Ukupan iznos odobrenog finansiranja za zemlje u razvoju za promovisanje, prijenos i širenje ekološki prihvatljivih tehnologija",
+          "title": "Ukupan iznos finansiranja za zemlje u razvoju za promociju, transfer i širenje ekološki prihvatljivih tehnologija",
           "description": "",
           "keywords": "",
           "href": "/bs/17-7-1",
@@ -1999,7 +1999,7 @@
         },
         {
           "id": "17-8-1",
-          "title": "Udio pojedinaca koji koriste internet (%)",
+          "title": "Udio pojedinaca koji koriste Internet (%)",
           "description": "",
           "keywords": "",
           "href": "/bs/17-8-1",
@@ -2007,7 +2007,7 @@
         },
         {
           "id": "17-9-1",
-          "title": "Vrijednost finansijske i tehničke pomoći u dolarima (uključujući kroz sjever-jug, jug-jug i trouglastu saradnju) posvećena zemljama u razvoju",
+          "title": "Vrijednost finansijske i tehničke pomoći, izražene u američkim dolarima (uključujući pomoć kroz saradnju Sjever-Jug, Jug-Jug i trostrane saradnje), namijenjene zemljama u razvoju",
           "description": "",
           "keywords": "",
           "href": "/bs/17-9-1",
@@ -2015,7 +2015,7 @@
         },
         {
           "id": "17-10-1",
-          "title": "Svetski ponderirani carinski prosjek",
+          "title": "Svjetski ponderisani prosjek carina",
           "description": "",
           "keywords": "",
           "href": "/bs/17-10-1",
@@ -2023,7 +2023,7 @@
         },
         {
           "id": "17-11-1",
-          "title": "Udio zemalja u razvoju i najmanje razvijenih zemalja u globalnom izvozu",
+          "title": "Udio zemalja u razvoju i najmanje razvijenih zemalja u svjetskom izvozu",
           "description": "",
           "keywords": "",
           "href": "/bs/17-11-1",
@@ -2031,7 +2031,7 @@
         },
         {
           "id": "17-12-1",
-          "title": "Prosječne carine s kojima se suočavaju zemlje u razvoju, najnerazvijenije zemlje, i male ostrvske zemlje u razvoju",
+          "title": "Ponderisane prosječne carine koje se primjenjuju na zemlje u razvoju, najmanje razvijene zemlje i male ostrvske zemlje u razvoju",
           "description": "",
           "keywords": "",
           "href": "/bs/17-12-1",
@@ -2047,7 +2047,7 @@
         },
         {
           "id": "17-14-1",
-          "title": "Broj zemalja koje imaju   mehanizme za unapređenje koherentnosti mjera politike za održivi razvoj",
+          "title": "Broj zemalja sa uspostavljenim mehanizmima za poboljšanje usklađenosti politika održivog razvoja",
           "description": "",
           "keywords": "",
           "href": "/bs/17-14-1",
@@ -2055,7 +2055,7 @@
         },
         {
           "id": "17-15-1",
-          "title": "Obim korišćenja okvira državnih rezultata i planiranih alata od strane pružalaca razvojne saradnje",
+          "title": "Mjera u kojoj se koriste nacionalni okviri rezultata i instrumenti planiranja od strane pružaoca razvojne saradnje",
           "description": "",
           "keywords": "",
           "href": "/bs/17-15-1",
@@ -2063,7 +2063,7 @@
         },
         {
           "id": "17-16-1",
-          "title": "Broj zemalja koje prijavljuju napredak u višekorisničkom razvoju efektivnosti koji podržavaju postizanje ciljeva održivog razvoja",
+          "title": "Broj zemalja koje izvještavaju o napretku kroz multiagencijske okvire za praćenje efektivnosti razvoja koji podržavaju postizanje Ciljeva održivog razvoja",
           "description": "",
           "keywords": "",
           "href": "/bs/17-16-1",
@@ -2071,7 +2071,7 @@
         },
         {
           "id": "17-17-1",
-          "title": "Iznos u američkim dolarima opredijeljen javno-privatnom partnerstvu za infrastrukturu",
+          "title": "Iznos u američkim dolarima namijenjen javno-privatnim partnerstvima za infrastrukturu",
           "description": "",
           "keywords": "",
           "href": "/bs/17-17-1",
@@ -2095,7 +2095,7 @@
         },
         {
           "id": "17-18-3",
-          "title": "Broj zemalja sa nacionalnim statističkim planom koji je u potpunosti finansiran i koji se implementira prema izvorima finansiranja",
+          "title": "Broj zemalja sa nacionalnim statističkim planom za koji su obezbijeđena financijska sredstva i koji se provodi, prema izvoru finansiranja",
           "description": "",
           "keywords": "",
           "href": "/bs/17-18-3",
@@ -2103,7 +2103,7 @@
         },
         {
           "id": "17-19-1",
-          "title": "Dolarska vrijednost svih izvora sredstava dostupnih za jačanje statističkih kapaciteta u zemljama razvoja",
+          "title": "Vrijednost (izražena u američkim dolarima) svih resursa stavljenih na raspolaganje za jačanje statističkih kapaciteta u zemljama u razvoju",
           "description": "",
           "keywords": "",
           "href": "/bs/17-19-1",
@@ -2111,7 +2111,7 @@
         },
         {
           "id": "17-19-2",
-          "title": "Procenat zemalja koje su: (a) provele najmanje jedan popis stanovništva i stanova u posljednjih 10 godina; i (b) postigli 100 procenata registracije rođenih i 80 procenata smrti",
+          "title": "Udio zemalja koje su (a) u posljednjih 10 godina izvršile najmanje jedan popis stanovništva, domaćinstava i stanova i (b) ostvarile 100 posto registraciju rođenih i 80 posto registraciju umrlih",
           "description": "",
           "keywords": "",
           "href": "/bs/17-19-2",
