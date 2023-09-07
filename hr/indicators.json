@@ -1735,7 +1735,7 @@
         
         {
           "id": "16-1-1",
-          "title": "Broj žrtava ubistava s namjerom na 100.000 stanovnika, prema polu i starosti",
+          "title": "Broj žrtava ubojstva s namjerom na 100,000 stanovnika, prema spolu i starosti",
           "description": "",
           "keywords": "",
           "href": "/hr/16-1-1",
@@ -1743,7 +1743,7 @@
         },
         {
           "id": "16-1-2",
-          "title": "Umrli povezane sa sukobima na 100.000 stanovnika, prema polu, starosti i uzroku",
+          "title": "Smrti povezane sa sukobima na 100 000 stanovnika, po spolu, dobi i uzroku",
           "description": "",
           "keywords": "",
           "href": "/hr/16-1-2",
@@ -1751,7 +1751,7 @@
         },
         {
           "id": "16-1-3",
-          "title": "Udio stanovništva izloženog (a) fizičkom nasilju, (b) psihičkom nasilju i (c) seksualnom nasilju u prethodnih 12 mjeseci",
+          "title": "Udio stanovništva koje je bilo izloženo (a) fizičkom nasilju, (b) psihološkom nasilju i (c) seksualnom nasilju u posljednjih 12 mjeseci",
           "description": "",
           "keywords": "",
           "href": "/hr/16-1-3",
@@ -1759,7 +1759,7 @@
         },
         {
           "id": "16-1-4",
-          "title": "Udio stanovništva koji se osjećaju sigurno da se kreću sami oko područja u kojem žive",
+          "title": "Udio osoba koje se osjećaju sigurnim kada same šetaju područjem u kojem žive",
           "description": "",
           "keywords": "",
           "href": "/hr/16-1-4",
@@ -1767,7 +1767,7 @@
         },
         {
           "id": "16-2-1",
-          "title": "Udio djece u dobi od 1 do 17 godina koja su u proteklih mjesec dana doživjela bilo kakve fizičke kazne i/ili psihološku agresiju od strane njegovatelja",
+          "title": "Udio djece u dobi od 1 do 17 godina koja su u posljednjih mjesec dana doživjela bilo kakvu fizičku kaznu i/ili psihološku agresiju od svojih roditelja/skrbnikaa",
           "description": "",
           "keywords": "",
           "href": "/hr/16-2-1",
@@ -1775,7 +1775,7 @@
         },
         {
           "id": "16-2-2",
-          "title": "Broj žrtava trgovine ljudima na 100.000 stanovnika, prema polu, starosti i obliku eksploatacije",
+          "title": "Broj žrtava trgovine ljudima na 100 000 stanovnika, prema spolu, dobi i obliku eksploatacije",
           "description": "",
           "keywords": "",
           "href": "/hr/16-2-2",
@@ -1783,7 +1783,7 @@
         },
         {
           "id": "16-2-3",
-          "title": "Udio mladih žena i muškaraca u dobi od 18-29 godina koji su iskusili seksualno nasilje do 18 godina",
+          "title": "Udio mladih žena i muškaraca u dobi od 18 do 29 godina koji su doživjeli seksualno nasilje do 18. godine",
           "description": "",
           "keywords": "",
           "href": "/hr/16-2-3",
@@ -1791,7 +1791,7 @@
         },
         {
           "id": "16-3-1",
-          "title": "Udio žrtava nasilja u zadnjih 12 mjeseci koji su nasilje prijavili nadležnim organima ili drugim zvanično priznatim mehanizmima za rješavanje sukoba",
+          "title": "Udio žrtava nasilja u proteklih 12 mjeseci koji su svoju viktimizaciju prijavili nadležnim tijelima ili drugim službeno priznatim mehanizmima za rješavanje sukoba",
           "description": "",
           "keywords": "",
           "href": "/hr/16-3-1",
@@ -1799,7 +1799,7 @@
         },
         {
           "id": "16-3-2",
-          "title": "Neosuđeni pritvorenici kao udio u ukupnoj zatvorskoj populaciji",
+          "title": "Neosuđeni pritvorenici kao udio ukupne zatvorske populacije",
           "description": "",
           "keywords": "",
           "href": "/hr/16-3-2",
@@ -1807,7 +1807,7 @@
         },
         {
           "id": "16-4-1",
-          "title": "Ukupna vrijednost dolaznih i odlaznih nezakonitih finansijskih tokova (u tekućoj vrijednosti USD)",
+          "title": "Ukupna vrijednost unutarnjih i vanjskih nezakonitih financijskih tokova (u tekućim američkim dolarima)",
           "description": "",
           "keywords": "",
           "href": "/hr/16-4-1",
@@ -1815,7 +1815,7 @@
         },
         {
           "id": "16-4-2",
-          "title": "Udio zaplijenjenog, pronađenog i predatog vatrenog oružja za koje su nadležni organi utvrdili nezakonito poreklo ili kontekst u skladu sa međunarodnim instrumentima",
+          "title": "Udio zaplijenjenog, pronađenog ili predanog oružja čije je nezakonito podrijetlo ili okolnosti otkrilo ili utvrdilo nadležno tijelo u skladu s međunarodnim instrumentima",
           "description": "",
           "keywords": "",
           "href": "/hr/16-4-2",
@@ -1823,7 +1823,7 @@
         },
         {
           "id": "16-5-1",
-          "title": "Udio osoba koje su imale najmanje jedan kontakt sa državnim službenikom i koje su platile mito državnom službeniku ili su im državni službenici tražili mito tokom prethodnih 12 mjeseci",
+          "title": "Udio osoba koje su imale barem jedan kontakt s javnim službenikom i koji su platili mito javnom službeniku ili im je javni službenik tražio mito tijekom proteklih 12 mjeseci",
           "description": "",
           "keywords": "",
           "href": "/hr/16-5-1",
@@ -1831,7 +1831,7 @@
         },
         {
           "id": "16-5-2",
-          "title": "Udio preduzeća koja su imala najmanje jedan kontakt sa državnim službenikom i koja su platila mito državnom službeniku ili su im državni službenici tražili mito tokom prethodnih 12 mjeseci",
+          "title": "Udio poslovnih subjekata koji su imali barem jedan kontakt s javnim službenikom i koji su platili mito javnom službeniku ili im je javni službenik tražio mito tijekom proteklih 12 mjeseci",
           "description": "",
           "keywords": "",
           "href": "/hr/16-5-2",
@@ -1839,7 +1839,7 @@
         },
         {
           "id": "16-6-1",
-          "title": "Primarni državni rashodi kao dio prvobitnog odobrenog budžeta, po sektorima (ili po budžetskim kodovima ili slično)",
+          "title": "Osnovni rashodi države po sektorima kao udio izvorno odobrenog proračuna (ili proračunskim kodovima ili slično)",
           "description": "",
           "keywords": "",
           "href": "/hr/16-6-1",
@@ -1847,7 +1847,7 @@
         },
         {
           "id": "16-6-2",
-          "title": "Udio stanovništva zadovoljnog svojim posljednjim iskustvom u pružanju javnih usluga",
+          "title": "Udio stanovništva koje je zadovoljno sa svojim posljednjim iskustvom s javim službama",
           "description": "",
           "keywords": "",
           "href": "/hr/16-6-2",
@@ -1855,7 +1855,7 @@
         },
         {
           "id": "16-7-1",
-          "title": "Udio položaja u nacionalnim i lokalnim institucijama, uključujući (a) zakonodavna tijela; (b) javnu službu; i (c) pravosuđe, u poređenju sa nacionalnim distribucijama, prema polu, starosti, osobama sa invaliditetom i grupama stanovništva",
+          "title": "Udjeli radnih mjesta u nacionalnim i lokalnim institucijama, uključujući (a) zakonodavna tijela; (b) javne službe; i (c) pravosuđe, u usporedbi s raspodjelom na nacionalnoj razini, prema spolu, dobi, osobama s invaliditetom i skupinama stanovništva",
           "description": "",
           "keywords": "",
           "href": "/hr/16-7-1",
@@ -1863,7 +1863,7 @@
         },
         {
           "id": "16-7-2",
-          "title": "Udio stanovništva koji vjeruje da je donošenje odluka inkluzivno i odgovara na potrebe, po polu, starosti, invaliditetu ili populacionim grupama",
+          "title": "Udio stanovništva koje vjeruje da je donošenje odluka inkluzivno i odgovorno, prema spolu, dobi, invaliditetu i skupini stanovništva",
           "description": "",
           "keywords": "",
           "href": "/hr/16-7-2",
@@ -1871,7 +1871,7 @@
         },
         {
           "id": "16-8-1",
-          "title": "Udio članova i prava glasa zemalja u razvoju u međunarodnim organizacijama",
+          "title": "Udio članova i glasačkih prava zemalja u razvoju u međunarodnim organizacijama",
           "description": "",
           "keywords": "",
           "href": "/hr/16-8-1",
@@ -1879,7 +1879,7 @@
         },
         {
           "id": "16-9-1",
-          "title": "Udio djece mlađe od 5 godina čija su rođenja registrovana u matičnim knigama, prema starosnoj dobi",
+          "title": "Udio djece mlađe od 5 godina čije je rođenje registrirano pri tijelu civilne vlasti, prema starosti",
           "description": "",
           "keywords": "",
           "href": "/hr/16-9-1",
@@ -1887,7 +1887,7 @@
         },
         {
           "id": "16-10-1",
-          "title": "Broj potvrđenih slučajeva ubistava, kidnapovanja, prisilnog nestanka, proizvoljnog zatvaranja i mučenja novinara, pripadnika medijskog osoblja, sindikata i zagovornika ljudskih prava u prethodnih 12 mjeseci",
+          "title": "Broj potvrđenih slučajeva ubojstava, otmica, prisilnih nestanaka, samovoljnog zatvaranja i mučenja novinara, pripadnika medija, sindikalaca i boraca za ljudska prava u proteklih 12 mjeseci",
           "description": "",
           "keywords": "",
           "href": "/hr/16-10-1",
@@ -1895,7 +1895,7 @@
         },
         {
           "id": "16-10-2",
-          "title": "Broj zemalja koje usvajaju i sprovode ustavne, zakonske i/ili političke garancije za javni pristup informacijama",
+          "title": "Broj zemalja koje donose i provode ustavne, zakonske i/ili političke odredbe kojima se osigurava javnosti pristup informacijama",
           "description": "",
           "keywords": "",
           "href": "/hr/16-10-2",
@@ -1903,7 +1903,7 @@
         },
         {
           "id": "16-a-1",
-          "title": "Postojanje nezavisnih nacionalnih institucija za ljudska prava u skladu sa Pariškim principima",
+          "title": "Postojanje neovisnih nacionalnih institucija za ljudska prava sukladno Pariškim načelima",
           "description": "",
           "keywords": "",
           "href": "/hr/16-a-1",
@@ -1911,7 +1911,7 @@
         },
         {
           "id": "16-b-1",
-          "title": "Procenat izvještavanja o stanovništvu koje je lično bilo diskriminirano ili uznemiravano u prethodnih 12 mjeseci na osnovu diskriminacije zabranjene međunarodnim zakonom o ljudskim pravima",
+          "title": "Udio stanovništva koji je izjavio kako se osobno osjećao diskriminiranim ili uznemiravanim u proteklih 12 mjeseci na temelju razloga diskriminacije zabranjenih prema međunarodnoj pravnoj osnovi o ljudskim pravima",
           "description": "",
           "keywords": "",
           "href": "/hr/16-b-1",
