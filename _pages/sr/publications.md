@@ -16,6 +16,7 @@ permalink: /sr/publications/
         <li><a href="http://www.bhas.gov.ba/data/Publikacije/Bilteni/2021/SDG_00_2019_TB_0_SR.pdf" target="_blank">Индикатори одрживог развоја БиХ, 2019.</a></li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Bilteni/2019/SDG_00_2018_TB_0_BS.pdf" target="_blank">Индикатори одрживог развоја БиХ, 2018.</a> </li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Metodologije/SDG_00_2020_MD_0_BS.pdf" target="_blank">Мапа пута</a> </li>
-        <li><a href="http://bhas.gov.ba/data/Publikacije/Metodologije/SDG_00_2019_MD_0_BS.pdf" target="_blank">Добровољни извјештај Босне и Херцеговине о провођењу Агенде 2030 и Циљева одрживог развоја 2023.</a> </li>
+        <li><a href="http://bhas.gov.ba/data/Publikacije/Metodologije/SDG_00_2019_MD_0_BS.pdf" target="_blank">Добровољни извјештај Босне и Херцеговине о провођењу Агенде 2030 и Циљева одрживог развоја 2019.</a> </li>
+        <li><a href="http://www.dep.gov.ba/Koordinacija_strateških_dokumenata/Objave/COR/VNR_BS_web.pdf" target="_blank">Добровољни извјештај Босне и Херцеговине о провођењу Агенде 2030 и Циљева одрживог развоја 2023.</a> </li>
     </ul>
 </div>
