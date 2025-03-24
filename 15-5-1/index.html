@@ -132,7 +132,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250324021143">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250324094650">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -472,7 +472,7 @@ var translations = {
   data-charttitles="[{&quot;series&quot;:&quot;Red List Index&quot;,&quot;title&quot;:&quot;Red List Index&quot;}]"
   data-measurementunit=""
   data-showdata="true"
-  data-graphtype="bar"
+  data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="null"
@@ -524,7 +524,7 @@ var translations = {
         
         
         
-        <th scope="col">{"BOOL"=>"Boolean or binary measure", "CON_PPP_USD"=>"Constant PPP USD", "CON_USD"=>"Constant USD", "CON_USD_M"=>"Millions of constant United States dollars", "CUR_LCU"=>"in BAM", "CUR_LCU_M"=>"Local currency (millions)", "CUR_NAC_1000"=>"in thousands of BAM", "CU_USD"=>"(Current United States dollars)", "CU_USD_B"=>"(billions of nominal United States dollars)", "CU_USD_M"=>"Millions of current United States dollars", "GPERM3"=>"Micrograms per cubic meter", "GWh"=>"GWh", "HA_TH"=>"Thousands of hectares", "IX"=>"Index", "KG"=>"Kilograms", "KG_PER_CON_USD"=>"Kilograms per constant USD", "KM2"=>"Square kilometers", "LITRES"=>"LITRES", "MILLIONS"=>"MILLIONS", "MJ_PER_GDP_CON_PPP_USD"=>"Megajoules per USD constant PPP GDP", "MT_CO2E"=>"Million tons of CO2 equivalent", "M_M3_PER_YR"=>"Million of cubic metres per annum", "NUMBER"=>"Number", "PER_1000000_POP"=>"Per million population", "PER_100000_LIVE_BIRTHS"=>"Per 100,000 live births", "PER_100000_POP"=>"Per 100,000 population", "PER_10000_POP"=>"Per 10,000 population", "PER_1000_LIVE_BIRTHS"=>"Per 1,000 live births", "PER_1000_POP"=>"Per 1,000 population", "PER_1000_UNINFECTED_POP"=>"Per 1,000 uninfected population", "PER_100_POP"=>"Per 100 population", "PER_MARW_20T24Y"=>"(%) of married women aged 20 - 24 years", "PT"=>"Percent", "P_KM"=>"Passenger kilometres", "RO"=>"Ratio", "SCORE"=>"Score", "THOUSANDS"=>"THOUSANDS", "TONNES"=>"TONNES", "TONNES_M"=>"TONNES_M", "TONNES_T"=>"OOOt", "T_KM"=>"Tonne kilometres", "T_PER_HA"=>"Tonnes per hectare", "UNIT_MEASURE"=>"Unit of measure", "USD"=>"USD", "USD/m3"=>"USD/m3", "W_PER_CAPITA"=>"Watts per capita"}</th>
+        <th scope="col">{"BOOL"=>"Boolean or binary measure", "CON_PPP_USD"=>"Constant PPP USD", "CON_USD"=>"Constant USD", "CON_USD_M"=>"Millions of constant United States dollars", "CUR_LCU"=>"in BAM", "CUR_LCU_M"=>"Local currency (millions)", "CUR_NAC_1000"=>"in thousands of BAM", "CU_USD"=>"(Current United States dollars)", "CU_USD_B"=>"(billions of nominal United States dollars)", "CU_USD_M"=>"Millions of current United States dollars", "GPERM3"=>"Micrograms per cubic meter", "GWh"=>"GWh", "HA_TH"=>"Thousands of hectares", "INDEX"=>"Index", "IX"=>"Index", "KG"=>"Kilograms", "KG_PER_CON_USD"=>"Kilograms per constant USD", "KM2"=>"Square kilometers", "LITRES"=>"LITRES", "MILLIONS"=>"MILLIONS", "MJ_PER_GDP_CON_PPP_USD"=>"Megajoules per USD constant PPP GDP", "MT_CO2E"=>"Million tons of CO2 equivalent", "M_M3_PER_YR"=>"Million of cubic metres per annum", "NUMBER"=>"Number", "PER_1000000_POP"=>"Per million population", "PER_100000_LIVE_BIRTHS"=>"Per 100,000 live births", "PER_100000_POP"=>"Per 100,000 population", "PER_10000_POP"=>"Per 10,000 population", "PER_1000_LIVE_BIRTHS"=>"Per 1,000 live births", "PER_1000_POP"=>"Per 1,000 population", "PER_1000_UNINFECTED_POP"=>"Per 1,000 uninfected population", "PER_100_POP"=>"Per 100 population", "PER_MARW_20T24Y"=>"(%) of married women aged 20 - 24 years", "PT"=>"Percent", "P_KM"=>"Passenger kilometres", "RO"=>"Ratio", "SCORE"=>"Score", "THOUSANDS"=>"THOUSANDS", "TONNES"=>"TONNES", "TONNES_M"=>"TONNES_M", "TONNES_T"=>"OOOt", "T_KM"=>"Tonne kilometres", "T_PER_HA"=>"Tonnes per hectare", "UNIT_MEASURE"=>"Unit of measure", "USD"=>"USD", "USD/m3"=>"USD/m3", "W_PER_CAPITA"=>"Watts per capita"}</th>
         
         
         
@@ -542,6 +542,86 @@ var translations = {
           
           
           <td>0.89427</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2001</td>
+          
+          
+          
+          <td>0.89421</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2002</td>
+          
+          
+          
+          <td>0.89422</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>
+          
+          
+          
+          <td>0.89411</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>
+          
+          
+          
+          <td>0.89381</td>
           
           
           
@@ -617,11 +697,111 @@ var translations = {
         <tr>
           
           
+          <td>2016</td>
+          
+          
+          
+          <td>0.89047</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>0.8902</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
           <td>2018</td>
           
           
           
           <td>0.88992</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>0.88945</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>0.88904</td>
+          
+          
+          
+          <td>Index</td>
+          
+          
+          
+          <td class="table-value">Red List Index</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>0.88866</td>
           
           
           
@@ -886,32 +1066,39 @@ opensdg.chartConfigAlter(function(config, info) {
 </script>
 
 <script>
+// For line charts, add the vertical line hover functionality.
 opensdg.chartConfigAlter(function(config, info) {
-  if (info.stackedDisaggregation) {
     var overrides = {
-      options: {
-        scales: {
-          xAxes: [{ stacked: true }],
-          yAxes: [{ stacked: true }],
-        }
-      }
+        options: {
+            tooltips: {
+                intersect: false,
+                axis: 'x'
+            },
+        },
+        plugins: [{
+            beforeDatasetsDraw: function(chart) {
+                if (chart.tooltip._active && chart.tooltip._active.length) {
+                    var activePoint = chart.tooltip._active[0],
+                        ctx = chart.ctx,
+                        x = activePoint.tooltipPosition().x,
+                        topY = chart.scales['y-axis-0'].top,
+                        bottomY = chart.scales['y-axis-0'].bottom;
+
+                    // draw line
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(x, topY);
+                    ctx.lineTo(x, bottomY);
+                    ctx.lineWidth = 2;
+                    ctx.strokeStyle = '#07C';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+            }
+        }],
     };
-    // If we have stackedDisaggregation, we need to group datasets into stacks.
-    config.data.datasets.forEach(function(dataset) {
-      var disaggregation = $.extend({}, dataset.disaggregation);
-      // We're going to "stringify" each combination of disaggregations in order
-      // to place them in their own "stacks". To place "stacked" disaggregations
-      // into the same stack, we set them as "samestack" before stringifying.
-      // Note that the string "samestack" is completely arbitrary.
-      if (typeof disaggregation[info.stackedDisaggregation] !== 'undefined') {
-        disaggregation[info.stackedDisaggregation] = 'samestack';
-      }
-      // Use the disaggregation as a unique id for each stack.
-      dataset.stack = JSON.stringify(disaggregation);
-    });
     // Add these overrides onto the normal config, and return it.
     $.extend(true, config, overrides);
-  }
 });
 </script>
 
@@ -1215,8 +1402,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/cc656228f188a4ad60cdd4665e1fa5a2c5b97e72" target="_blank">
-                2025-03-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/f9a703345f9cfc46d4f10f3335633abbd9c16ff8" target="_blank">
+                2025-03-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1242,8 +1429,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/cc656228f188a4ad60cdd4665e1fa5a2c5b97e72" target="_blank">
-                2025-03-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/sdgbih/sdg-data-bosnia/commit/f9a703345f9cfc46d4f10f3335633abbd9c16ff8" target="_blank">
+                2025-03-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1939,12 +2126,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250324021143'></script>
+<script src='/assets/js/sdg.js?v=20250324094650'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250324021143"></script><script>
+    <script src="/assets/js/custom.js?v=20250324094650"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
