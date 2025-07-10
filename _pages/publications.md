@@ -11,6 +11,7 @@ permalink: /publications/
         <li><a href="http://s3.amazonaws.com/sustainabledevelopment.report/2023/sustainable-development-report-2023.pdf" target="_blank">Sustainable Development Report 2023</a></li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Saopstenja/2024/SDG_01_2024_Y1_1_BS.pdf" target="_blank">Progress towards achieving SDG, 2024.</a></li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Saopstenja/2023/SDG_01_2023_Y1_1_BS.pdf" target="_blank">Progress towards achieving SDG, 2023.</a></li>
+        <li><a href="http://bhas.gov.ba/data/Publikacije/Bilteni/2025/SDG_00_2024_TB_1_BS.pdf" target="_blank">Sustainable development goal indicators, 2023.</a></li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Bilteni/2024/SDG_00_2023_TB_1_BS.pdf" target="_blank">Sustainable development goal indicators, 2023.</a></li>
         <li><a href="http://bhas.gov.ba/data/Publikacije/Bilteni/2024/SDG_00_2023_TB_1_BS.pdf" target="_blank">Sustainable development goal indicators, 2022.</a></li>
         <li><a href="http://www.bhas.gov.ba/data/Publikacije/Bilteni/2022/SDG_00_2021_TB_1_BS.pdf" target="_blank">Sustainable development goal indicators, 2021</a></li>
