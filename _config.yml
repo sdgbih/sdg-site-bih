@@ -119,8 +119,8 @@ menu:
  #   translation_key: menu.faq
   - path: /publications
     translation_key: menu.publications
-  - path: /covid-19-impact
-    translation_key: custom.covid
+  #- path: /covid-19-impact
+#    translation_key: custom.covid
 
 footer_menu:
   - path: mailto:sdg@bhas.gov.ba
